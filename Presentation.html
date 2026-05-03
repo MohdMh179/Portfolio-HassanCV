@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Mohd Hassan | Advanced Data Analyst Portfolio + 5K Analytics Dashboard</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #eef2f9;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* animated gradient background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 10% 20%, rgba(220, 235, 250, 0.9), rgba(235, 245, 255, 0.95));
+            background-size: 200% 200%;
+            animation: slowShift 22s ease infinite;
+        }
+
+        @keyframes slowShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* floating particles */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(35, 85, 125, 0.04);
+            border-radius: 50%;
+            animation: floatSlow 30s infinite alternate;
+        }
+
+        @keyframes floatSlow {
+            0% { transform: translateY(0px) translateX(0px) rotate(0deg);}
+            100% { transform: translateY(-60px) translateX(50px) rotate(12deg);}
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 2rem 2rem 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.1);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.2s;
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 32px 48px -18px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.97);
+        }
+
+        .profile-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+            padding: 1.8rem 2.2rem;
+        }
+
+        .avatar {
+            background: linear-gradient(145deg, #0f3b5c, #1a5a7e);
+            width: 90px;
+            height: 90px;
+            border-radius: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 18px 24px -12px rgba(0,0,0,0.25);
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 0.8rem;
+        }
+        .badge {
+            background: #eef3fc;
+            padding: 0.35rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #165a7a;
+            transition: all 0.2s;
+        }
+        .badge:hover { background: #dce9f5; transform: scale(1.02);}
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #1a4c70, #2a6e9e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.4rem;
+            border-left: 6px solid #2a6e9e;
+            padding-left: 1.1rem;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Dashboard specific */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #ffffffec, #f8fbfe);
+            border-radius: 28px;
+            padding: 1.4rem;
+            text-align: center;
+            transition: all 0.25s;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            border: 1px solid rgba(90, 150, 190, 0.15);
+        }
+        .stat-number-lg {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1a6a96;
+            letter-spacing: -1px;
+        }
+        .chart-container {
+            background: #fffffff2;
+            border-radius: 32px;
+            padding: 1.3rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .chart-container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 16px 28px -12px rgba(0,0,0,0.12);
+        }
+        canvas {
+            max-height: 260px;
+            width: 100% !important;
+        }
+
+        .progress-wrap {
+            margin-bottom: 1.3rem;
+        }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .progress-bar-bg {
+            background: #dfe8f2;
+            border-radius: 40px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #1c628b, #3f91c2);
+            width: 0%;
+            height: 100%;
+            border-radius: 40px;
+            transition: width 1.2s cubic-bezier(0.22, 0.97, 0.36, 1);
+        }
+        .footer-contact {
+            background: #ffffffea;
+            backdrop-filter: blur(5px);
+            border-radius: 48px;
+            padding: 1.6rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .hover-glow {
+            transition: 0.2s;
+        }
+        @media (max-width: 760px) {
+            .container { padding: 1rem; }
+        }
+        .insight-badge {
+            font-size: 0.7rem;
+            background: #e5eff8;
+            border-radius: 60px;
+            padding: 0.2rem 0.8rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="animated-bg"></div>
+<div class="floating-shapes">
+    <div class="shape" style="width: 220px; height: 220px; top: 5%; left: -3%; animation-duration: 28s;"></div>
+    <div class="shape" style="width: 340px; height: 340px; bottom: 0%; right: -6%; animation-duration: 40s;"></div>
+    <div class="shape" style="width: 150px; height: 150px; top: 75%; left: 85%; animation-duration: 24s;"></div>
+    <div class="shape" style="width: 100px; height: 100px; top: 40%; left: 10%; animation-duration: 32s;"></div>
+</div>
+
+<div class="container">
+    <!-- Header Section -->
+    <div class="glass-card profile-header" data-aos="fade-down" data-aos-duration="800">
+        <div style="display: flex; align-items: center; gap: 1.6rem; flex-wrap: wrap;">
+            <div class="avatar">MH</div>
+            <div>
+                <h1 style="font-size: 2.1rem; font-weight: 800;">MOHD HASSAN</h1>
+                <p style="font-size: 1.2rem; color: #1f6592; font-weight: 600;"><i class="fas fa-chart-line"></i> Senior Data Analyst Aspirant | Analytics Engineer</p>
+                <div class="badge-list">
+                    <span class="badge"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+                    <span class="badge"><i class="fas fa-chart-simple"></i> Statistics</span>
+                    <span class="badge"><i class="fas fa-database"></i> SQL</span>
+                    <span class="badge"><i class="fab fa-python"></i> Python (Pandas)</span>
+                    <span class="badge"><i class="fas fa-chart-pie"></i> Power BI</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p><i class="fas fa-phone-alt"></i> 9369409820</p>
+            <p><i class="fas fa-envelope"></i> mohdhassanhassanshaikh@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Azamgarh, Uttar Pradesh</p>
+            <div style="margin-top: 0.7rem;"><span class="badge" style="background:#d9e9ff;"><i class="fas fa-briefcase"></i> OPEN TO ENTRY-LEVEL ROLES</span> <span class="badge"><i class="fas fa-folder-open"></i> Portfolio 5K+ Analytics</span></div>
+        </div>
+    </div>
+
+    <!-- Objective + Metrics -->
+    <div class="grid-2col">
+        <div class="glass-card" style="padding: 1.8rem;" data-aos="fade-right">
+            <h2 class="section-title" style="font-size: 1.5rem;">🎯 Career Objective</h2>
+            <p>Data Analyst professional with hands-on experience managing <strong>5,000+ student records</strong>, expert in Advanced Excel, Statistics, and data quality. Leveraging analytical skills to drive data-informed decisions for business growth.</p>
+            <div style="margin-top: 1.2rem;"><i class="fas fa-chart-line"></i> <strong>Self-learning pipeline:</strong> SQL, Python (NumPy, Pandas, Matplotlib), Power BI → full-stack analytics.</div>
+        </div>
+        <div class="glass-card" style="padding: 1.8rem;" data-aos="fade-left">
+            <h2 class="section-title" style="font-size: 1.5rem;">🏆 Key Achievements</h2>
+            <div style="display: flex; justify-content: space-between; text-align: center; flex-wrap: wrap; gap: 1rem;">
+                <div><span class="stat-number-lg">5,280</span><br>Students Analyzed</div>
+                <div><span class="stat-number-lg">40%</span><br>Efficiency Boost</div>
+                <div><span class="stat-number-lg">100%</span><br>Data Integrity</div>
+                <div><span class="stat-number-lg">12+</span><br>Reports/Month</div>
+            </div>
+            <hr style="margin: 1rem 0;">
+            <p><i class="fas fa-graduation-cap"></i> BCA (Pursuing) – Amity University Noida | ADCA Certified</p>
+            <p><i class="fas fa-language"></i> English, Hindi, Arabic, Urdu</p>
+        </div>
+    </div>
+
+    <!-- =========== ADVANCED DASHBOARD + 5000+ RECORDS INSIGHTS =========== -->
+    <div data-aos="zoom-in-up" data-aos-duration="950">
+        <div class="glass-card" style="padding: 1.8rem; margin-bottom: 2rem;">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> 📊 Advanced Analytics Dashboard | 5,000+ Student Records Deep Dive</h2>
+            <p class="insight-badge" style="margin-bottom: 1rem;"><i class="fas fa-database"></i> Real-time KPIs based on 5,280 student academic & attendance records (2024-25)</p>
+            
+            <!-- KPI Cards Row -->
+            <div class="dashboard-grid">
+                <div class="stat-card"><i class="fas fa-users fa-2x" style="color:#2a628f;"></i><div class="stat-number-lg" id="totalStudentsCount">5,280</div><div>Total Enrolled Students</div><small>📌 100% attendance tracked</small></div>
+                <div class="stat-card"><i class="fas fa-chart-line fa-2x" style="color:#2a628f;"></i><div class="stat-number-lg" id="avgScoreDisplay">78.4%</div><div>Average Exam Score</div><small>⬆️ +5.7% vs previous year</small></div>
+                <div class="stat-card"><i class="fas fa-tachometer-alt fa-2x" style="color:#2a628f;"></i><div class="stat-number-lg" id="efficiencyDisplay">40%</div><div>Retrieval Efficiency Gain</div><small>Excel VLOOKUP + Pivot</small></div>
+                <div class="stat-card"><i class="fas fa-chart-pie fa-2x" style="color:#2a628f;"></i><div class="stat-number-lg">93%</div><div>Attendance Rate (Avg)</div><small>Consistent student engagement</small></div>
+            </div>
+
+            <!-- Three advanced Charts: Trend, Distribution, and Subject-wise performance -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="chart-container">
+                    <h3 style="font-weight: 700;"><i class="fas fa-chart-line"></i> Semester Performance Trend (5k+ cohort)</h3>
+                    <canvas id="trendChartAdvanced" width="450" height="240" style="max-height: 240px;"></canvas>
+                    <p class="insight-badge">📈 Consistent growth after Excel-based interventions</p>
+                </div>
+                <div class="chart-container">
+                    <h3 style="font-weight: 700;"><i class="fas fa-chart-pie"></i> Grade Distribution (5,280 Students)</h3>
+                    <canvas id="gradeDistributionChart" width="450" height="240" style="max-height: 240px;"></canvas>
+                    <p class="insight-badge">🏅 Distinction holders: 38% · Data-driven reports</p>
+                </div>
+                <div class="chart-container">
+                    <h3 style="font-weight: 700;"><i class="fas fa-chart-column"></i> Top 5 Subjects Performance</h3>
+                    <canvas id="subjectPerformanceChart" width="450" height="240" style="max-height: 240px;"></canvas>
+                    <p class="insight-badge">📚 Mathematics & Science improvement by 12% due to analytics</p>
+                </div>
+            </div>
+
+            <!-- Additional bar chart: Efficiency Comparison (Before/After Advanced Excel) -->
+            <div class="chart-container" style="margin-top: 0.5rem;">
+                <h3 style="font-weight: 700;"><i class="fas fa-chart-column"></i> Operational Efficiency Transformation (Manual vs Excel Automation)</h3>
+                <canvas id="efficiencyComparisonChart" width="800" height="230" style="max-height: 230px;"></canvas>
+                <p class="insight-badge">⚡ 40% faster data retrieval & 78% reduction in manual errors across 5,000+ records</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience + Technical Skills -->
+    <div class="grid-2col">
+        <div class="glass-card" style="padding: 1.8rem;" data-aos="flip-left">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            <div style="font-weight:800;">📌 Exam Office Assistant · Jamia Tul Falah School, UP | 1 Year</div>
+            <ul style="margin-top: 0.8rem; margin-left: 1.2rem;">
+                <li>Orchestrated data management for <strong>5,280+ students</strong> with Advanced Excel achieving 100% accuracy.</li>
+                <li>Developed analytical reports & dashboards for exam trends, attendance tracking → enabled data-driven decisions.</li>
+                <li>Reduced manual data retrieval time by <strong>40%</strong> using VLOOKUP, INDEX-MATCH, and PivotTables.</li>
+                <li>Automated error-checking via conditional formatting, cutting discrepancy rates by 70%.</li>
+                <li>Visualized performance matrices and presented to school management.</li>
+            </ul>
+        </div>
+        <div class="glass-card" style="padding: 1.8rem;" data-aos="flip-right">
+            <h2 class="section-title"><i class="fas fa-code-branch"></i> Technical Proficiency</h2>
+            <div><span class="badge">🔹 Advanced Excel</span> – Power Query, Pivot, Slicers, Dynamic Arrays</div>
+            <div><span class="badge">🔹 Statistics</span> – Descriptive, Inferential, Correlation, Regression basics</div>
+            <div><span class="badge">🔹 SQL (MySQL/PostgreSQL)</span> – Joins, Subqueries, Window Functions (learning)</div>
+            <div><span class="badge">🔹 Python</span> – Pandas, NumPy, Matplotlib, Seaborn (45% progress)</div>
+            <div><span class="badge">🔹 Power BI</span> – DAX, Interactive dashboards, Data Modeling</div>
+            <div><span class="badge">🔹 Visualization Tools</span> – Canva, Excel Charts, Matplotlib</div>
+        </div>
+    </div>
+
+    <!-- Learning Progress & Soft Skills -->
+    <div class="grid-2col">
+        <div class="glass-card" style="padding: 1.8rem;" data-aos="fade-up">
+            <h2 class="section-title"><i class="fas fa-rocket"></i> Active Upskilling Journey</h2>
+            <div class="progress-wrap"><div class="progress-label"><span>SQL Mastery (Complex Queries, Optimization)</span><span>58%</span></div><div class="progress-bar-bg"><div class="progress-fill" id="sqlProgressFill"></div></div></div>
+            <div class="progress-wrap"><div class="progress-label"><span>Python for Data Science (Pandas, NumPy, Viz)</span><span>48%</span></div><div class="progress-bar-bg"><div class="progress-fill" id="pythonProgressFill"></div></div></div>
+            <div class="progress-wrap"><div class="progress-label"><span>Power BI & Advanced Analytics</span><span>42%</span></div><div class="progress-bar-bg"><div class="progress-fill" id="powerBIProgressFill"></div></div></div>
+            <p class="insight-badge"><i class="fas fa-clock"></i> 3+ months consistent self-study | Building portfolio dashboards</p>
+        </div>
+        <div class="glass-card" style="padding: 1.8rem;" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title"><i class="fas fa-medal"></i> Soft Skills & Strengths</h2>
+            <div><i class="fas fa-brain"></i> <strong>Analytical Problem Solving</strong> – Convert raw data into strategy</div>
+            <div><i class="fas fa-chalkboard-teacher"></i> <strong>Quick Learner</strong> – Self-taught Excel + Python libraries</div>
+            <div><i class="fas fa-check-double"></i> <strong>Data Integrity Focus</strong> – 100% accuracy across large datasets</div>
+            <div><i class="fas fa-users"></i> <strong>Collaboration</strong> – Worked with academic staff to improve insights</div>
+            <div><i class="fas fa-comments"></i> <strong>Communication</strong> – Improving business storytelling</div>
+        </div>
+    </div>
+    
+    <!-- Certification & Connect -->
+    <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1rem;" data-aos="fade-right">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications & Achievements</h2>
+        <p>🏅 <strong>Advanced Excel for Analytics</strong> (Self-taught: Pivot, VLOOKUP, Dashboards) <br>
+        📊 <strong>Statistics for Data Science</strong> – Descriptive & Probability <br>
+        📌 <strong>5,000+ Student Records Project</strong> – Built comprehensive performance dashboard <br>
+        🚀 Ongoing Nanodegree: Data Analysis with Python & SQL</p>
+    </div>
+
+    <div class="footer-contact glass-card" data-aos="fade-up">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+            <span><i class="fas fa-phone-alt"></i> 9369409820</span>
+            <span><i class="fas fa-envelope"></i> mohdhassanhassanshaikh@gmail.com</span>
+            <span><i class="fas fa-map-marker-alt"></i> Azamgarh, UP</span>
+        </div>
+        <hr style="margin: 0.8rem 0;">
+        <p><i class="fas fa-chart-line"></i> Open to Entry-level Data Analyst roles | Portfolio featuring 5k+ real-world analytics | Let’s drive business impact with data.</p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 850, once: true, offset: 20 });
+    
+    // Progress fill animation
+    function fillProgress() {
+        document.getElementById('sqlProgressFill').style.width = '58%';
+        document.getElementById('pythonProgressFill').style.width = '48%';
+        document.getElementById('powerBIProgressFill').style.width = '42%';
+    }
+    const progObserver = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting) { fillProgress(); progObserver.disconnect(); }
+    }, {threshold: 0.3});
+    const progCard = document.querySelector('.glass-card:has(.progress-fill)');
+    if(progCard) progObserver.observe(progCard); else fillProgress();
+
+    // ----- CHARTS SECTION: 5000+ records based -----
+    // 1. Semester Trend: 5k+ student average score
+    const ctxTrend = document.getElementById('trendChartAdvanced').getContext('2d');
+    new Chart(ctxTrend, {
+        type: 'line',
+        data: {
+            labels: ['Sem 1', 'Sem 2', 'Mid-Year', 'Sem 3', 'Final Exam'],
+            datasets: [{
+                label: 'Avg Score (%) - 5,280 Students',
+                data: [68.2, 71.5, 74.3, 79.8, 84.6],
+                borderColor: '#1f6e9c',
+                backgroundColor: 'rgba(31,110,156,0.05)',
+                borderWidth: 3,
+                pointRadius: 5,
+                pointBackgroundColor: '#165a7a',
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw}% average` } } }, scales: { y: { max: 100, beginAtZero: true, title: { display: true, text: 'Percentage (%)' } } }, animation: { duration: 1800 } }
+    });
+
+    // 2. Grade Distribution (5,280 students)
+    const ctxGrade = document.getElementById('gradeDistributionChart').getContext('2d');
+    new Chart(ctxGrade, {
+        type: 'doughnut',
+        data: {
+            labels: ['Distinction (75%+)', 'First Class (60-74%)', 'Second Class (50-59%)', 'Pass (40-49%)', 'Needs Improvement'],
+            datasets: [{ data: [2006, 1795, 950, 370, 159], backgroundColor: ['#2c7fb8', '#5aa9dd', '#8bc1e8', '#b3d4f0', '#d0e2f2'], borderWidth: 0 }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (ctx) => `${ctx.label}: ${ctx.raw} students (${((ctx.raw/5280)*100).toFixed(1)}%)` } } }, animation: { animateScale: true, duration: 1500 } }
+    });
+
+    // 3. Subject wise performance (top 5 subjects)
+    const ctxSubject = document.getElementById('subjectPerformanceChart').getContext('2d');
+    new Chart(ctxSubject, {
+        type: 'bar',
+        data: {
+            labels: ['Mathematics', 'Science', 'English', 'Computer Science', 'Social Studies'],
+            datasets: [{
+                label: 'Average Marks (%) over 5,000+ students',
+                data: [76.4, 82.1, 74.8, 88.5, 79.3],
+                backgroundColor: '#3f8bcb',
+                borderRadius: 10,
+            }]
+        },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw}% avg marks` } } }, scales: { y: { max: 100, title: { display: true, text: 'Percentage' } } }, animation: { duration: 1600 } }
+    });
+
+    // 4. Efficiency Comparison (Before vs After Advanced Excel)
+    const ctxEfficiency = document.getElementById('efficiencyComparisonChart').getContext('2d');
+    new Chart(ctxEfficiency, {
+        type: 'bar',
+        data: {
+            labels: ['Report Generation (hrs/week)', 'Data Errors (%)', 'Retrieval Time (min/query)'],
+            datasets: [
+                { label: 'Before Excel Optimization', data: [6.2, 18.5, 12.4], backgroundColor: '#b0c7de', borderRadius: 8 },
+                { label: 'After Excel Advanced Techniques', data: [2.3, 2.1, 7.2], backgroundColor: '#2c7fb8', borderRadius: 8 }
+            ]
+        },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.raw} ${ctx.dataIndex === 0 ? 'hrs' : (ctx.dataIndex === 1 ? '%' : 'mins')}` } } }, scales: { y: { title: { display: true, text: 'Metrics' } } }, animation: { duration: 1700, easing: 'easeOutBack' } }
+    });
+
+    // Animate KPI numbers: total students strong 5000+
+    const animateNumbers = () => {
+        const studentEl = document.getElementById('totalStudentsCount');
+        const avgEl = document.getElementById('avgScoreDisplay');
+        const effEl = document.getElementById('efficiencyDisplay');
+        if(studentEl && !studentEl.hasAttribute('data-animated')) {
+            let target = 5280, current = 0, step = 60;
+            let interval = setInterval(() => {
+                current += step;
+                if(current >= target) { studentEl.innerText = "5,280"; clearInterval(interval); }
+                else studentEl.innerText = current.toLocaleString();
+            }, 18);
+            studentEl.setAttribute('data-animated', 'true');
+        }
+        if(avgEl && !avgEl.hasAttribute('data-animated')) {
+            let targetVal = 78.4, cur = 0;
+            let int2 = setInterval(() => { cur += 1.6; if(cur >= targetVal) { avgEl.innerText = "78.4%"; clearInterval(int2); } else avgEl.innerText = cur.toFixed(1)+"%"; }, 28);
+            avgEl.setAttribute('data-animated', 'true');
+        }
+        if(effEl && !effEl.hasAttribute('data-animated')) {
+            effEl.innerText = "40%"; effEl.setAttribute('data-animated', 'true');
+        }
+    };
+    const metricObserver = new IntersectionObserver((entries) => { if(entries[0].isIntersecting) animateNumbers(); }, { threshold: 0.3 });
+    const metricSection = document.querySelector('.dashboard-grid');
+    if(metricSection) metricObserver.observe(metricSection);
+    else animateNumbers();
+</script>
+</body>
+</html>
