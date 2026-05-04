@@ -1302,6 +1302,36 @@
         }
 
         /* ══════════════════════════════════════════════════
+           RESPONSIVE BUTTON TEXT — Education & Certificates
+           Only .edu-cert-btn and .cert-view-btn are affected.
+           All other buttons remain completely unchanged.
+        ══════════════════════════════════════════════════ */
+
+        /* Desktop default: show full label, hide mobile label */
+        .edu-cert-btn .btn-label,
+        .cert-view-btn .btn-label {
+            display: inline;
+        }
+
+        .edu-cert-btn .btn-label-mobile,
+        .cert-view-btn .btn-label-mobile {
+            display: none;
+        }
+
+        /* Mobile: hide full label, show "Click" instead */
+        @media (max-width: 768px) {
+            .edu-cert-btn .btn-label,
+            .cert-view-btn .btn-label {
+                display: none;
+            }
+
+            .edu-cert-btn .btn-label-mobile,
+            .cert-view-btn .btn-label-mobile {
+                display: inline;
+            }
+        }
+
+        /* ══════════════════════════════════════════════════
            RESPONSIVE BREAKPOINTS
         ══════════════════════════════════════════════════ */
 
@@ -1764,7 +1794,8 @@
                         </div>
                         <a class="edu-cert-btn">
                             <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            In Progress..........
+                            <span class="btn-label">In Progress..........</span>
+                            <span class="btn-label-mobile">Click</span>
                         </a>
                     </div>
 
@@ -1778,7 +1809,8 @@
                         </div>
                         <a href="ADCA.jpeg" class="edu-cert-btn">
                             <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            View Marksheet
+                            <span class="btn-label">View Marksheet</span>
+                            <span class="btn-label-mobile">Click</span>
                         </a>
                     </div>
 
@@ -1792,7 +1824,8 @@
                         </div>
                         <a href="12th-Marksheet.jpeg" class="edu-cert-btn">
                             <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            View Marksheet
+                            <span class="btn-label">View Marksheet</span>
+                            <span class="btn-label-mobile">Click</span>
                         </a>
                     </div>
 
@@ -1806,7 +1839,8 @@
                         </div>
                         <a href="10th-Marksheet.jpeg" class="edu-cert-btn">
                             <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            View Marksheet
+                            <span class="btn-label">View Marksheet</span>
+                            <span class="btn-label-mobile">Click</span>
                         </a>
                     </div>
 
@@ -1835,7 +1869,8 @@
                 </div>
                 <a href="Advanced-Excel-Certificate.jpeg" class="cert-view-btn">
                     <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                    View Certificate
+                    <span class="btn-label">View Certificate</span>
+                    <span class="btn-label-mobile">Click</span>
                 </a>
             </div>
 
@@ -1846,7 +1881,8 @@
                 </div>
                 <a href="Using-Ai-Certificate.jpeg" class="cert-view-btn">
                     <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                    View Certificate
+                    <span class="btn-label">View Certificate</span>
+                    <span class="btn-label-mobile">Click</span>
                 </a>
             </div>
 
@@ -1857,7 +1893,8 @@
                 </div>
                 <a class="cert-view-btn">
                     <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                    In Progress..........
+                    <span class="btn-label">In Progress..........</span>
+                    <span class="btn-label-mobile">Click</span>
                 </a>
             </div>
 
@@ -1868,7 +1905,8 @@
                 </div>
                 <a class="cert-view-btn">
                     <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                    In Progress..........
+                    <span class="btn-label">In Progress..........</span>
+                    <span class="btn-label-mobile">Click</span>
                 </a>
             </div>
 
@@ -1879,7 +1917,8 @@
                 </div>
                 <a class="cert-view-btn">
                     <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                    In Progress..........
+                    <span class="btn-label">In Progress..........</span>
+                    <span class="btn-label-mobile">Click</span>
                 </a>
             </div>
 
@@ -1898,15 +1937,15 @@
         </div>
         <div class="skills-grid">
             <div class="skill-card" data-aos="zoom-in" data-aos-delay="50">
-                <div class="skill-icon" style="background:rgba(245,158,11,0.12);">📊</div>
+                <div class="skill-icon" style="background:rgba(245,158,11,0.12);"><img src="Excel.jpg" alt="Excel" style="width:36px;height:36px;object-fit:contain;border-radius:6px;"></div>
                 <div class="skill-name">Advanced Excel</div>
                 <div class="skill-sub">Pivot Tables · Macros · XLOOKUP · Charts · Formulas</div>
                 <span class="skill-badge pro">PROFICIENT</span>
             </div>
             <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="skill-icon" style="background:rgba(37,99,235,0.10);">📈</div>
+                <div class="skill-icon" style="background:rgba(37,99,235,0.10);"><img src="Statistics.jpg" alt="Statistics" style="width:36px;height:36px;object-fit:contain;border-radius:6px;"></div>
                 <div class="skill-name">Data Charts &amp; Statistics</div>
-                <div class="skill-sub">Descriptive Statistics · Visualization · Probability · Hypothesis Testing</div>
+                <div class="skill-sub">Descriptive Statistics · Visualization · Probability </div>
                 <span class="skill-badge pro">PROFICIENT</span>
             </div>
             <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
@@ -1916,19 +1955,19 @@
                 <span class="skill-badge pro">PROFICIENT</span>
             </div>
             <div class="skill-card learning" data-aos="zoom-in" data-aos-delay="200">
-                <div class="skill-icon" style="background:rgba(139,92,246,0.10);">🗄️</div>
+                <div class="skill-icon" style="background:rgba(139,92,246,0.10);"><img src="SQL.jpg" alt="SQL" style="width:36px;height:36px;object-fit:contain;border-radius:6px;"></div>
                 <div class="skill-name">SQL</div>
                 <div class="skill-sub">Queries · Joins · MySQL · Stored Procedures · Triggers</div>
                 <span class="skill-badge lrn">3 MO · LEARNING</span>
             </div>
             <div class="skill-card learning" data-aos="zoom-in" data-aos-delay="250">
-                <div class="skill-icon" style="background:rgba(249,115,22,0.10);">🐍</div>
+                <div class="skill-icon" style="background:rgba(249,115,22,0.10);"><img src="Python.jpg" alt="Python" style="width:36px;height:36px;object-fit:contain;border-radius:6px;"></div>
                 <div class="skill-name">Python</div>
                 <div class="skill-sub">Pandas · NumPy · Matplotlib · Seaborn</div>
                 <span class="skill-badge lrn">3 MO · LEARNING</span>
             </div>
             <div class="skill-card learning" data-aos="zoom-in" data-aos-delay="300">
-                <div class="skill-icon" style="background:rgba(14,165,233,0.10);">📊</div>
+                <div class="skill-icon" style="background:rgba(14,165,233,0.10);"><img src="Power-BI.jpg" alt="Power BI" style="width:36px;height:36px;object-fit:contain;border-radius:6px;"></div>
                 <div class="skill-name">Power BI</div>
                 <div class="skill-sub">Dashboards &amp; Reports · Data Modeling · Power Query</div>
                 <span class="skill-badge lrn">3 MO · LEARNING</span>
