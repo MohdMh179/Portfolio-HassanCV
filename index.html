@@ -543,9 +543,12 @@
             50% { transform: translateY(5px); }
         }
 
-        /* ── SECTIONS ──────────────────────────────────────── */
+        /* ══════════════════════════════════════════════════
+           SECTIONS — REDUCED PADDING (Fix #2)
+           Mobile: 2rem top/bottom | Desktop: 3rem top/bottom
+        ══════════════════════════════════════════════════ */
         .section {
-            padding: 3.5rem 1rem;
+            padding: 2rem 1rem;
             width: 100%;
             overflow-x: hidden;
         }
@@ -602,7 +605,7 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             width: 100%;
         }
 
@@ -758,7 +761,7 @@
         /* ── EXPERIENCE ────────────────────────────────────── */
         .experience-wrap {
             max-width: 860px;
-            margin: 2rem auto 0;
+            margin: 1.5rem auto 0;
             width: 100%;
         }
 
@@ -850,7 +853,7 @@
         .projects-section { background: var(--section-alt); }
 
         .projects-table-wrap {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
@@ -952,7 +955,7 @@
         .proj-card .proj-name { word-break: break-word; overflow-wrap: break-word; }
 
         /* ── EDUCATION ─────────────────────────────────────── */
-        .edu-grid { margin-top: 2rem; width: 100%; }
+        .edu-grid { margin-top: 1.5rem; width: 100%; }
 
         .edu-card {
             background: var(--card-bg);
@@ -993,7 +996,7 @@
         .cert-card-text { font-size: 0.82rem; font-weight: 500; color: var(--text-main); }
 
         /* ══════════════════════════════════════════════════
-           SKILLS SECTION — FLIP CARDS  (UPDATED)
+           SKILLS SECTION — FLIP CARDS
         ══════════════════════════════════════════════════ */
         .skills-section { background: var(--off-white); }
 
@@ -1001,7 +1004,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.4rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 900px) {
@@ -1043,7 +1046,6 @@
             50% { transform: translateY(-8px); }
         }
 
-        /* Desktop hover flips */
         @media (hover: hover) {
             .skill-scene:hover .skill-flip-card {
                 transform: rotateY(180deg);
@@ -1051,13 +1053,11 @@
             }
         }
 
-        /* Mobile tap toggle */
         .skill-flip-card.flipped {
             transform: rotateY(180deg) !important;
             animation: none !important;
         }
 
-        /* ── FACE BASE ── */
         .skill-face {
             position: absolute;
             inset: 0;
@@ -1076,10 +1076,8 @@
             gap: 0.55rem;
             padding: 1.25rem 1rem;
             position: relative;
-            /* border removed — controlled per card below */
         }
 
-        /* Per-card gradients — light mode */
         .card-msoffice .skill-front { background: linear-gradient(145deg, rgba(209,52,52,0.14) 0%, rgba(251,146,60,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-stats    .skill-front { background: linear-gradient(145deg, rgba(245,158,11,0.15) 0%, rgba(251,191,36,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-excel    .skill-front { background: linear-gradient(145deg, rgba(33,115,70,0.18) 0%, rgba(34,197,94,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
@@ -1096,7 +1094,6 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
         }
 
-        /* ── ICON WRAPPER — white box, no border, no shadow ── */
         .skill-front-icon {
             width: 72px;
             height: 72px;
@@ -1105,7 +1102,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            /* WHITE background in BOTH modes, no border, no shadow */
             background: #ffffff !important;
             box-shadow: none !important;
             border: none !important;
@@ -1123,7 +1119,6 @@
             filter: none;
         }
 
-        /* Emoji fallback icon */
         .skill-front-icon .emoji-icon {
             font-size: 2rem;
             line-height: 1;
@@ -1167,28 +1162,27 @@
             opacity: 0.6;
         }
 
-        /* ── BACK FACE ──
-           Light mode  → black background, white text
-           Dark mode   → white background, dark text
-        ── */
+        /* ══════════════════════════════════════════════════
+           FIX #1 — BACK FACE TEXT COLORS
+           Light mode: black bg → all text WHITE
+           Dark mode:  white bg → all text BLACK/DARK
+        ══════════════════════════════════════════════════ */
         .skill-back {
             transform: rotateY(180deg);
             padding: 1.1rem 1rem;
             display: flex;
             flex-direction: column;
             gap: 0;
-            /* Light mode: black back */
             background: #0D1523;
             border: 1px solid rgba(255,255,255,0.08);
         }
 
-        /* Dark mode: white back */
         html.dark .skill-back {
             background: #ffffff;
             border: 1px solid rgba(0,0,0,0.10);
         }
 
-        /* Top accent borders */
+        /* Top accent borders — same for both modes */
         .card-msoffice .skill-back { border-top: 2px solid #ef4444; }
         .card-stats    .skill-back { border-top: 2px solid #f59e0b; }
         .card-excel    .skill-back { border-top: 2px solid #22c55e; }
@@ -1196,7 +1190,7 @@
         .card-python   .skill-back { border-top: 2px solid #eab308; }
         .card-powerbi  .skill-back { border-top: 2px solid #f2c80f; }
 
-        /* Back badge */
+        /* ── Back badge: LIGHT MODE (dark bg → light/bright text) ── */
         .skill-back-badge {
             display: inline-block;
             font-size: 0.55rem;
@@ -1207,53 +1201,57 @@
             margin-bottom: 0.45rem;
             font-weight: 600;
             width: fit-content;
+            /* Light mode: white text on dark background */
+            color: #ffffff;
         }
 
-        /* Light mode badge colors (on dark back) */
-        .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.18);  color: #f87171; border: 1px solid rgba(239,68,68,0.35); }
-        .card-stats    .skill-back-badge { background: rgba(245,158,11,0.18); color: #fbbf24; border: 1px solid rgba(245,158,11,0.35); }
-        .card-excel    .skill-back-badge { background: rgba(34,197,94,0.18);  color: #4ade80; border: 1px solid rgba(34,197,94,0.35); }
-        .card-sql      .skill-back-badge { background: rgba(14,165,233,0.18); color: #38bdf8; border: 1px solid rgba(14,165,233,0.35); }
-        .card-python   .skill-back-badge { background: rgba(234,179,8,0.18);  color: #facc15; border: 1px solid rgba(234,179,8,0.35); }
-        .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.18); color: #fbbf24; border: 1px solid rgba(242,200,15,0.35); }
+        .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.25);  border: 1px solid rgba(239,68,68,0.45); }
+        .card-stats    .skill-back-badge { background: rgba(245,158,11,0.25); border: 1px solid rgba(245,158,11,0.45); }
+        .card-excel    .skill-back-badge { background: rgba(34,197,94,0.25);  border: 1px solid rgba(34,197,94,0.45); }
+        .card-sql      .skill-back-badge { background: rgba(14,165,233,0.25); border: 1px solid rgba(14,165,233,0.45); }
+        .card-python   .skill-back-badge { background: rgba(234,179,8,0.25);  border: 1px solid rgba(234,179,8,0.45); }
+        .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.25); border: 1px solid rgba(242,200,15,0.45); }
 
-        /* Dark mode badge colors (on white back) */
-        html.dark .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.12);  color: #dc2626; border: 1px solid rgba(239,68,68,0.25); }
-        html.dark .card-stats    .skill-back-badge { background: rgba(245,158,11,0.12); color: #b45309; border: 1px solid rgba(245,158,11,0.25); }
-        html.dark .card-excel    .skill-back-badge { background: rgba(34,197,94,0.12);  color: #16a34a; border: 1px solid rgba(34,197,94,0.25); }
-        html.dark .card-sql      .skill-back-badge { background: rgba(14,165,233,0.12); color: #0284c7; border: 1px solid rgba(14,165,233,0.25); }
-        html.dark .card-python   .skill-back-badge { background: rgba(234,179,8,0.12);  color: #a16207; border: 1px solid rgba(234,179,8,0.25); }
-        html.dark .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.12); color: #c2410c; border: 1px solid rgba(242,200,15,0.25); }
+        /* Dark mode badge: dark text on white background */
+        html.dark .skill-back-badge { color: #0D1523; }
+        html.dark .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.12);  border: 1px solid rgba(239,68,68,0.25); }
+        html.dark .card-stats    .skill-back-badge { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); }
+        html.dark .card-excel    .skill-back-badge { background: rgba(34,197,94,0.12);  border: 1px solid rgba(34,197,94,0.25); }
+        html.dark .card-sql      .skill-back-badge { background: rgba(14,165,233,0.12); border: 1px solid rgba(14,165,233,0.25); }
+        html.dark .card-python   .skill-back-badge { background: rgba(234,179,8,0.12);  border: 1px solid rgba(234,179,8,0.25); }
+        html.dark .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.12); border: 1px solid rgba(242,200,15,0.25); }
 
-        /* Back heading — white on dark bg (light mode), dark on white bg (dark mode) */
+        /* ── Back heading: LIGHT MODE white, DARK MODE dark ── */
         .skill-back h3 {
             font-family: 'Syne', sans-serif;
             font-size: 0.78rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #ffffff;   /* Light mode: white text on black bg */
             line-height: 1.3;
             margin-bottom: 2px;
         }
 
-        html.dark .skill-back h3 { color: #0D1523; }
+        html.dark .skill-back h3 { color: #0D1523; }   /* Dark mode: dark text on white bg */
 
+        /* ── Back subtitle: LIGHT MODE white, DARK MODE muted dark ── */
         .skill-back-sub {
             font-size: 0.62rem;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.75);   /* Light mode: white semi-transparent */
             margin-bottom: 0.5rem;
             line-height: 1.4;
         }
 
-        html.dark .skill-back-sub { color: #56657E; }
+        html.dark .skill-back-sub { color: #56657E; }   /* Dark mode: muted dark */
 
+        /* ── Divider line ── */
         .skill-back-divider {
             width: 100%;
             height: 1px;
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.18);   /* Light mode: subtle white line */
             margin-bottom: 0.5rem;
         }
 
-        html.dark .skill-back-divider { background: rgba(0,0,0,0.10); }
+        html.dark .skill-back-divider { background: rgba(0,0,0,0.12); }
 
         .skill-tags-row {
             display: flex;
@@ -1261,29 +1259,31 @@
             gap: 3px;
         }
 
-        /* Skill tags — light mode (dark back → light tag colors) */
+        /* ── Skill tags: LIGHT MODE white text on dark bg ── */
         .skill-stag {
             font-size: 0.57rem;
             padding: 2px 6px;
             border-radius: 20px;
             white-space: nowrap;
             font-weight: 500;
+            color: #ffffff;   /* Light mode: white text */
         }
 
-        .card-msoffice .skill-stag { background: rgba(239,68,68,0.18);  border: 1px solid rgba(239,68,68,0.35); color: #f87171; }
-        .card-stats    .skill-stag { background: rgba(245,158,11,0.18); border: 1px solid rgba(245,158,11,0.35); color: #fbbf24; }
-        .card-excel    .skill-stag { background: rgba(34,197,94,0.18);  border: 1px solid rgba(34,197,94,0.35); color: #4ade80; }
-        .card-sql      .skill-stag { background: rgba(14,165,233,0.18); border: 1px solid rgba(14,165,233,0.35); color: #38bdf8; }
-        .card-python   .skill-stag { background: rgba(234,179,8,0.18);  border: 1px solid rgba(234,179,8,0.35); color: #facc15; }
-        .card-powerbi  .skill-stag { background: rgba(242,200,15,0.18); border: 1px solid rgba(242,200,15,0.35); color: #fbbf24; }
+        .card-msoffice .skill-stag { background: rgba(239,68,68,0.25);  border: 1px solid rgba(239,68,68,0.45); }
+        .card-stats    .skill-stag { background: rgba(245,158,11,0.25); border: 1px solid rgba(245,158,11,0.45); }
+        .card-excel    .skill-stag { background: rgba(34,197,94,0.25);  border: 1px solid rgba(34,197,94,0.45); }
+        .card-sql      .skill-stag { background: rgba(14,165,233,0.25); border: 1px solid rgba(14,165,233,0.45); }
+        .card-python   .skill-stag { background: rgba(234,179,8,0.25);  border: 1px solid rgba(234,179,8,0.45); }
+        .card-powerbi  .skill-stag { background: rgba(242,200,15,0.25); border: 1px solid rgba(242,200,15,0.45); }
 
-        /* Dark mode (white back → darker tag colors) */
-        html.dark .card-msoffice .skill-stag { background: rgba(239,68,68,0.10);  border: 1px solid rgba(239,68,68,0.22); color: #dc2626; }
-        html.dark .card-stats    .skill-stag { background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.22); color: #b45309; }
-        html.dark .card-excel    .skill-stag { background: rgba(34,197,94,0.10);  border: 1px solid rgba(34,197,94,0.22); color: #16a34a; }
-        html.dark .card-sql      .skill-stag { background: rgba(14,165,233,0.10); border: 1px solid rgba(14,165,233,0.22); color: #0284c7; }
-        html.dark .card-python   .skill-stag { background: rgba(234,179,8,0.10);  border: 1px solid rgba(234,179,8,0.22); color: #a16207; }
-        html.dark .card-powerbi  .skill-stag { background: rgba(242,200,15,0.10); border: 1px solid rgba(242,200,15,0.22); color: #c2410c; }
+        /* ── Skill tags: DARK MODE dark text on white bg ── */
+        html.dark .skill-stag { color: #0D1523; }
+        html.dark .card-msoffice .skill-stag { background: rgba(239,68,68,0.10);  border: 1px solid rgba(239,68,68,0.22); }
+        html.dark .card-stats    .skill-stag { background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.22); }
+        html.dark .card-excel    .skill-stag { background: rgba(34,197,94,0.10);  border: 1px solid rgba(34,197,94,0.22); }
+        html.dark .card-sql      .skill-stag { background: rgba(14,165,233,0.10); border: 1px solid rgba(14,165,233,0.22); }
+        html.dark .card-python   .skill-stag { background: rgba(234,179,8,0.10);  border: 1px solid rgba(234,179,8,0.22); }
+        html.dark .card-powerbi  .skill-stag { background: rgba(242,200,15,0.10); border: 1px solid rgba(242,200,15,0.22); }
 
         /* Scroll fade-in for skill scenes */
         .skill-scene { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -1296,7 +1296,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            margin: 1.75rem 0;
+            margin: 1.5rem 0;
             width: 100%;
         }
 
@@ -1335,7 +1335,7 @@
         .map-wrap iframe { display: block; width: 100%; }
 
         /* ── FOOTER ────────────────────────────────────────── */
-        footer { background: #050D1A; color: rgba(255,255,255,0.55); padding: 1.75rem 1rem; text-align: center; }
+        footer { background: #050D1A; color: rgba(255,255,255,0.55); padding: 1.5rem 1rem; text-align: center; }
         .footer-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; }
         .footer-copy { font-size: 0.75rem; }
         .footer-made { font-size: 0.65rem; margin-top: 0.3rem; opacity: 0.45; }
@@ -1383,7 +1383,7 @@
 
         @media (min-width: 768px) {
             :root { --nav-h: 64px; }
-            .section { padding: 5rem 1.5rem; }
+            .section { padding: 3rem 1.5rem; }
             .nav-badge { display: inline-block; }
             .hero-inner { padding: 6rem 1.5rem 4rem; gap: 2.5rem; }
             .hero-photo-wrap { width: min(260px, 55vw); padding: 1.5rem; }
@@ -1621,7 +1621,6 @@
 </section>
 
 <!-- ══════════════ SKILLS — FLIP CARDS ══════════════ -->
-<!-- ORDER: MS Office → Statistics → Excel → SQL → Python → Power BI -->
 <section id="skills" class="section skills-section">
     <div class="section-inner">
         <div class="section-center">
@@ -2048,7 +2047,7 @@
             <span class="section-tag">Achievements</span>
             <h2 class="section-title">Certificates</h2>
             <div class="divider-line"></div>
-            <p style="font-size:0.86rem;color:var(--text-muted);margin-top:0.5rem;margin-bottom:1.5rem;">
+            <p style="font-size:0.86rem;color:var(--text-muted);margin-top:0.5rem;margin-bottom:1.25rem;">
                 Professional certifications, self-learning milestones &amp; real-world achievements
             </p>
             <div style="display:flex;flex-direction:column;gap:0.65rem;">
@@ -2275,7 +2274,7 @@
     }
 
     /* ── SKILL FLIP CARDS ────────────────────────────────────
-       Desktop : CSS hover handles flip (no JS needed)
+       Desktop : CSS hover handles flip
        Mobile  : tap toggles — only ONE card open at a time
     ──────────────────────────────────────────────────────── */
     var allFlipCards = document.querySelectorAll('.skill-flip-card');
@@ -2285,31 +2284,17 @@
     }
 
     allFlipCards.forEach(function(card) {
-        /* Click/tap handler */
         card.addEventListener('click', function() {
             var alreadyFlipped = card.classList.contains('flipped');
-
-            /* On touch/mobile: close all others first */
             if (isTouchDevice()) {
-                allFlipCards.forEach(function(c) {
-                    c.classList.remove('flipped');
-                });
-                /* Toggle current: if it was open, clicking again closes it */
-                if (!alreadyFlipped) {
-                    card.classList.add('flipped');
-                }
+                allFlipCards.forEach(function(c) { c.classList.remove('flipped'); });
+                if (!alreadyFlipped) { card.classList.add('flipped'); }
             } else {
-                /* Desktop fallback (keyboard users) */
                 card.classList.toggle('flipped');
             }
         });
-
-        /* Keyboard accessibility */
         card.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                card.click();
-            }
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
         });
     });
 
@@ -2318,9 +2303,7 @@
     var skillIO = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry, i) {
             if (entry.isIntersecting) {
-                setTimeout(function() {
-                    entry.target.classList.add('visible');
-                }, i * 80);
+                setTimeout(function() { entry.target.classList.add('visible'); }, i * 80);
                 skillIO.unobserve(entry.target);
             }
         });
@@ -2328,49 +2311,18 @@
     skillScenes.forEach(function(s) { skillIO.observe(s); });
 
     /* ── INIT ────────────────────────────────── */
-    AOS.init({
-        duration: 700,
-        once: true,
-        easing: 'ease-out-cubic',
-        offset: 50
-    });
+    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 50 });
 
     document.addEventListener('DOMContentLoaded', function() {
         setupObservers();
-
         if (typeof Typed !== 'undefined') {
             new Typed('#typed-subtitle', {
-                strings: [
-                    'Data Analyst Aspirant',
-                    'Statistics Expert',
-                    'Advanced Excel Expert',
-                    'SQL Learner',
-                    'Python Libraries Learner',
-                    'Power BI Learner',
-                ],
-                loop: true,
-                typeSpeed: 75,
-                backSpeed: 20,
-                backDelay: 1500,
-                showCursor: true,
-                cursorChar: '|'
+                strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'],
+                loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|'
             });
-
             new Typed('#typed-photo-role', {
-                strings: [
-                    'Data Analyst Aspirant',
-                    'Statistics Expert',
-                    'Advanced Excel Expert',
-                    'SQL Learner',
-                    'Python Libraries Learner',
-                    'Power BI Learner'
-                ],
-                loop: true,
-                typeSpeed: 75,
-                backSpeed: 20,
-                backDelay: 1500,
-                showCursor: true,
-                cursorChar: '|'
+                strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'],
+                loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|'
             });
         }
     });
