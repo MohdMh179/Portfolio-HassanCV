@@ -543,10 +543,7 @@
             50% { transform: translateY(5px); }
         }
 
-        /* ══════════════════════════════════════════════════
-           SECTIONS — REDUCED PADDING (Fix #2)
-           Mobile: 2rem top/bottom | Desktop: 3rem top/bottom
-        ══════════════════════════════════════════════════ */
+        /* ── SECTIONS ─────────────────────────────────────── */
         .section {
             padding: 2rem 1rem;
             width: 100%;
@@ -635,6 +632,11 @@
             background: linear-gradient(90deg, var(--blue), transparent);
         }
 
+        /* ══════════════════════════════════════════════════
+           STRENGTH CARDS — LIQUID FILL ANIMATION
+           Mobile: 2 columns (6 cards only)
+           Desktop: 3 columns (12 cards)
+        ══════════════════════════════════════════════════ */
         .strengths-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -642,6 +644,22 @@
             margin-top: 1rem;
         }
 
+        /* Hide extra 6 cards on mobile */
+        .strength-card.desktop-only {
+            display: none;
+        }
+
+        /* Show extra 6 on desktop (min-width 900px) */
+        @media (min-width: 900px) {
+            .strengths-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .strength-card.desktop-only {
+                display: flex;
+            }
+        }
+
+        /* ── LIQUID FILL STRENGTH CARD ── */
         .strength-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -653,21 +671,89 @@
             font-size: 0.78rem;
             font-weight: 500;
             color: var(--text-main);
-            transition: all 0.25s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s, color 0.3s, transform 0.2s;
+            /* Remove old shadow/bg hover */
+            z-index: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        .strength-card:hover {
+        /* The liquid fill pseudo-element — starts at bottom, fills up */
+        .strength-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0%;
+            /* Light mode: blue fill */
+            background: var(--blue);
+            border-radius: 0.875rem;
+            transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: -1;
+        }
+
+        /* Dark mode fill: white */
+        html.dark .strength-card::before {
+            background: #ffffff;
+        }
+
+        /* On hover (desktop) or .active (touch) — fill up */
+        .strength-card:hover::before,
+        .strength-card.active::before {
+            height: 100%;
+        }
+
+        /* Text and icon color when filled */
+        .strength-card:hover,
+        .strength-card.active {
             border-color: var(--blue);
-            background: var(--blue-muted);
+            color: #000000;
             transform: translateY(-2px);
         }
 
+        /* Dark mode hover text */
+        html.dark .strength-card:hover,
+        html.dark .strength-card.active {
+            border-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Icon stays visible on fill */
         .strength-card i {
             color: var(--blue);
             font-size: 0.9rem;
             flex-shrink: 0;
             width: 15px;
+            transition: color 0.25s;
+            position: relative;
+            z-index: 1;
         }
+
+        .strength-card:hover i,
+        .strength-card.active i {
+            color: #000000;
+        }
+
+        html.dark .strength-card i {
+            color: var(--blue);
+        }
+
+        html.dark .strength-card:hover i,
+        html.dark .strength-card.active i {
+            color: #000000;
+        }
+
+        /* Text span sits above fill */
+        .strength-card span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── END STRENGTH CARDS ── */
 
         .counters-row {
             display: grid;
@@ -995,9 +1081,7 @@
         .cert-card-body { flex: 1; min-width: 0; }
         .cert-card-text { font-size: 0.82rem; font-weight: 500; color: var(--text-main); }
 
-        /* ══════════════════════════════════════════════════
-           SKILLS SECTION — FLIP CARDS
-        ══════════════════════════════════════════════════ */
+        /* ── SKILLS FLIP CARDS ─────────────────────────────── */
         .skills-section { background: var(--off-white); }
 
         .skills-flip-grid {
@@ -1067,7 +1151,6 @@
             overflow: hidden;
         }
 
-        /* ── FRONT FACE ── */
         .skill-front {
             display: flex;
             flex-direction: column;
@@ -1162,11 +1245,7 @@
             opacity: 0.6;
         }
 
-        /* ══════════════════════════════════════════════════
-           FIX #1 — BACK FACE TEXT COLORS
-           Light mode: black bg → all text WHITE
-           Dark mode:  white bg → all text BLACK/DARK
-        ══════════════════════════════════════════════════ */
+        /* ── SKILL BACK FACE ── */
         .skill-back {
             transform: rotateY(180deg);
             padding: 1.1rem 1rem;
@@ -1182,7 +1261,6 @@
             border: 1px solid rgba(0,0,0,0.10);
         }
 
-        /* Top accent borders — same for both modes */
         .card-msoffice .skill-back { border-top: 2px solid #ef4444; }
         .card-stats    .skill-back { border-top: 2px solid #f59e0b; }
         .card-excel    .skill-back { border-top: 2px solid #22c55e; }
@@ -1190,7 +1268,6 @@
         .card-python   .skill-back { border-top: 2px solid #eab308; }
         .card-powerbi  .skill-back { border-top: 2px solid #f2c80f; }
 
-        /* ── Back badge: LIGHT MODE (dark bg → light/bright text) ── */
         .skill-back-badge {
             display: inline-block;
             font-size: 0.55rem;
@@ -1201,7 +1278,6 @@
             margin-bottom: 0.45rem;
             font-weight: 600;
             width: fit-content;
-            /* Light mode: white text on dark background */
             color: #ffffff;
         }
 
@@ -1212,7 +1288,6 @@
         .card-python   .skill-back-badge { background: rgba(234,179,8,0.25);  border: 1px solid rgba(234,179,8,0.45); }
         .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.25); border: 1px solid rgba(242,200,15,0.45); }
 
-        /* Dark mode badge: dark text on white background */
         html.dark .skill-back-badge { color: #0D1523; }
         html.dark .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.12);  border: 1px solid rgba(239,68,68,0.25); }
         html.dark .card-stats    .skill-back-badge { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); }
@@ -1221,33 +1296,30 @@
         html.dark .card-python   .skill-back-badge { background: rgba(234,179,8,0.12);  border: 1px solid rgba(234,179,8,0.25); }
         html.dark .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.12); border: 1px solid rgba(242,200,15,0.25); }
 
-        /* ── Back heading: LIGHT MODE white, DARK MODE dark ── */
         .skill-back h3 {
             font-family: 'Syne', sans-serif;
             font-size: 0.78rem;
             font-weight: 700;
-            color: #ffffff;   /* Light mode: white text on black bg */
+            color: #ffffff;
             line-height: 1.3;
             margin-bottom: 2px;
         }
 
-        html.dark .skill-back h3 { color: #0D1523; }   /* Dark mode: dark text on white bg */
+        html.dark .skill-back h3 { color: #0D1523; }
 
-        /* ── Back subtitle: LIGHT MODE white, DARK MODE muted dark ── */
         .skill-back-sub {
             font-size: 0.62rem;
-            color: rgba(255,255,255,0.75);   /* Light mode: white semi-transparent */
+            color: rgba(255,255,255,0.75);
             margin-bottom: 0.5rem;
             line-height: 1.4;
         }
 
-        html.dark .skill-back-sub { color: #56657E; }   /* Dark mode: muted dark */
+        html.dark .skill-back-sub { color: #56657E; }
 
-        /* ── Divider line ── */
         .skill-back-divider {
             width: 100%;
             height: 1px;
-            background: rgba(255,255,255,0.18);   /* Light mode: subtle white line */
+            background: rgba(255,255,255,0.18);
             margin-bottom: 0.5rem;
         }
 
@@ -1259,14 +1331,13 @@
             gap: 3px;
         }
 
-        /* ── Skill tags: LIGHT MODE white text on dark bg ── */
         .skill-stag {
             font-size: 0.57rem;
             padding: 2px 6px;
             border-radius: 20px;
             white-space: nowrap;
             font-weight: 500;
-            color: #ffffff;   /* Light mode: white text */
+            color: #ffffff;
         }
 
         .card-msoffice .skill-stag { background: rgba(239,68,68,0.25);  border: 1px solid rgba(239,68,68,0.45); }
@@ -1276,7 +1347,6 @@
         .card-python   .skill-stag { background: rgba(234,179,8,0.25);  border: 1px solid rgba(234,179,8,0.45); }
         .card-powerbi  .skill-stag { background: rgba(242,200,15,0.25); border: 1px solid rgba(242,200,15,0.45); }
 
-        /* ── Skill tags: DARK MODE dark text on white bg ── */
         html.dark .skill-stag { color: #0D1523; }
         html.dark .card-msoffice .skill-stag { background: rgba(239,68,68,0.10);  border: 1px solid rgba(239,68,68,0.22); }
         html.dark .card-stats    .skill-stag { background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.22); }
@@ -1354,9 +1424,7 @@
             .edu-cert-btn .btn-label-mobile, .cert-view-btn .btn-label-mobile { display: inline; }
         }
 
-        /* ══════════════════════════════════════════════════
-           RESPONSIVE BREAKPOINTS
-        ══════════════════════════════════════════════════ */
+        /* ── RESPONSIVE ────────────────────────────────────── */
         @media (max-width: 768px) {
             .hero-title { display: none; }
             .hero-sub { display: none; }
@@ -1375,7 +1443,6 @@
         }
 
         @media (min-width: 600px) {
-            .strengths-grid { grid-template-columns: repeat(3, 1fr); }
             .contact-cards { flex-direction: row; flex-wrap: wrap; }
             .contact-card { flex: 1; min-width: 0; }
             .contact-card-value { word-break: normal; overflow-wrap: normal; }
@@ -1563,13 +1630,66 @@
                     Detail-oriented Data Analyst Aspirant with proven experience managing datasets for 5000+ students using Advanced Excel and Statistics. Skilled at generating actionable insights through analytical reports, Dashboards, Pivot Tables, Macros, and data visualization. Currently mastering SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Power BI to build full-stack data analysis capabilities.
                 </p>
                 <div class="strengths-label">Core Strengths</div>
-                <div class="strengths-grid">
-                    <div class="strength-card"><i class="fa-solid fa-brain"></i> Analytical Thinking</div>
-                    <div class="strength-card"><i class="fa-solid fa-magnifying-glass"></i> Attention to Detail</div>
-                    <div class="strength-card"><i class="fa-solid fa-rocket"></i> Quick Learner</div>
-                    <div class="strength-card"><i class="fa-solid fa-clock"></i> Time Management</div>
-                    <div class="strength-card"><i class="fa-solid fa-users"></i> Team Collaboration</div>
-                    <div class="strength-card"><i class="fa-solid fa-shield-halved"></i> Data Accuracy Focus</div>
+
+                <!-- ══ STRENGTH CARDS ══
+                     Mobile: 6 cards (2 columns)
+                     Desktop (900px+): 12 cards (3 columns)
+                     Extra 6 have class "desktop-only"
+                -->
+                <div class="strengths-grid" id="strengths-grid">
+
+                    <!-- Always visible (6 cards) -->
+                    <div class="strength-card" tabindex="0">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Analytical Thinking</span>
+                    </div>
+                    <div class="strength-card" tabindex="0">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Attention to Detail</span>
+                    </div>
+                    <div class="strength-card" tabindex="0">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Quick Learner</span>
+                    </div>
+                    <div class="strength-card" tabindex="0">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Time Management</span>
+                    </div>
+                    <div class="strength-card" tabindex="0">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Team Collaboration</span>
+                    </div>
+                    <div class="strength-card" tabindex="0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Data Accuracy Focus</span>
+                    </div>
+
+                    <!-- Desktop-only extra 6 cards -->
+                    <div class="strength-card desktop-only" tabindex="0">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Data Visualization</span>
+                    </div>
+                    <div class="strength-card desktop-only" tabindex="0">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Problem Solving</span>
+                    </div>
+                    <div class="strength-card desktop-only" tabindex="0">
+                        <i class="fa-solid fa-comments"></i>
+                        <span>Communication</span>
+                    </div>
+                    <div class="strength-card desktop-only" tabindex="0">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>Goal Oriented</span>
+                    </div>
+                    <div class="strength-card desktop-only" tabindex="0">
+                        <i class="fa-solid fa-rotate"></i>
+                        <span>Adaptability</span>
+                    </div>
+                    <div class="strength-card desktop-only" tabindex="0">
+                        <i class="fa-solid fa-database"></i>
+                        <span>Data Management</span>
+                    </div>
+
                 </div>
             </div>
 
@@ -2272,6 +2392,63 @@
             animateBars();
         });
     }
+
+    /* ══════════════════════════════════════════════════
+       STRENGTH CARDS — LIQUID FILL (TOUCH + MOUSE)
+       
+       Logic:
+       - Desktop (hover): CSS handles hover state via :hover
+       - Touch devices: JS adds/removes .active class on tap
+         Only ONE card can be .active at a time
+       - Clicking outside any card removes all .active states
+    ══════════════════════════════════════════════════ */
+    (function initStrengthCards() {
+        var cards = document.querySelectorAll('.strength-card');
+        var activeCard = null;
+
+        function isTouchDevice() {
+            return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        }
+
+        cards.forEach(function(card) {
+            // Touch tap handler
+            card.addEventListener('click', function(e) {
+                if (!isTouchDevice()) return; // Desktop uses CSS :hover, skip
+
+                e.stopPropagation();
+
+                if (activeCard && activeCard !== card) {
+                    activeCard.classList.remove('active');
+                }
+
+                if (card.classList.contains('active')) {
+                    card.classList.remove('active');
+                    activeCard = null;
+                } else {
+                    card.classList.add('active');
+                    activeCard = card;
+                }
+            });
+
+            // Keyboard support (Enter/Space)
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        });
+
+        // Click outside clears active on touch
+        document.addEventListener('click', function(e) {
+            if (!isTouchDevice()) return;
+            var grid = document.getElementById('strengths-grid');
+            if (grid && !grid.contains(e.target) && activeCard) {
+                activeCard.classList.remove('active');
+                activeCard = null;
+            }
+        });
+    })();
 
     /* ── SKILL FLIP CARDS ────────────────────────────────────
        Desktop : CSS hover handles flip
