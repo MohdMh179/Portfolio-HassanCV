@@ -5,1464 +5,432 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Mohd Hassan - Data Analyst Aspirant from Azamgarh, Uttar Pradesh, India. Expert in Advanced Excel, Pivot Tables, VLOOKUP, Statistics. Mastering SQL, Python, Power BI.">
     <title>Mohd Hassan | Data Analyst Aspirant</title>
-
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
-
     <style>
-        /* ── RESET & CSS VARIABLES ─────────────────────────── */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-            --blue: #2563eb;
-            --blue-dark: #1d4ed8;
-            --blue-light: #3b82f6;
-            --blue-muted: rgba(37,99,235,0.10);
-            --green: #22c55e;
-            --green-dark: #16a34a;
-            --white: #ffffff;
-            --off-white: #F5F8FF;
-            --text-main: #0D1523;
-            --text-muted: #56657E;
-            --border: rgba(37,99,235,0.15);
-            --card-bg: #ffffff;
-            --nav-bg: rgba(255,255,255,0.97);
-            --section-alt: #EEF4FF;
-            --shadow: 0 4px 32px rgba(37,99,235,0.10);
-            --radius: 1.25rem;
-            --nav-h: 60px;
+            --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #3b82f6;
+            --blue-muted: rgba(37,99,235,0.10); --green: #22c55e; --green-dark: #16a34a;
+            --white: #ffffff; --off-white: #F5F8FF; --text-main: #0D1523; --text-muted: #56657E;
+            --border: rgba(37,99,235,0.15); --card-bg: #ffffff; --nav-bg: rgba(255,255,255,0.97);
+            --section-alt: #EEF4FF; --shadow: 0 4px 32px rgba(37,99,235,0.10); --radius: 1.25rem; --nav-h: 60px;
         }
-
         html.dark {
-            --blue: #3b82f6;
-            --blue-dark: #2563eb;
-            --blue-light: #60a5fa;
-            --blue-muted: rgba(59,130,246,0.15);
-            --green: #22c55e;
-            --green-dark: #16a34a;
-            --white: #0A111F;
-            --off-white: #0E172B;
-            --text-main: #E8F0FE;
-            --text-muted: #7B93B8;
-            --border: rgba(59,130,246,0.18);
-            --card-bg: #111E35;
-            --nav-bg: rgba(10,17,31,0.97);
-            --section-alt: #0E172B;
-            --shadow: 0 4px 32px rgba(0,0,0,0.35);
+            --blue: #3b82f6; --blue-dark: #2563eb; --blue-light: #60a5fa;
+            --blue-muted: rgba(59,130,246,0.15); --green: #22c55e; --green-dark: #16a34a;
+            --white: #0A111F; --off-white: #0E172B; --text-main: #E8F0FE; --text-muted: #7B93B8;
+            --border: rgba(59,130,246,0.18); --card-bg: #111E35; --nav-bg: rgba(10,17,31,0.97);
+            --section-alt: #0E172B; --shadow: 0 4px 32px rgba(0,0,0,0.35);
         }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--nav-h);
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: 'DM Sans', system-ui, sans-serif;
-            background: var(--white);
-            color: var(--text-main);
-            line-height: 1.65;
-            transition: background 0.3s, color 0.3s;
-            overflow-x: hidden;
-            max-width: 100vw;
-            width: 100%;
-        }
-
-        h1, h2, h3, h4, h5 {
-            font-family: 'Syne', sans-serif;
-            line-height: 1.15;
-        }
-
+        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); overflow-x: hidden; }
+        body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--text-main); line-height: 1.65; transition: background 0.3s, color 0.3s; overflow-x: hidden; max-width: 100vw; width: 100%; padding-top: var(--nav-h); }
+        h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; line-height: 1.15; }
         a { color: inherit; text-decoration: none; }
         img { display: block; max-width: 100%; }
-
-        /* ── SCROLLBAR ─────────────────────────────────────── */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--off-white); }
         ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 9px; }
 
-        /* ── NAVBAR ────────────────────────────────────────── */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border);
-            transition: background 0.3s, border-color 0.3s;
-            width: 100%;
-            max-width: 100vw;
-        }
-
-        .nav-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: var(--nav-h);
-            gap: 0.5rem;
-            width: 100%;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-shrink: 1;
-            min-width: 0;
-        }
-
-        .nav-logo-img {
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid var(--blue);
-            flex-shrink: 0;
-        }
-
-        .nav-logo-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-
-        .nav-logo-name {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-main);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .nav-logo-name-mobile {
-            display: none;
-            font-family: 'Syne', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text-main);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        @media (max-width: 768px) {
-            .nav-logo-name { display: none; }
-            .nav-logo-name-mobile { display: block; }
-        }
-
-        .nav-badge {
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            padding: 3px 8px;
-            border-radius: 99px;
-            background: var(--blue-muted);
-            color: var(--blue);
-            white-space: nowrap;
-            display: none;
-        }
-
-        .nav-links {
-            display: none;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            cursor: pointer;
-            position: relative;
-            padding-bottom: 2px;
-            transition: color 0.2s;
-            white-space: nowrap;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--blue);
-            border-radius: 9px;
-            transition: width 0.25s ease;
-        }
-
+        /* NAVBAR — FIXED */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); transition: background 0.3s, border-color 0.3s; width: 100%; max-width: 100vw; }
+        .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 0.75rem; display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 0.5rem; width: 100%; }
+        .nav-logo { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 1; min-width: 0; }
+        .nav-logo-img { width: 34px; height: 34px; border-radius: 10px; overflow: hidden; border: 2px solid var(--blue); flex-shrink: 0; }
+        .nav-logo-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .nav-logo-name { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .nav-logo-name-mobile { display: none; font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        @media (max-width: 768px) { .nav-logo-name { display: none; } .nav-logo-name-mobile { display: block; } }
+        .nav-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 99px; background: var(--blue-muted); color: var(--blue); white-space: nowrap; display: none; }
+        .nav-links { display: none; align-items: center; gap: 1.5rem; }
+        .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; position: relative; padding-bottom: 2px; transition: color 0.2s; white-space: nowrap; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--blue); border-radius: 9px; transition: width 0.25s ease; }
         .nav-links a:hover { color: var(--blue); }
         .nav-links a:hover::after { width: 100%; }
+        .nav-actions { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+        .btn-icon { width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: all 0.2s; flex-shrink: 0; }
+        .btn-icon:hover { background: var(--blue-muted); color: var(--blue); border-color: var(--blue); }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--blue); color: #fff; padding: 0.45rem 0.8rem; border-radius: 99px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.15s; box-shadow: 0 4px 14px rgba(37,99,235,0.30); white-space: nowrap; border: none; flex-shrink: 0; }
+        .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            flex-shrink: 0;
-        }
-
-        .btn-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text-muted);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .btn-icon:hover {
-            background: var(--blue-muted);
-            color: var(--blue);
-            border-color: var(--blue);
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            background: var(--blue);
-            color: #fff;
-            padding: 0.45rem 0.8rem;
-            border-radius: 99px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.15s;
-            box-shadow: 0 4px 14px rgba(37,99,235,0.30);
-            white-space: nowrap;
-            border: none;
-            flex-shrink: 0;
-        }
-
-        .btn-primary:hover {
-            background: var(--blue-dark);
-            transform: translateY(-1px);
-        }
-
-        /* ── MOBILE MENU ───────────────────────────────────── */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            padding: 0.75rem 1rem 1.25rem;
-            border-top: 1px solid var(--border);
-            background: var(--nav-bg);
-            gap: 0.15rem;
-            width: 100%;
-            max-width: 100vw;
-        }
-
+        /* MOBILE MENU */
+        .mobile-menu { display: none; flex-direction: column; padding: 0.75rem 1rem 1.25rem; border-top: 1px solid var(--border); background: var(--nav-bg); gap: 0.15rem; width: 100%; max-width: 100vw; }
         .mobile-menu.open { display: flex; }
+        .mobile-menu a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 0.65rem 0.85rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .mobile-menu a:hover, .mobile-menu a:active { background: var(--blue-muted); color: var(--blue); }
 
-        .mobile-menu a {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            padding: 0.65rem 0.85rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .mobile-menu a:hover,
-        .mobile-menu a:active {
-            background: var(--blue-muted);
-            color: var(--blue);
-        }
-
-        /* ── HERO ──────────────────────────────────────────── */
-        .hero {
-            min-height: 100svh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #0D2B6E 0%, #1052BF 45%, #2563eb 100%);
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            width: 100%;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 60% 60% at 20% 30%, rgba(255,255,255,0.07) 0%, transparent 70%),
-                radial-gradient(ellipse 50% 50% at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-
-        .hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 4.5rem 1rem 3rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            order: -1;
-        }
-
-        .hero-photo-wrap {
-            width: min(200px, 70vw);
-            aspect-ratio: 1;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.1rem;
-            position: relative;
-        }
-
-        .hero-photo-inner {
-            width: min(110px, 55vw);
-            height: min(110px, 55vw);
-            border-radius: 1.25rem;
-            overflow: hidden;
-            background: rgba(255,255,255,0.9);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .hero-photo-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-
-        .hero-photo-name {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.78rem;
-            font-weight: 600;
-            margin-top: 0.6rem;
-        }
-
-        .hero-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2.8rem, 10vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-photo-role {
-            color: var(--green);
-            font-weight: 600;
-            font-size: 0.62rem;
-            min-height: 1.4em;
-            line-height: 1.4;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 100%;
-        }
-
-        .hero-deco-ring {
-            position: absolute;
-            inset: -8px;
-            border: 1px dashed rgba(255,255,255,0.2);
-            border-radius: 2.5rem;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            text-align: center;
-            width: 100%;
-            min-width: 0;
-        }
-
-        .hero-sub {
-            font-size: clamp(1.05rem, 4vw, 1.6rem);
-            font-weight: 700;
-            color: var(--green);
-            margin-bottom: 0.75rem;
-            min-height: 2.2em;
-            line-height: 1.3;
-        }
-
-        .typed-cursor {
-            color: var(--green);
-            font-weight: 700;
-            animation: typed-blink 0.7s infinite;
-        }
-
-        @keyframes typed-blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .hero-desc {
-            font-size: 0.85rem;
-            opacity: 0.72;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            max-width: 480px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 0.25rem;
-        }
-
-        .hero-ctas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.65rem;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .hero-btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            background: #fff;
-            color: var(--blue-dark);
-            padding: 0.65rem 1.25rem;
-            border-radius: 99px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            white-space: nowrap;
-        }
-
-        .hero-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-        }
-
-        .hero-btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            border: 2px solid rgba(255,255,255,0.45);
-            color: #fff;
-            padding: 0.65rem 1.25rem;
-            border-radius: 99px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .hero-btn-outline:hover {
-            background: rgba(255,255,255,0.12);
-            border-color: #fff;
-        }
-
+        /* HERO */
+        .hero { min-height: 100svh; display: flex; align-items: center; background: linear-gradient(135deg, #0D2B6E 0%, #1052BF 45%, #2563eb 100%); position: relative; overflow: hidden; color: #fff; width: 100%; }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 20% 30%, rgba(255,255,255,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 70%); pointer-events: none; }
+        .hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+        .hero-inner { max-width: 1280px; margin: 0 auto; padding: 4.5rem 1rem 3rem; display: flex; flex-direction: column; gap: 2rem; align-items: center; width: 100%; position: relative; z-index: 1; }
+        .hero-visual { display: flex; justify-content: center; order: -1; }
+        .hero-photo-wrap { width: min(200px, 70vw); aspect-ratio: 1; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.25); border-radius: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.1rem; position: relative; }
+        .hero-photo-inner { width: min(110px, 55vw); height: min(110px, 55vw); border-radius: 1.25rem; overflow: hidden; background: rgba(255,255,255,0.9); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .hero-photo-inner img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .hero-photo-name { color: rgba(255,255,255,0.9); font-size: 0.78rem; font-weight: 600; margin-top: 0.6rem; }
+        .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 10vw, 5.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        .hero-photo-role { color: var(--green); font-weight: 600; font-size: 0.62rem; min-height: 1.4em; line-height: 1.4; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+        .hero-deco-ring { position: absolute; inset: -8px; border: 1px dashed rgba(255,255,255,0.2); border-radius: 2.5rem; pointer-events: none; }
+        .hero-content { text-align: center; width: 100%; min-width: 0; }
+        .hero-sub { font-size: clamp(1.05rem, 4vw, 1.6rem); font-weight: 700; color: var(--green); margin-bottom: 0.75rem; min-height: 2.2em; line-height: 1.3; }
+        .typed-cursor { color: var(--green); font-weight: 700; animation: typed-blink 0.7s infinite; }
+        @keyframes typed-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .hero-desc { font-size: 0.85rem; opacity: 0.72; line-height: 1.7; margin-bottom: 1.5rem; max-width: 480px; margin-left: auto; margin-right: auto; padding: 0 0.25rem; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.65rem; justify-content: center; margin-bottom: 2rem; }
+        .hero-btn-primary { display: inline-flex; align-items: center; gap: 0.45rem; background: #fff; color: var(--blue-dark); padding: 0.65rem 1.25rem; border-radius: 99px; font-weight: 700; font-size: 0.85rem; transition: all 0.2s; box-shadow: 0 8px 24px rgba(0,0,0,0.2); white-space: nowrap; }
+        .hero-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+        .hero-btn-outline { display: inline-flex; align-items: center; gap: 0.45rem; border: 2px solid rgba(255,255,255,0.45); color: #fff; padding: 0.65rem 1.25rem; border-radius: 99px; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; white-space: nowrap; }
+        .hero-btn-outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
         .hero-cta-presentation-desktop { display: inline-flex; }
         .hero-cta-presentation-mobile { display: none; }
-
-        .hero-stats {
-            display: flex;
-            gap: 1.25rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.18);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
+        .hero-stats { display: flex; gap: 1.25rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.18); flex-wrap: wrap; justify-content: center; }
         .hero-stat-item { min-width: 0; text-align: center; }
-
-        .hero-stat-num {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(1.4rem, 6vw, 2rem);
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .hero-stat-label {
-            font-size: 0.62rem;
-            opacity: 0.6;
-            margin-top: 0.2rem;
-            max-width: 90px;
-            line-height: 1.3;
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 1.25rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.35rem;
-            color: rgba(255,255,255,0.45);
-            font-size: 0.6rem;
-            letter-spacing: 0.15em;
-            z-index: 2;
-        }
-
+        .hero-stat-num { font-family: 'Syne', sans-serif; font-size: clamp(1.4rem, 6vw, 2rem); font-weight: 700; line-height: 1; }
+        .hero-stat-label { font-size: 0.62rem; opacity: 0.6; margin-top: 0.2rem; max-width: 90px; line-height: 1.3; }
+        .scroll-hint { position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.35rem; color: rgba(255,255,255,0.45); font-size: 0.6rem; letter-spacing: 0.15em; z-index: 2; }
         .scroll-hint i { animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(5px); }
-        }
-
-        /* ── SECTIONS ─────────────────────────────────────── */
-        .section {
-            padding: 2rem 1rem;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        .section-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .section-tag {
-            display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 0.28rem 0.8rem;
-            border-radius: 99px;
-            background: var(--blue-muted);
-            color: var(--blue);
-            margin-bottom: 0.6rem;
-        }
-
-        .section-title {
-            font-size: clamp(1.45rem, 5vw, 2.4rem);
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.4rem;
-        }
-
+        /* SECTIONS */
+        .section { padding: 2rem 1rem; width: 100%; overflow-x: hidden; }
+        .section-inner { max-width: 1280px; margin: 0 auto; width: 100%; }
+        .section-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.28rem 0.8rem; border-radius: 99px; background: var(--blue-muted); color: var(--blue); margin-bottom: 0.6rem; }
+        .section-title { font-size: clamp(1.45rem, 5vw, 2.4rem); font-weight: 800; color: var(--text-main); margin-bottom: 0.4rem; }
         .section-center { text-align: center; }
         .section-center .section-tag { display: block; }
-
-        .section-subtitle {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            max-width: 480px;
-            margin: 0 auto;
-        }
-
-        .divider-line {
-            width: 48px;
-            height: 3px;
-            background: var(--blue);
-            border-radius: 9px;
-            margin: 0.6rem 0 0;
-        }
-
+        .section-subtitle { font-size: 0.88rem; color: var(--text-muted); max-width: 480px; margin: 0 auto; }
+        .divider-line { width: 48px; height: 3px; background: var(--blue); border-radius: 9px; margin: 0.6rem 0 0; }
         .section-center .divider-line { margin: 0.6rem auto 0; }
         .highlight-green { color: var(--green); }
 
-        /* ── ABOUT ─────────────────────────────────────────── */
-        .about-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            width: 100%;
-        }
+        /* ABOUT */
+        .about-grid { display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem; width: 100%; }
+        .about-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.25rem; }
+        .strengths-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.65rem; }
+        .strengths-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--blue), transparent); }
+        .strengths-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 1rem; }
+        .strength-card.desktop-only { display: none; }
+        @media (min-width: 900px) { .strengths-grid { grid-template-columns: repeat(3, 1fr); } .strength-card.desktop-only { display: flex; } }
+        .strength-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.875rem; padding: 0.65rem 0.85rem; display: flex; align-items: center; gap: 0.55rem; font-size: 0.78rem; font-weight: 500; color: var(--text-main); cursor: pointer; position: relative; overflow: hidden; transition: border-color 0.3s, color 0.3s, transform 0.2s; z-index: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
+        .strength-card::before { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 0%; background: #60a5fa; border-radius: 0.875rem; transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1); z-index: -1; }
+        html.dark .strength-card::before { background: #ffffff; }
+        .strength-card:hover::before, .strength-card.active::before { height: 100%; }
+        .strength-card:hover, .strength-card.active { border-color: #60a5fa; color: #ffffff; transform: translateY(-2px); }
+        html.dark .strength-card:hover, html.dark .strength-card.active { border-color: #ffffff; color: #000000; }
+        .strength-card i { color: var(--blue); font-size: 0.9rem; flex-shrink: 0; width: 15px; transition: color 0.25s; position: relative; z-index: 1; }
+        .strength-card:hover i, .strength-card.active i { color: #ffffff; }
+        html.dark .strength-card i { color: var(--blue); }
+        html.dark .strength-card:hover i, html.dark .strength-card.active i { color: #000000; }
+        .strength-card span { position: relative; z-index: 1; }
 
-        .about-desc {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 1.25rem;
-        }
-
-        .strengths-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.65rem;
-        }
-
-        .strengths-label::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--blue), transparent);
-        }
-
-        /* ══════════════════════════════════════════════════
-           STRENGTH CARDS — LIQUID FILL ANIMATION
-           Mobile: 2 columns (6 cards only)
-           Desktop: 3 columns (12 cards)
-        ══════════════════════════════════════════════════ */
-        .strengths-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        /* Hide extra 6 cards on mobile */
-        .strength-card.desktop-only {
-            display: none;
-        }
-
-        /* Show extra 6 on desktop (min-width 900px) */
-        @media (min-width: 900px) {
-            .strengths-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .strength-card.desktop-only {
-                display: flex;
-            }
-        }
-
-        /* ── LIQUID FILL STRENGTH CARD ── */
-        .strength-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 0.875rem;
-            padding: 0.65rem 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--text-main);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: border-color 0.3s, color 0.3s, transform 0.2s;
-            /* Remove old shadow/bg hover */
-            z-index: 0;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        /* The liquid fill pseudo-element — starts at bottom, fills up */
-        .strength-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 0%;
-            /* Light mode: blue fill */
-            background: var(--blue);
-            border-radius: 0.875rem;
-            transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-            z-index: -1;
-        }
-
-        /* Dark mode fill: white */
-        html.dark .strength-card::before {
-            background: #ffffff;
-        }
-
-        /* On hover (desktop) or .active (touch) — fill up */
-        .strength-card:hover::before,
-        .strength-card.active::before {
-            height: 100%;
-        }
-
-        /* Text and icon color when filled */
-        .strength-card:hover,
-        .strength-card.active {
-            border-color: var(--blue);
-            color: #000000;
-            transform: translateY(-2px);
-        }
-
-        /* Dark mode hover text */
-        html.dark .strength-card:hover,
-        html.dark .strength-card.active {
-            border-color: #ffffff;
-            color: #000000;
-        }
-
-        /* Icon stays visible on fill */
-        .strength-card i {
-            color: var(--blue);
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            width: 15px;
-            transition: color 0.25s;
-            position: relative;
-            z-index: 1;
-        }
-
-        .strength-card:hover i,
-        .strength-card.active i {
-            color: #000000;
-        }
-
-        html.dark .strength-card i {
-            color: var(--blue);
-        }
-
-        html.dark .strength-card:hover i,
-        html.dark .strength-card.active i {
-            color: #000000;
-        }
-
-        /* Text span sits above fill */
-        .strength-card span {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ── END STRENGTH CARDS ── */
-
-        .counters-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            width: 100%;
-        }
-
-        .counter-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1rem 0.75rem;
-            text-align: center;
-            min-width: 0;
-        }
-
-        .counter-num {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(1.8rem, 6vw, 2.5rem);
-            font-weight: 800;
-            color: var(--blue);
-            line-height: 1;
-        }
-
-        .counter-label {
-            font-size: 0.62rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-muted);
-            margin-top: 0.35rem;
-            line-height: 1.3;
-        }
-
-        .counter-sub {
-            font-size: 0.62rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-        }
-
+        /* COUNTERS */
+        .counters-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; width: 100%; }
+        .counter-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 0.75rem; text-align: center; min-width: 0; }
+        .counter-num { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 6vw, 2.5rem); font-weight: 800; color: var(--blue); line-height: 1; }
+        .counter-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-top: 0.35rem; line-height: 1.3; }
+        .counter-sub { font-size: 0.62rem; color: var(--text-muted); margin-top: 0.2rem; }
         .skills-bars { display: flex; flex-direction: column; gap: 1rem; }
-
-        .skill-bar-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.78rem;
-            margin-bottom: 0.35rem;
-            color: var(--text-main);
-            font-weight: 500;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .skill-bar-track {
-            height: 7px;
-            background: var(--border);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
-        .skill-bar-fill {
-            height: 100%;
-            border-radius: 99px;
-            background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
-            width: 0;
-            transition: width 1.6s cubic-bezier(0.34, 1.2, 0.64, 1);
-        }
-
-        .languages-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-            margin-top: 1rem;
-        }
-
-        .lang-tag {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 0.3rem 0.65rem;
-            border-radius: 99px;
-            font-size: 0.75rem;
-        }
-
+        .skill-bar-header { display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 0.35rem; color: var(--text-main); font-weight: 500; gap: 0.5rem; flex-wrap: wrap; }
+        .skill-bar-track { height: 7px; background: var(--border); border-radius: 99px; overflow: hidden; }
+        .skill-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%); width: 0; transition: width 1.6s cubic-bezier(0.34, 1.2, 0.64, 1); }
+        .languages-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
+        .lang-tag { display: flex; align-items: center; gap: 0.4rem; background: var(--card-bg); border: 1px solid var(--border); padding: 0.3rem 0.65rem; border-radius: 99px; font-size: 0.75rem; }
         .lang-tag .native { color: #22C55E; font-size: 0.62rem; font-weight: 700; }
         .lang-tag .improving { color: #F59E0B; font-size: 0.62rem; font-weight: 700; }
 
-        /* ── EXPERIENCE ────────────────────────────────────── */
-        .experience-wrap {
-            max-width: 860px;
-            margin: 1.5rem auto 0;
-            width: 100%;
-        }
-
-        .exp-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.25rem;
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
-            width: 100%;
-        }
-
-        .exp-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(37,99,235,0.15);
-            border-color: var(--blue);
-        }
-
-        .exp-period {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--off-white);
-            border: 1px solid var(--border);
-            padding: 0.25rem 0.7rem;
-            border-radius: 99px;
-            font-size: 0.72rem;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-        }
-
+        /* EXPERIENCE */
+        .experience-wrap { max-width: 860px; margin: 1.5rem auto 0; width: 100%; }
+        .exp-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; transition: all 0.3s; box-shadow: var(--shadow); width: 100%; }
+        .exp-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(37,99,235,0.15); border-color: var(--blue); }
+        html.dark .exp-card:hover { border-color: #ffffff; box-shadow: 0 12px 40px rgba(255,255,255,0.12); }
+        html.dark .exp-card.touch-active { border-color: #ffffff; box-shadow: 0 12px 40px rgba(255,255,255,0.12); transform: translateY(-3px); }
+        .exp-period { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--off-white); border: 1px solid var(--border); padding: 0.25rem 0.7rem; border-radius: 99px; font-size: 0.72rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
         .exp-period .year { color: #22C55E; font-weight: 600; }
         .exp-period .dur { background: rgba(34,197,94,0.12); color: #22C55E; padding: 1px 6px; border-radius: 99px; font-size: 0.62rem; font-weight: 600; }
-
         .exp-title { font-size: clamp(1rem, 4vw, 1.25rem); font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem; }
-
-        .exp-company {
-            color: var(--blue);
-            font-weight: 500;
-            font-size: 0.82rem;
-            margin-bottom: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            flex-wrap: wrap;
-        }
-
+        .exp-company { color: var(--blue); font-weight: 500; font-size: 0.82rem; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; }
         .exp-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
-
-        .exp-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.83rem;
-            color: var(--text-muted);
-        }
-
+        .exp-list li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.83rem; color: var(--text-muted); }
         .exp-list li i { color: #22C55E; margin-top: 3px; flex-shrink: 0; font-size: 0.7rem; }
-
-        .exp-card-bottom {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            padding-top: 0.85rem;
-            border-top: 1px solid var(--border);
-        }
-
+        .exp-card-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding-top: 0.85rem; border-top: 1px solid var(--border); }
         .exp-icons-row { display: flex; gap: 0.65rem; }
-
-        .exp-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
+        .exp-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
         .exp-icon.amber { background: rgba(245,158,11,0.12); color: #F59E0B; }
         .exp-icon.sky { background: rgba(14,165,233,0.12); color: #0EA5E9; }
         .exp-tech-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
         .exp-delivered { color: #22C55E; font-weight: 600; font-size: 0.72rem; }
 
-        /* ── PROJECTS ──────────────────────────────────────── */
+        /* ═══════════════════════════════════════════
+           PROJECTS — dark mode: full white bg fill + black text
+           Same liquid fill effect as strength cards
+        ═══════════════════════════════════════════ */
         .projects-section { background: var(--section-alt); }
-
-        .projects-table-wrap {
-            margin-top: 1.5rem;
-            border-radius: var(--radius);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            width: 100%;
-        }
-
+        .projects-table-wrap { margin-top: 1.5rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
         .projects-table { width: 100%; border-collapse: collapse; min-width: 600px; }
         .projects-table thead tr { background: var(--blue); }
-
-        .projects-table thead th {
-            color: #fff;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.75rem 0.85rem;
-            text-align: left;
-            white-space: nowrap;
-        }
-
-        .projects-table tbody tr { background: var(--card-bg); border-bottom: 1px solid var(--border); transition: background 0.2s; }
+        .projects-table thead th { color: #fff; font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 0.85rem; text-align: left; white-space: nowrap; }
+        .projects-table tbody tr { background: var(--card-bg); border-bottom: 1px solid var(--border); transition: background 0.3s, box-shadow 0.3s; }
         .projects-table tbody tr:last-child { border-bottom: none; }
+        /* Light mode hover */
         .projects-table tbody tr:hover { background: var(--blue-muted); }
+        /* Dark mode hover — full white fill, all text black */
+        html.dark .projects-table tbody tr:hover { background: #ffffff; box-shadow: 0 4px 24px rgba(255,255,255,0.18); }
+        html.dark .projects-table tbody tr:hover td { color: #000000; }
+        html.dark .projects-table tbody tr:hover .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
+        html.dark .projects-table tbody tr:hover .proj-status.done { color: #16a34a; }
+        html.dark .projects-table tbody tr:hover .proj-status.wip { color: #d97706; }
+        html.dark .projects-table tbody tr:hover .proj-link-coming { color: #56657E; }
+        /* Dark mode touch-active — same as hover */
+        html.dark .projects-table tbody tr.touch-active { background: #ffffff; box-shadow: 0 4px 24px rgba(255,255,255,0.18); }
+        html.dark .projects-table tbody tr.touch-active td { color: #000000; }
+        html.dark .projects-table tbody tr.touch-active .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
+        html.dark .projects-table tbody tr.touch-active .proj-status.done { color: #16a34a; }
+        html.dark .projects-table tbody tr.touch-active .proj-status.wip { color: #d97706; }
+        html.dark .projects-table tbody tr.touch-active .proj-link-coming { color: #56657E; }
 
         .projects-table td { padding: 0.85rem; vertical-align: middle; font-size: 0.82rem; color: var(--text-main); }
         .proj-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
         .proj-name { font-weight: 600; }
         .proj-desc { color: var(--text-muted); font-size: 0.76rem; max-width: 220px; }
         .proj-tools { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-
-        .proj-tool-tag {
-            font-size: 0.63rem;
-            font-weight: 600;
-            padding: 2px 7px;
-            border-radius: 99px;
-            background: var(--blue-muted);
-            color: var(--blue);
-            white-space: nowrap;
-        }
-
+        .proj-tool-tag { font-size: 0.63rem; font-weight: 600; padding: 2px 7px; border-radius: 99px; background: var(--blue-muted); color: var(--blue); white-space: nowrap; }
         .proj-status { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
         .proj-status.done { color: #22C55E; }
         .proj-status.wip { color: #F59E0B; }
         .proj-status.planned { color: var(--text-muted); }
-
         .sdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
         .proj-status.done .sdot { background: #22C55E; }
         .proj-status.wip .sdot { background: #F59E0B; animation: pulse 2s infinite; }
         .proj-status.planned .sdot { background: var(--text-muted); }
         .proj-link-coming { font-size: 0.7rem; color: var(--text-muted); font-style: italic; white-space: nowrap; }
+        .project-btn, .cert-view-btn, .edu-cert-btn { display: inline-flex; align-items: center; gap: 0.3rem; background: var(--blue); color: #fff; padding: 0.3rem 0.75rem; border-radius: 99px; font-size: 0.7rem; font-weight: 600; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(37,99,235,0.28); white-space: nowrap; text-decoration: none; border: none; cursor: pointer; flex-shrink: 0; }
+        .project-btn:hover, .cert-view-btn:hover, .edu-cert-btn:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.38); }
 
-        .project-btn, .cert-view-btn, .edu-cert-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            background: var(--blue);
-            color: #fff;
-            padding: 0.3rem 0.75rem;
-            border-radius: 99px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(37,99,235,0.28);
-            white-space: nowrap;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        .project-btn:hover, .cert-view-btn:hover, .edu-cert-btn:hover {
-            background: var(--blue-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(37,99,235,0.38);
-        }
-
+        /* Mobile proj cards — dark mode same fill effect */
         .proj-cards-mobile { display: none; margin-top: 1.25rem; }
-
-        .proj-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1rem;
-            margin-bottom: 0.65rem;
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-            transition: all 0.25s;
-        }
-
+        .proj-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; margin-bottom: 0.65rem; width: 100%; max-width: 100%; overflow: hidden; box-sizing: border-box; transition: all 0.3s; }
         .proj-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+        html.dark .proj-card:hover { background: #ffffff; border-color: #ffffff; box-shadow: 0 8px 32px rgba(255,255,255,0.18); }
+        html.dark .proj-card:hover .proj-name,
+        html.dark .proj-card:hover .proj-desc,
+        html.dark .proj-card:hover .proj-num { color: #000000; }
+        html.dark .proj-card:hover .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
+        html.dark .proj-card:hover .proj-status.done { color: #16a34a; }
+        html.dark .proj-card:hover .proj-status.wip { color: #d97706; }
+        html.dark .proj-card.touch-active { background: #ffffff; border-color: #ffffff; box-shadow: 0 8px 32px rgba(255,255,255,0.18); }
+        html.dark .proj-card.touch-active .proj-name,
+        html.dark .proj-card.touch-active .proj-desc,
+        html.dark .proj-card.touch-active .proj-num { color: #000000; }
+        html.dark .proj-card.touch-active .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
+        html.dark .proj-card.touch-active .proj-status.done { color: #16a34a; }
+        html.dark .proj-card.touch-active .proj-status.wip { color: #d97706; }
+
         .proj-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.6rem; }
         .proj-card-header > div { min-width: 0; flex: 1; }
         .proj-card .proj-name { word-break: break-word; overflow-wrap: break-word; }
 
-        /* ── EDUCATION ─────────────────────────────────────── */
+        /* EDUCATION */
         .edu-grid { margin-top: 1.5rem; width: 100%; }
-
-        .edu-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 0.9rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.25s;
-            margin-bottom: 0.65rem;
-            width: 100%;
-        }
-
+        .edu-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; margin-bottom: 0.65rem; width: 100%; }
         .edu-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+        html.dark .edu-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); }
+        html.dark .edu-card.touch-active { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); transform: translateY(-2px); }
         .edu-icon { color: var(--blue); font-size: 1.15rem; flex-shrink: 0; }
         .edu-card-body { flex: 1; min-width: 0; }
         .edu-degree { font-weight: 600; font-size: 0.84rem; color: var(--text-main); }
         .edu-org { color: var(--blue); font-size: 0.76rem; font-weight: 500; margin-top: 0.1rem; }
         .edu-year { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem; }
 
-        .cert-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 0.9rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.25s;
-            margin-bottom: 0.65rem;
-            width: 100%;
-        }
-
+        /* ═══════════════════════════════════════════
+           CERTIFICATES — dark mode white border
+        ═══════════════════════════════════════════ */
+        .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; margin-bottom: 0.65rem; width: 100%; }
         .cert-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+        html.dark .cert-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); }
+        html.dark .cert-card.touch-active { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); transform: translateY(-2px); }
         .cert-icon { color: #F59E0B; font-size: 1.15rem; flex-shrink: 0; }
         .cert-card-body { flex: 1; min-width: 0; }
         .cert-card-text { font-size: 0.82rem; font-weight: 500; color: var(--text-main); }
 
-        /* ── SKILLS FLIP CARDS ─────────────────────────────── */
+        /* CONTACT */
+        .contact-inner { max-width: 860px; margin: 0 auto; width: 100%; }
+        .contact-cards { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; width: 100%; }
+        .contact-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; min-width: 0; width: 100%; }
+        .contact-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+        html.dark .contact-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.10); }
+        html.dark .contact-card.touch-active { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.10); transform: translateY(-2px); }
+        .contact-card-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-muted); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+        .contact-card-label { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.12rem; }
+        .contact-card-value { font-weight: 600; font-size: 0.82rem; color: var(--text-main); word-break: break-all; overflow-wrap: anywhere; }
+        .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); width: 100%; }
+        .map-wrap iframe { display: block; width: 100%; }
+
+        /* SKILLS FLIP CARDS */
         .skills-section { background: var(--off-white); }
-
-        .skills-flip-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.4rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (max-width: 900px) {
-            .skills-flip-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-        }
-
-        @media (max-width: 600px) {
-            .skills-flip-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
-        }
-
-        .skill-scene {
-            perspective: 900px;
-            height: 230px;
-        }
-
-        @media (max-width: 600px) {
-            .skill-scene { height: 200px; }
-        }
-
-        .skill-flip-card {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.55s cubic-bezier(0.35,0.1,0.15,1);
-            border-radius: 20px;
-            cursor: pointer;
-            animation: skillFloat 4s ease-in-out infinite;
-        }
-
+        .skills-flip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.5rem; }
+        @media (max-width: 900px) { .skills-flip-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+        @media (max-width: 600px) { .skills-flip-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; } }
+        .skill-scene { perspective: 900px; height: 230px; }
+        @media (max-width: 600px) { .skill-scene { height: 200px; } }
+        .skill-flip-card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(0.35,0.1,0.15,1); border-radius: 20px; cursor: pointer; animation: skillFloat 4s ease-in-out infinite; }
         .skill-scene:nth-child(2) .skill-flip-card { animation-delay: 0.5s; }
         .skill-scene:nth-child(3) .skill-flip-card { animation-delay: 1.0s; }
         .skill-scene:nth-child(4) .skill-flip-card { animation-delay: 1.5s; }
         .skill-scene:nth-child(5) .skill-flip-card { animation-delay: 2.0s; }
         .skill-scene:nth-child(6) .skill-flip-card { animation-delay: 2.5s; }
-
-        @keyframes skillFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @media (hover: hover) {
-            .skill-scene:hover .skill-flip-card {
-                transform: rotateY(180deg);
-                animation: none;
-            }
-        }
-
-        .skill-flip-card.flipped {
-            transform: rotateY(180deg) !important;
-            animation: none !important;
-        }
-
-        .skill-face {
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            overflow: hidden;
-        }
-
-        .skill-front {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.55rem;
-            padding: 1.25rem 1rem;
-            position: relative;
-        }
-
+        @keyframes skillFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @media (hover: hover) { .skill-scene:hover .skill-flip-card { transform: rotateY(180deg); animation: none; } }
+        .skill-flip-card.flipped { transform: rotateY(180deg) !important; animation: none !important; }
+        .skill-face { position: absolute; inset: 0; border-radius: 20px; backface-visibility: hidden; -webkit-backface-visibility: hidden; overflow: hidden; }
+        .skill-front { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.55rem; padding: 1.25rem 1rem; position: relative; }
         .card-msoffice .skill-front { background: linear-gradient(145deg, rgba(209,52,52,0.14) 0%, rgba(251,146,60,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-stats    .skill-front { background: linear-gradient(145deg, rgba(245,158,11,0.15) 0%, rgba(251,191,36,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-excel    .skill-front { background: linear-gradient(145deg, rgba(33,115,70,0.18) 0%, rgba(34,197,94,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-sql      .skill-front { background: linear-gradient(145deg, rgba(14,165,233,0.15) 0%, rgba(99,102,241,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-python   .skill-front { background: linear-gradient(145deg, rgba(234,179,8,0.15) 0%, rgba(59,130,246,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         .card-powerbi  .skill-front { background: linear-gradient(145deg, rgba(234,179,8,0.16) 0%, rgba(245,158,11,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
-
         html.dark .skill-front { border-color: rgba(255,255,255,0.08) !important; }
-
-        .skill-front-shine {
-            position: absolute;
-            top: 0; left: 10%; right: 10%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-        }
-
-        .skill-front-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: #ffffff !important;
-            box-shadow: none !important;
-            border: none !important;
-        }
-
-        @media (max-width: 600px) {
-            .skill-front-icon { width: 56px; height: 56px; border-radius: 14px; }
-        }
-
-        .skill-front-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 8px;
-            filter: none;
-        }
-
-        .skill-front-icon .emoji-icon {
-            font-size: 2rem;
-            line-height: 1;
-        }
-
-        @media (max-width: 600px) {
-            .skill-front-icon .emoji-icon { font-size: 1.6rem; }
-        }
-
-        .skill-front-label {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        @media (max-width: 600px) {
-            .skill-front-label { font-size: 0.7rem; }
-        }
-
-        .skill-front-badge {
-            font-size: 0.56rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            padding: 2px 8px;
-            border-radius: 99px;
-        }
-
+        .skill-front-shine { position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); }
+        .skill-front-icon { width: 72px; height: 72px; border-radius: 18px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #ffffff !important; box-shadow: none !important; border: none !important; }
+        @media (max-width: 600px) { .skill-front-icon { width: 56px; height: 56px; border-radius: 14px; } }
+        .skill-front-icon img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+        .skill-front-icon .emoji-icon { font-size: 2rem; line-height: 1; }
+        @media (max-width: 600px) { .skill-front-icon .emoji-icon { font-size: 1.6rem; } }
+        .skill-front-label { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--text-main); text-align: center; line-height: 1.2; }
+        @media (max-width: 600px) { .skill-front-label { font-size: 0.7rem; } }
+        .skill-front-badge { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 99px; }
         .card-msoffice .skill-front-badge, .card-stats .skill-front-badge, .card-excel .skill-front-badge { background: #22c55e; color: #fff; }
-        .card-sql      .skill-front-badge, .card-python .skill-front-badge, .card-powerbi .skill-front-badge { background: var(--blue); color: #fff; }
-
-        .skill-hover-hint {
-            position: absolute;
-            bottom: 0.7rem;
-            font-size: 0.55rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            opacity: 0.6;
-        }
-
-        /* ── SKILL BACK FACE ── */
-        .skill-back {
-            transform: rotateY(180deg);
-            padding: 1.1rem 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            background: #0D1523;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        html.dark .skill-back {
-            background: #ffffff;
-            border: 1px solid rgba(0,0,0,0.10);
-        }
-
+        .card-sql .skill-front-badge, .card-python .skill-front-badge, .card-powerbi .skill-front-badge { background: var(--blue); color: #fff; }
+        .skill-hover-hint { position: absolute; bottom: 0.7rem; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); opacity: 0.6; }
+        .skill-back { transform: rotateY(180deg); padding: 1.1rem 1rem; display: flex; flex-direction: column; gap: 0; background: #0D1523; border: 1px solid rgba(255,255,255,0.08); }
+        html.dark .skill-back { background: #ffffff; border: 1px solid rgba(0,0,0,0.10); }
         .card-msoffice .skill-back { border-top: 2px solid #ef4444; }
         .card-stats    .skill-back { border-top: 2px solid #f59e0b; }
         .card-excel    .skill-back { border-top: 2px solid #22c55e; }
         .card-sql      .skill-back { border-top: 2px solid #0ea5e9; }
         .card-python   .skill-back { border-top: 2px solid #eab308; }
         .card-powerbi  .skill-back { border-top: 2px solid #f2c80f; }
-
-        .skill-back-badge {
-            display: inline-block;
-            font-size: 0.55rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 2px 8px;
-            border-radius: 20px;
-            margin-bottom: 0.45rem;
-            font-weight: 600;
-            width: fit-content;
-            color: #ffffff;
-        }
-
-        .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.25);  border: 1px solid rgba(239,68,68,0.45); }
+        .skill-back-badge { display: inline-block; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; margin-bottom: 0.45rem; font-weight: 600; width: fit-content; color: #ffffff; }
+        .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.25); border: 1px solid rgba(239,68,68,0.45); }
         .card-stats    .skill-back-badge { background: rgba(245,158,11,0.25); border: 1px solid rgba(245,158,11,0.45); }
-        .card-excel    .skill-back-badge { background: rgba(34,197,94,0.25);  border: 1px solid rgba(34,197,94,0.45); }
+        .card-excel    .skill-back-badge { background: rgba(34,197,94,0.25); border: 1px solid rgba(34,197,94,0.45); }
         .card-sql      .skill-back-badge { background: rgba(14,165,233,0.25); border: 1px solid rgba(14,165,233,0.45); }
-        .card-python   .skill-back-badge { background: rgba(234,179,8,0.25);  border: 1px solid rgba(234,179,8,0.45); }
+        .card-python   .skill-back-badge { background: rgba(234,179,8,0.25); border: 1px solid rgba(234,179,8,0.45); }
         .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.25); border: 1px solid rgba(242,200,15,0.45); }
-
         html.dark .skill-back-badge { color: #0D1523; }
-        html.dark .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.12);  border: 1px solid rgba(239,68,68,0.25); }
+        html.dark .card-msoffice .skill-back-badge { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); }
         html.dark .card-stats    .skill-back-badge { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.25); }
-        html.dark .card-excel    .skill-back-badge { background: rgba(34,197,94,0.12);  border: 1px solid rgba(34,197,94,0.25); }
+        html.dark .card-excel    .skill-back-badge { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); }
         html.dark .card-sql      .skill-back-badge { background: rgba(14,165,233,0.12); border: 1px solid rgba(14,165,233,0.25); }
-        html.dark .card-python   .skill-back-badge { background: rgba(234,179,8,0.12);  border: 1px solid rgba(234,179,8,0.25); }
+        html.dark .card-python   .skill-back-badge { background: rgba(234,179,8,0.12); border: 1px solid rgba(234,179,8,0.25); }
         html.dark .card-powerbi  .skill-back-badge { background: rgba(242,200,15,0.12); border: 1px solid rgba(242,200,15,0.25); }
-
-        .skill-back h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.3;
-            margin-bottom: 2px;
-        }
-
+        .skill-back h3 { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: #ffffff; line-height: 1.3; margin-bottom: 2px; }
         html.dark .skill-back h3 { color: #0D1523; }
-
-        .skill-back-sub {
-            font-size: 0.62rem;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
+        .skill-back-sub { font-size: 0.62rem; color: rgba(255,255,255,0.75); margin-bottom: 0.5rem; line-height: 1.4; }
         html.dark .skill-back-sub { color: #56657E; }
-
-        .skill-back-divider {
-            width: 100%;
-            height: 1px;
-            background: rgba(255,255,255,0.18);
-            margin-bottom: 0.5rem;
-        }
-
+        .skill-back-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.18); margin-bottom: 0.5rem; }
         html.dark .skill-back-divider { background: rgba(0,0,0,0.12); }
-
-        .skill-tags-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3px;
-        }
-
-        .skill-stag {
-            font-size: 0.57rem;
-            padding: 2px 6px;
-            border-radius: 20px;
-            white-space: nowrap;
-            font-weight: 500;
-            color: #ffffff;
-        }
-
-        .card-msoffice .skill-stag { background: rgba(239,68,68,0.25);  border: 1px solid rgba(239,68,68,0.45); }
+        .skill-tags-row { display: flex; flex-wrap: wrap; gap: 3px; }
+        .skill-stag { font-size: 0.57rem; padding: 2px 6px; border-radius: 20px; white-space: nowrap; font-weight: 500; color: #ffffff; }
+        .card-msoffice .skill-stag { background: rgba(239,68,68,0.25); border: 1px solid rgba(239,68,68,0.45); }
         .card-stats    .skill-stag { background: rgba(245,158,11,0.25); border: 1px solid rgba(245,158,11,0.45); }
-        .card-excel    .skill-stag { background: rgba(34,197,94,0.25);  border: 1px solid rgba(34,197,94,0.45); }
+        .card-excel    .skill-stag { background: rgba(34,197,94,0.25); border: 1px solid rgba(34,197,94,0.45); }
         .card-sql      .skill-stag { background: rgba(14,165,233,0.25); border: 1px solid rgba(14,165,233,0.45); }
-        .card-python   .skill-stag { background: rgba(234,179,8,0.25);  border: 1px solid rgba(234,179,8,0.45); }
+        .card-python   .skill-stag { background: rgba(234,179,8,0.25); border: 1px solid rgba(234,179,8,0.45); }
         .card-powerbi  .skill-stag { background: rgba(242,200,15,0.25); border: 1px solid rgba(242,200,15,0.45); }
-
         html.dark .skill-stag { color: #0D1523; }
-        html.dark .card-msoffice .skill-stag { background: rgba(239,68,68,0.10);  border: 1px solid rgba(239,68,68,0.22); }
+        html.dark .card-msoffice .skill-stag { background: rgba(239,68,68,0.10); border: 1px solid rgba(239,68,68,0.22); }
         html.dark .card-stats    .skill-stag { background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.22); }
-        html.dark .card-excel    .skill-stag { background: rgba(34,197,94,0.10);  border: 1px solid rgba(34,197,94,0.22); }
+        html.dark .card-excel    .skill-stag { background: rgba(34,197,94,0.10); border: 1px solid rgba(34,197,94,0.22); }
         html.dark .card-sql      .skill-stag { background: rgba(14,165,233,0.10); border: 1px solid rgba(14,165,233,0.22); }
-        html.dark .card-python   .skill-stag { background: rgba(234,179,8,0.10);  border: 1px solid rgba(234,179,8,0.22); }
+        html.dark .card-python   .skill-stag { background: rgba(234,179,8,0.10); border: 1px solid rgba(234,179,8,0.22); }
         html.dark .card-powerbi  .skill-stag { background: rgba(242,200,15,0.10); border: 1px solid rgba(242,200,15,0.22); }
-
-        /* Scroll fade-in for skill scenes */
         .skill-scene { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
         .skill-scene.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── CONTACT ───────────────────────────────────────── */
-        .contact-inner { max-width: 860px; margin: 0 auto; width: 100%; }
-
-        .contact-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin: 1.5rem 0;
-            width: 100%;
+        /* ═══════════════════════════════════════════
+           FOOTER — Social Icons (NO floating animation)
+           Hover: white bg, icon color stays BUT X icon → black
+        ═══════════════════════════════════════════ */
+        footer { background: #050D1A; color: rgba(255,255,255,0.55); padding: 2rem 1rem 1.5rem; text-align: center; }
+        .footer-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 1rem; }
+        .footer-social { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .footer-social-btn {
+            width: 42px; height: 42px; border-radius: 12px;
+            border: 1.5px solid rgba(255,255,255,0.18);
+            background: transparent;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; cursor: pointer; text-decoration: none;
+            position: relative; overflow: hidden;
+            transition: border-color 0.3s, transform 0.25s;
         }
-
-        .contact-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1rem 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.25s;
-            min-width: 0;
-            width: 100%;
+        /* NO animation — removed socialFloat */
+        .footer-social-btn::before {
+            content: ''; position: absolute; inset: 0;
+            background: #ffffff; border-radius: 10px;
+            transform: scale(0);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+        .footer-social-btn:hover::before, .footer-social-btn.touch-active::before { transform: scale(1); }
+        .footer-social-btn:hover { border-color: #ffffff; transform: translateY(-4px) scale(1.08); }
+        .footer-social-btn.touch-active { border-color: #ffffff; transform: translateY(-4px) scale(1.08); }
+        .footer-social-btn i { position: relative; z-index: 1; transition: transform 0.2s; }
+        .footer-social-btn:hover i, .footer-social-btn.touch-active i { transform: scale(1.15); }
 
-        .contact-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+        /* Icon colors — normal state */
+        .footer-social-btn.whatsapp i { color: #25D366; }
+        .footer-social-btn.youtube i { color: #FF0000; }
+        .footer-social-btn.facebook i { color: #1877F2; }
+        .footer-social-btn.instagram i { color: #E1306C; }
+        /* X icon: white in normal, BLACK on hover (bg is white, so icon must be black) */
+        .footer-social-btn.twitter i { color: #ffffff; }
+        .footer-social-btn.twitter:hover i,
+        .footer-social-btn.twitter.touch-active i { color: #000000; }
+        /* Other icons keep their color on hover (colored icon on white bg looks great) */
 
-        .contact-card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: var(--blue-muted);
-            color: var(--blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.95rem;
-            flex-shrink: 0;
-        }
-
-        .contact-card-label { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.12rem; }
-        .contact-card-value { font-weight: 600; font-size: 0.82rem; color: var(--text-main); word-break: break-all; overflow-wrap: anywhere; }
-
-        .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); width: 100%; }
-        .map-wrap iframe { display: block; width: 100%; }
-
-        /* ── FOOTER ────────────────────────────────────────── */
-        footer { background: #050D1A; color: rgba(255,255,255,0.55); padding: 1.5rem 1rem; text-align: center; }
-        .footer-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; }
         .footer-copy { font-size: 0.75rem; }
-        .footer-made { font-size: 0.65rem; margin-top: 0.3rem; opacity: 0.45; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.3); } }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.3); }
-        }
-
-        /* Responsive button labels */
         .edu-cert-btn .btn-label, .cert-view-btn .btn-label { display: inline; }
         .edu-cert-btn .btn-label-mobile, .cert-view-btn .btn-label-mobile { display: none; }
-
         @media (max-width: 768px) {
             .edu-cert-btn .btn-label, .cert-view-btn .btn-label { display: none; }
             .edu-cert-btn .btn-label-mobile, .cert-view-btn .btn-label-mobile { display: inline; }
         }
 
-        /* ── RESPONSIVE ────────────────────────────────────── */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero-title { display: none; }
-            .hero-sub { display: none; }
+            .hero-title { display: none; } .hero-sub { display: none; }
             .hero-cta-presentation-desktop { display: none; }
             .hero-cta-presentation-mobile { display: inline-flex; }
             .hero-photo-role { font-size: 0.82rem; font-weight: 700; color: #22c55e; white-space: normal; text-align: center; }
             .hero-desc { margin-top: 0.5rem; }
         }
-
         @media (max-width: 399px) {
-            .btn-primary span { display: none; }
-            .btn-primary { padding: 0.45rem 0.7rem; }
-            .hero-stats { gap: 0.85rem; }
-            .hero-stat-label { max-width: 75px; font-size: 0.58rem; }
+            .btn-primary span { display: none; } .btn-primary { padding: 0.45rem 0.7rem; }
+            .hero-stats { gap: 0.85rem; } .hero-stat-label { max-width: 75px; font-size: 0.58rem; }
             .counters-row { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
         }
-
         @media (min-width: 600px) {
             .contact-cards { flex-direction: row; flex-wrap: wrap; }
             .contact-card { flex: 1; min-width: 0; }
             .contact-card-value { word-break: normal; overflow-wrap: normal; }
         }
-
         @media (min-width: 768px) {
-            :root { --nav-h: 64px; }
-            .section { padding: 3rem 1.5rem; }
+            :root { --nav-h: 64px; } .section { padding: 3rem 1.5rem; }
             .nav-badge { display: inline-block; }
             .hero-inner { padding: 6rem 1.5rem 4rem; gap: 2.5rem; }
             .hero-photo-wrap { width: min(260px, 55vw); padding: 1.5rem; }
             .hero-photo-inner { width: min(140px, 30vw); height: min(140px, 30vw); }
         }
-
         @media (min-width: 900px) {
             .hero-inner { flex-direction: row; align-items: center; gap: 4rem; justify-content: space-between; }
             .hero-visual { order: 0; flex-shrink: 0; }
             .hero-content { text-align: left; flex: 1; min-width: 0; }
-            .hero-stats { justify-content: flex-start; }
-            .hero-ctas { justify-content: flex-start; }
+            .hero-stats { justify-content: flex-start; } .hero-ctas { justify-content: flex-start; }
             .hero-desc { margin-left: 0; margin-right: 0; }
             .hero-photo-wrap { width: 300px; padding: 2rem; }
             .hero-photo-inner { width: 170px; height: 170px; }
@@ -1474,12 +442,7 @@
             .skills-flip-grid { grid-template-columns: repeat(6, 1fr); gap: 1.1rem; }
             .skill-scene { height: 240px; }
         }
-
-        @media (min-width: 1100px) {
-            .hero-photo-wrap { width: 360px; }
-            .hero-photo-inner { width: 200px; height: 200px; }
-        }
-
+        @media (min-width: 1100px) { .hero-photo-wrap { width: 360px; } .hero-photo-inner { width: 200px; height: 200px; } }
         @media (max-width: 768px) {
             #contact { overflow-x: hidden; }
             #contact .section-inner, #contact .contact-inner { max-width: 100%; overflow-x: hidden; }
@@ -1488,24 +451,18 @@
             #contact .contact-card-value { font-size: 0.72rem; word-break: break-all; overflow-wrap: anywhere; white-space: normal; }
             #contact .map-wrap { width: 100%; max-width: 100%; overflow: hidden; }
             #contact .map-wrap iframe { width: 100% !important; max-width: 100%; }
-        }
-
-        @media (max-width: 768px) {
             .skill-bar-header { flex-wrap: nowrap; align-items: baseline; }
             .skill-bar-header span:first-child { font-size: 0.62rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0; }
             .skill-bar-header span:last-child { font-size: 0.62rem; white-space: nowrap; flex-shrink: 0; margin-left: 0.3rem; }
         }
-
         #education .section-tag, #education .section-title, #education .divider-line,
         #certificates .section-tag, #certificates .section-title, #certificates .divider-line,
         #certificates > .section-inner > div > p { text-align: center; display: block; margin-left: auto; margin-right: auto; }
         #education .divider-line, #certificates .divider-line { margin: 0.6rem auto 0; }
         #education .section-title { font-size: clamp(1.1rem, 3.5vw, 1.65rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
-
         @media (max-width: 599px) {
             .projects-table-wrap { display: none; }
-            .proj-cards-mobile { display: block; }
-            .proj-cards-mobile { width: 100%; max-width: 100%; overflow: hidden; box-sizing: border-box; }
+            .proj-cards-mobile { display: block; width: 100%; max-width: 100%; overflow: hidden; box-sizing: border-box; }
             .proj-card .proj-tools { flex-wrap: wrap; max-width: 100%; }
             .proj-card .proj-desc { max-width: 100%; word-break: break-word; overflow-wrap: break-word; }
             .proj-card-header { flex-wrap: wrap; }
@@ -1514,56 +471,41 @@
 </head>
 <body>
 
-<!-- ══════════════ NAVBAR ══════════════ -->
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <div class="nav-logo">
-            <div class="nav-logo-img">
-                <img src="Mohd-Hassan.jpeg" alt="Mohd Hassan" loading="lazy">
-            </div>
+            <div class="nav-logo-img"><img src="Mohd-Hassan.jpeg" alt="Mohd Hassan" loading="lazy"></div>
             <span class="nav-logo-name">HASSAN PORTFOLIO</span>
             <span class="nav-logo-name-mobile">Hassan Portfolio</span>
             <span class="nav-badge">DATA ANALYST ASPIRANT</span>
         </div>
-
         <div class="nav-links" id="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#certificates">Certificates</a>
-            <a href="#contact">Contact</a>
+            <a href="#hero">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+            <a href="#experience">Experience</a><a href="#projects">Projects</a>
+            <a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
         </div>
-
         <div class="nav-actions">
             <button class="btn-icon" id="theme-btn" onclick="toggleDark()" title="Toggle dark mode" aria-label="Toggle dark mode">
                 <i id="theme-icon" class="fa-solid fa-moon"></i>
             </button>
             <a href="Data-Analyst-Resume.pdf" target="_blank" rel="noopener" class="btn-primary">
-                <i class="fa-solid fa-file-pdf"></i>
-                <span>Resume</span>
+                <i class="fa-solid fa-file-pdf"></i><span>Resume</span>
             </a>
             <button class="btn-icon" id="hamburger-btn" onclick="toggleMenu()" aria-label="Toggle navigation menu">
                 <i id="hamburger-icon" class="fa-solid fa-bars"></i>
             </button>
         </div>
     </div>
-
     <div class="mobile-menu" id="mobile-menu" role="navigation">
-        <a href="#hero" onclick="closeMenu()">Home</a>
-        <a href="#about" onclick="closeMenu()">About</a>
-        <a href="#skills" onclick="closeMenu()">Skills</a>
-        <a href="#experience" onclick="closeMenu()">Experience</a>
-        <a href="#projects" onclick="closeMenu()">Projects</a>
-        <a href="#education" onclick="closeMenu()">Education</a>
-        <a href="#certificates" onclick="closeMenu()">Certificates</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#hero" onclick="closeMenu()">Home</a><a href="#about" onclick="closeMenu()">About</a>
+        <a href="#skills" onclick="closeMenu()">Skills</a><a href="#experience" onclick="closeMenu()">Experience</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a><a href="#education" onclick="closeMenu()">Education</a>
+        <a href="#certificates" onclick="closeMenu()">Certificates</a><a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
 </nav>
 
-<!-- ══════════════ HERO ══════════════ -->
+<!-- HERO -->
 <section id="hero" class="hero">
     <div class="hero-grid"></div>
     <div class="hero-inner">
@@ -1572,162 +514,65 @@
             <p class="hero-sub"><span id="typed-subtitle"></span></p>
             <p class="hero-desc">Detail-oriented professional with 1 year of hands-on experience managing 5000+ student datasets. Turning raw data into actionable insights using Advanced Excel, Statistics &amp; visualizations.</p>
             <div class="hero-ctas">
-                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-desktop">
-                    <i class="fa-solid fa-file-pdf"></i> View Presentation
-                </a>
-                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-mobile">
-                    <i class="fa-solid fa-file-pdf"></i> View Presentation
-                </a>
-                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" class="hero-btn-outline">
-                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-                </a>
+                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-desktop"><i class="fa-solid fa-file-pdf"></i> View Presentation</a>
+                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-mobile"><i class="fa-solid fa-file-pdf"></i> View Presentation</a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" class="hero-btn-outline"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
             </div>
             <div class="hero-stats">
-                <div class="hero-stat-item">
-                    <div class="hero-stat-num" id="h-s1">0</div>
-                    <div class="hero-stat-label">Student records managed</div>
-                </div>
-                <div class="hero-stat-item">
-                    <div class="hero-stat-num" id="h-s2">0</div>
-                    <div class="hero-stat-label">Data accuracy</div>
-                </div>
-                <div class="hero-stat-item">
-                    <div class="hero-stat-num" id="h-s3">0</div>
-                    <div class="hero-stat-label">Efficiency improvement</div>
-                </div>
+                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s1">0</div><div class="hero-stat-label">Student records managed</div></div>
+                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s2">0</div><div class="hero-stat-label">Data accuracy</div></div>
+                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s3">0</div><div class="hero-stat-label">Efficiency improvement</div></div>
             </div>
         </div>
-
         <div class="hero-visual" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
             <div class="hero-photo-wrap">
-                <div class="hero-photo-inner">
-                    <img src="Mohd-Hassan.jpeg" alt="Mohd Hassan" loading="lazy">
-                </div>
+                <div class="hero-photo-inner"><img src="Mohd-Hassan.jpeg" alt="Mohd Hassan" loading="lazy"></div>
                 <p class="hero-photo-name">Mohd Hassan</p>
-                <p class="hero-photo-role">
-                    <span id="typed-photo-role"></span>
-                </p>
+                <p class="hero-photo-role"><span id="typed-photo-role"></span></p>
                 <div class="hero-deco-ring"></div>
             </div>
         </div>
     </div>
-    <div class="scroll-hint" aria-hidden="true">
-        <span>SCROLL</span>
-        <i class="fa-solid fa-chevron-down"></i>
-    </div>
+    <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><i class="fa-solid fa-chevron-down"></i></div>
 </section>
 
-<!-- ══════════════ ABOUT ══════════════ -->
+<!-- ABOUT -->
 <section id="about" class="section" style="background:var(--white);">
     <div class="section-inner">
         <span class="section-tag">Career Objective</span>
         <h2 class="section-title">Detail-oriented <span class="highlight-green">Data Analyst Aspirant</span><br>delivering data-driven insights</h2>
         <div class="divider-line"></div>
-
         <div class="about-grid">
             <div data-aos="fade-right">
-                <p class="about-desc">
-                    Detail-oriented Data Analyst Aspirant with proven experience managing datasets for 5000+ students using Advanced Excel and Statistics. Skilled at generating actionable insights through analytical reports, Dashboards, Pivot Tables, Macros, and data visualization. Currently mastering SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Power BI to build full-stack data analysis capabilities.
-                </p>
+                <p class="about-desc">Detail-oriented Data Analyst Aspirant with proven experience managing datasets for 5000+ students using Advanced Excel and Statistics. Skilled at generating actionable insights through analytical reports, Dashboards, Pivot Tables, Macros, and data visualization. Currently mastering SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Power BI to build full-stack data analysis capabilities.</p>
                 <div class="strengths-label">Core Strengths</div>
-
-                <!-- ══ STRENGTH CARDS ══
-                     Mobile: 6 cards (2 columns)
-                     Desktop (900px+): 12 cards (3 columns)
-                     Extra 6 have class "desktop-only"
-                -->
                 <div class="strengths-grid" id="strengths-grid">
-
-                    <!-- Always visible (6 cards) -->
-                    <div class="strength-card" tabindex="0">
-                        <i class="fa-solid fa-brain"></i>
-                        <span>Analytical Thinking</span>
-                    </div>
-                    <div class="strength-card" tabindex="0">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span>Attention to Detail</span>
-                    </div>
-                    <div class="strength-card" tabindex="0">
-                        <i class="fa-solid fa-rocket"></i>
-                        <span>Quick Learner</span>
-                    </div>
-                    <div class="strength-card" tabindex="0">
-                        <i class="fa-solid fa-clock"></i>
-                        <span>Time Management</span>
-                    </div>
-                    <div class="strength-card" tabindex="0">
-                        <i class="fa-solid fa-users"></i>
-                        <span>Team Collaboration</span>
-                    </div>
-                    <div class="strength-card" tabindex="0">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Data Accuracy Focus</span>
-                    </div>
-
-                    <!-- Desktop-only extra 6 cards -->
-                    <div class="strength-card desktop-only" tabindex="0">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <span>Data Visualization</span>
-                    </div>
-                    <div class="strength-card desktop-only" tabindex="0">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <span>Problem Solving</span>
-                    </div>
-                    <div class="strength-card desktop-only" tabindex="0">
-                        <i class="fa-solid fa-comments"></i>
-                        <span>Communication</span>
-                    </div>
-                    <div class="strength-card desktop-only" tabindex="0">
-                        <i class="fa-solid fa-bullseye"></i>
-                        <span>Goal Oriented</span>
-                    </div>
-                    <div class="strength-card desktop-only" tabindex="0">
-                        <i class="fa-solid fa-rotate"></i>
-                        <span>Adaptability</span>
-                    </div>
-                    <div class="strength-card desktop-only" tabindex="0">
-                        <i class="fa-solid fa-database"></i>
-                        <span>Data Management</span>
-                    </div>
-
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-brain"></i><span>Analytical Thinking</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-magnifying-glass"></i><span>Attention to Detail</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-rocket"></i><span>Quick Learner</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-clock"></i><span>Time Management</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-users"></i><span>Team Collaboration</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-shield-halved"></i><span>Data Accuracy Focus</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-chart-line"></i><span>Data Visualization</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-lightbulb"></i><span>Problem Solving</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-comments"></i><span>Communication</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-bullseye"></i><span>Goal Oriented</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-rotate"></i><span>Adaptability</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-database"></i><span>Data Management</span></div>
                 </div>
             </div>
-
             <div data-aos="fade-left" data-aos-delay="150">
                 <div class="counters-row">
-                    <div class="counter-card">
-                        <div class="counter-num" id="counter-students">0</div>
-                        <div class="counter-label">Students Data Managed</div>
-                        <div class="counter-sub">Jamia Tul Falah School</div>
-                    </div>
-                    <div class="counter-card">
-                        <div class="counter-num" id="counter-efficiency">0</div>
-                        <div class="counter-label">% Efficiency Improved</div>
-                        <div class="counter-sub">Through Excel Reports</div>
-                    </div>
+                    <div class="counter-card"><div class="counter-num" id="counter-students">0</div><div class="counter-label">Students Data Managed</div><div class="counter-sub">Jamia Tul Falah School</div></div>
+                    <div class="counter-card"><div class="counter-num" id="counter-efficiency">0</div><div class="counter-label">% Efficiency Improved</div><div class="counter-sub">Through Excel Reports</div></div>
                 </div>
                 <h3 style="font-size:0.85rem;font-weight:700;margin-bottom:0.85rem;color:var(--text-main);">Technical Proficiency</h3>
                 <div class="skills-bars">
-                    <div>
-                        <div class="skill-bar-header"><span>Advanced Excel + Macros + Pivot Tables + XLOOKUP + Dashboard</span><span>100%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="100"></div></div>
-                    </div>
-                    <div>
-                        <div class="skill-bar-header"><span>Descriptive Statistics &amp; Data Charts &amp; Probability</span><span>90%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div>
-                    </div>
-                    <div>
-                        <div class="skill-bar-header"><span>SQL — Queries &amp; Joins &amp; Database Design &amp; Mysql</span><span>30%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="30"></div></div>
-                    </div>
-                    <div>
-                        <div class="skill-bar-header"><span>Python (Pandas, NumPy, Matplotlib, Seaborn)</span><span>30%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="30"></div></div>
-                    </div>
-                    <div>
-                        <div class="skill-bar-header"><span>Power BI Dashboards &amp; DAX &amp; Reports</span><span>50%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-w="50"></div></div>
-                    </div>
+                    <div><div class="skill-bar-header"><span>Advanced Excel + Macros + Pivot Tables + XLOOKUP + Dashboard</span><span>100%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="100"></div></div></div>
+                    <div><div class="skill-bar-header"><span>Descriptive Statistics &amp; Data Charts &amp; Probability</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div></div>
+                    <div><div class="skill-bar-header"><span>SQL — Queries &amp; Joins &amp; Database Design &amp; Mysql</span><span>30%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="30"></div></div></div>
+                    <div><div class="skill-bar-header"><span>Python (Pandas, NumPy, Matplotlib, Seaborn)</span><span>30%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="30"></div></div></div>
+                    <div><div class="skill-bar-header"><span>Power BI Dashboards &amp; DAX &amp; Reports</span><span>50%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="50"></div></div></div>
                 </div>
                 <div class="languages-row">
                     <div class="lang-tag"><strong>Hindi</strong><span class="native">NATIVE</span></div>
@@ -1740,7 +585,7 @@
     </div>
 </section>
 
-<!-- ══════════════ SKILLS — FLIP CARDS ══════════════ -->
+<!-- SKILLS FLIP CARDS -->
 <section id="skills" class="section skills-section">
     <div class="section-inner">
         <div class="section-center">
@@ -1749,191 +594,48 @@
             <div class="divider-line"></div>
             <p class="section-subtitle" style="margin-top:0.5rem;">Proficient · Learning (3 Months) — Hover/Tap to flip</p>
         </div>
-
         <div class="skills-flip-grid">
-
-            <!-- 1. MS OFFICE -->
             <div class="skill-scene">
                 <div class="skill-flip-card card-msoffice" tabindex="0" role="button" aria-label="MS Office skill card">
-                    <div class="skill-face skill-front">
-                        <div class="skill-front-shine"></div>
-                        <div class="skill-front-icon">
-                            <span class="emoji-icon">📋</span>
-                        </div>
-                        <div class="skill-front-label">MS Office Suite</div>
-                        <span class="skill-front-badge">PROFICIENT</span>
-                        <div class="skill-hover-hint">tap to flip</div>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <div class="skill-back-badge">Proficient</div>
-                        <h3>MS Office Suite</h3>
-                        <div class="skill-back-sub">Office &amp; design tools</div>
-                        <div class="skill-back-divider"></div>
-                        <div class="skill-tags-row">
-                            <span class="skill-stag">MS Word</span>
-                            <span class="skill-stag">PowerPoint</span>
-                            <span class="skill-stag">Canva</span>
-                            <span class="skill-stag">CorelDraw</span>
-                            <span class="skill-stag">Formatting</span>
-                            <span class="skill-stag">Presentations</span>
-                        </div>
-                    </div>
+                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><span class="emoji-icon">📋</span></div><div class="skill-front-label">MS Office Suite</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div>
+                    <div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>MS Office Suite</h3><div class="skill-back-sub">Office &amp; design tools</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">MS Word</span><span class="skill-stag">PowerPoint</span><span class="skill-stag">Canva</span><span class="skill-stag">CorelDraw</span><span class="skill-stag">Formatting</span><span class="skill-stag">Presentations</span></div></div>
                 </div>
             </div>
-
-            <!-- 2. STATISTICS -->
             <div class="skill-scene">
                 <div class="skill-flip-card card-stats" tabindex="0" role="button" aria-label="Statistics skill card">
-                    <div class="skill-face skill-front">
-                        <div class="skill-front-shine"></div>
-                        <div class="skill-front-icon">
-                            <img src="Statistics.jpg" alt="Statistics">
-                        </div>
-                        <div class="skill-front-label">Statistics</div>
-                        <span class="skill-front-badge">PROFICIENT</span>
-                        <div class="skill-hover-hint">tap to flip</div>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <div class="skill-back-badge">Proficient</div>
-                        <h3>Statistics</h3>
-                        <div class="skill-back-sub">Data analysis &amp; probability</div>
-                        <div class="skill-back-divider"></div>
-                        <div class="skill-tags-row">
-                            <span class="skill-stag">Descriptive Stats</span>
-                            <span class="skill-stag">Probability</span>
-                            <span class="skill-stag">Visualization</span>
-                            <span class="skill-stag">Mean/Median</span>
-                            <span class="skill-stag">Std Deviation</span>
-                            <span class="skill-stag">Distribution</span>
-                        </div>
-                    </div>
+                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Statistics.jpg" alt="Statistics"></div><div class="skill-front-label">Statistics</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div>
+                    <div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>Statistics</h3><div class="skill-back-sub">Data analysis &amp; probability</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Descriptive Stats</span><span class="skill-stag">Probability</span><span class="skill-stag">Visualization</span><span class="skill-stag">Mean/Median</span><span class="skill-stag">Std Deviation</span><span class="skill-stag">Distribution</span></div></div>
                 </div>
             </div>
-
-            <!-- 3. EXCEL -->
             <div class="skill-scene">
                 <div class="skill-flip-card card-excel" tabindex="0" role="button" aria-label="Excel skill card">
-                    <div class="skill-face skill-front">
-                        <div class="skill-front-shine"></div>
-                        <div class="skill-front-icon">
-                            <img src="Excel.jpg" alt="Advanced Excel">
-                        </div>
-                        <div class="skill-front-label">Advanced Excel</div>
-                        <span class="skill-front-badge">PROFICIENT</span>
-                        <div class="skill-hover-hint">tap to flip</div>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <div class="skill-back-badge">Proficient</div>
-                        <h3>Advanced Excel</h3>
-                        <div class="skill-back-sub">Full data management toolkit</div>
-                        <div class="skill-back-divider"></div>
-                        <div class="skill-tags-row">
-                            <span class="skill-stag">Pivot Tables</span>
-                            <span class="skill-stag">Macros</span>
-                            <span class="skill-stag">XLOOKUP</span>
-                            <span class="skill-stag">Charts</span>
-                            <span class="skill-stag">Dashboard</span>
-                            <span class="skill-stag">Formulas</span>
-                            <span class="skill-stag">VBA</span>
-                            <span class="skill-stag">Data Validation</span>
-                        </div>
-                    </div>
+                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Excel.jpg" alt="Advanced Excel"></div><div class="skill-front-label">Advanced Excel</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div>
+                    <div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>Advanced Excel</h3><div class="skill-back-sub">Full data management toolkit</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Pivot Tables</span><span class="skill-stag">Macros</span><span class="skill-stag">XLOOKUP</span><span class="skill-stag">Charts</span><span class="skill-stag">Dashboard</span><span class="skill-stag">Formulas</span><span class="skill-stag">VBA</span><span class="skill-stag">Data Validation</span></div></div>
                 </div>
             </div>
-
-            <!-- 4. SQL -->
             <div class="skill-scene">
                 <div class="skill-flip-card card-sql" tabindex="0" role="button" aria-label="SQL skill card">
-                    <div class="skill-face skill-front">
-                        <div class="skill-front-shine"></div>
-                        <div class="skill-front-icon">
-                            <img src="SQL.jpg" alt="SQL">
-                        </div>
-                        <div class="skill-front-label">SQL</div>
-                        <span class="skill-front-badge">3 MO · LEARNING</span>
-                        <div class="skill-hover-hint">tap to flip</div>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <div class="skill-back-badge">Learning</div>
-                        <h3>SQL</h3>
-                        <div class="skill-back-sub">Database queries &amp; design</div>
-                        <div class="skill-back-divider"></div>
-                        <div class="skill-tags-row">
-                            <span class="skill-stag">MySQL</span>
-                            <span class="skill-stag">Queries</span>
-                            <span class="skill-stag">Joins</span>
-                            <span class="skill-stag">Aggregation</span>
-                            <span class="skill-stag">Stored Procs</span>
-                            <span class="skill-stag">Triggers</span>
-                            <span class="skill-stag">DB Design</span>
-                        </div>
-                    </div>
+                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="SQL.jpg" alt="SQL"></div><div class="skill-front-label">SQL</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div>
+                    <div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>SQL</h3><div class="skill-back-sub">Database queries &amp; design</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">MySQL</span><span class="skill-stag">Queries</span><span class="skill-stag">Joins</span><span class="skill-stag">Aggregation</span><span class="skill-stag">Stored Procs</span><span class="skill-stag">Triggers</span><span class="skill-stag">DB Design</span></div></div>
                 </div>
             </div>
-
-            <!-- 5. PYTHON -->
             <div class="skill-scene">
                 <div class="skill-flip-card card-python" tabindex="0" role="button" aria-label="Python skill card">
-                    <div class="skill-face skill-front">
-                        <div class="skill-front-shine"></div>
-                        <div class="skill-front-icon">
-                            <img src="Python.jpg" alt="Python">
-                        </div>
-                        <div class="skill-front-label">Python</div>
-                        <span class="skill-front-badge">3 MO · LEARNING</span>
-                        <div class="skill-hover-hint">tap to flip</div>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <div class="skill-back-badge">Learning</div>
-                        <h3>Python</h3>
-                        <div class="skill-back-sub">Data analysis libraries</div>
-                        <div class="skill-back-divider"></div>
-                        <div class="skill-tags-row">
-                            <span class="skill-stag">Pandas</span>
-                            <span class="skill-stag">NumPy</span>
-                            <span class="skill-stag">Matplotlib</span>
-                            <span class="skill-stag">Seaborn</span>
-                            <span class="skill-stag">EDA</span>
-                            <span class="skill-stag">Data Cleaning</span>
-                        </div>
-                    </div>
+                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Python.jpg" alt="Python"></div><div class="skill-front-label">Python</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div>
+                    <div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>Python</h3><div class="skill-back-sub">Data analysis libraries</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Pandas</span><span class="skill-stag">NumPy</span><span class="skill-stag">Matplotlib</span><span class="skill-stag">Seaborn</span><span class="skill-stag">EDA</span><span class="skill-stag">Data Cleaning</span></div></div>
                 </div>
             </div>
-
-            <!-- 6. POWER BI -->
             <div class="skill-scene">
                 <div class="skill-flip-card card-powerbi" tabindex="0" role="button" aria-label="Power BI skill card">
-                    <div class="skill-face skill-front">
-                        <div class="skill-front-shine"></div>
-                        <div class="skill-front-icon">
-                            <img src="Power-BI.jpg" alt="Power BI">
-                        </div>
-                        <div class="skill-front-label">Power BI</div>
-                        <span class="skill-front-badge">3 MO · LEARNING</span>
-                        <div class="skill-hover-hint">tap to flip</div>
-                    </div>
-                    <div class="skill-face skill-back">
-                        <div class="skill-back-badge">Learning</div>
-                        <h3>Power BI</h3>
-                        <div class="skill-back-sub">BI dashboards &amp; reporting</div>
-                        <div class="skill-back-divider"></div>
-                        <div class="skill-tags-row">
-                            <span class="skill-stag">Dashboards</span>
-                            <span class="skill-stag">DAX</span>
-                            <span class="skill-stag">Reports</span>
-                            <span class="skill-stag">Data Modeling</span>
-                            <span class="skill-stag">Power Query</span>
-                            <span class="skill-stag">KPI Visuals</span>
-                        </div>
-                    </div>
+                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Power-BI.jpg" alt="Power BI"></div><div class="skill-front-label">Power BI</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div>
+                    <div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>Power BI</h3><div class="skill-back-sub">BI dashboards &amp; reporting</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Dashboards</span><span class="skill-stag">DAX</span><span class="skill-stag">Reports</span><span class="skill-stag">Data Modeling</span><span class="skill-stag">Power Query</span><span class="skill-stag">KPI Visuals</span></div></div>
                 </div>
             </div>
-
-        </div><!-- /skills-flip-grid -->
+        </div>
     </div>
 </section>
 
-<!-- ══════════════ EXPERIENCE ══════════════ -->
+<!-- EXPERIENCE -->
 <section id="experience" class="section" style="background:var(--section-alt);">
     <div class="section-inner">
         <div class="section-center">
@@ -1943,15 +645,9 @@
         </div>
         <div class="experience-wrap">
             <div class="exp-card" data-aos="fade-right">
-                <div class="exp-period">
-                    <span class="year">2025 — 2026</span>
-                    <span class="dur">1 YEAR</span>
-                </div>
+                <div class="exp-period"><span class="year">2025 — 2026</span><span class="dur">1 YEAR</span></div>
                 <h3 class="exp-title">Exam Office Assistant</h3>
-                <p class="exp-company">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <a href="https://maps.app.goo.gl/gr247Dr97EpHqqkEA" target="_blank" rel="noopener" style="text-decoration:none;">Jamia Tul Falah School, Uttar Pradesh</a>
-                </p>
+                <p class="exp-company"><i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/gr247Dr97EpHqqkEA" target="_blank" rel="noopener" style="text-decoration:none;">Jamia Tul Falah School, Uttar Pradesh</a></p>
                 <ul class="exp-list">
                     <li><i class="fa-solid fa-check"></i>Managed examination records for 5000+ students</li>
                     <li><i class="fa-solid fa-check"></i>Built Excel-based reports on exam results &amp; attendance</li>
@@ -1974,7 +670,7 @@
     </div>
 </section>
 
-<!-- ══════════════ PROJECTS ══════════════ -->
+<!-- PROJECTS -->
 <section id="projects" class="section projects-section">
     <div class="section-inner">
         <div class="section-center">
@@ -1983,56 +679,40 @@
             <div class="divider-line"></div>
             <p class="section-subtitle" style="margin-top:0.75rem;">Data analysis and visualization projects</p>
         </div>
-
-        <!-- Desktop Table -->
         <div class="projects-table-wrap" data-aos="fade-left">
             <table class="projects-table">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Project Name</th>
-                        <th>Description</th>
-                        <th>Tools Used</th>
-                        <th>Status</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>No.</th><th>Project Name</th><th>Description</th><th>Tools Used</th><th>Status</th><th>Link</th></tr></thead>
                 <tbody>
                     <tr>
-                        <td class="proj-num">01</td>
-                        <td class="proj-name">Student Performance Dashboard</td>
+                        <td class="proj-num">01</td><td class="proj-name">Student Performance Dashboard</td>
                         <td class="proj-desc">Excel dashboard analyzing 5000+ student exam scores, attendance patterns, and grade trends.</td>
                         <td><div class="proj-tools"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Pivot Tables</span><span class="proj-tool-tag">XLOOKUP</span><span class="proj-tool-tag">Charts</span></div></td>
                         <td><span class="proj-status done"><span class="sdot"></span>Completed</span></td>
                         <td><a href="#" class="project-btn"><i class="fa-brands fa-github" style="font-size:0.65rem;"></i> View Excel</a></td>
                     </tr>
                     <tr>
-                        <td class="proj-num">02</td>
-                        <td class="proj-name">Attendance Analytics Report</td>
+                        <td class="proj-num">02</td><td class="proj-name">Attendance Analytics Report</td>
                         <td class="proj-desc">Statistical analysis identifying attendance patterns with automated monthly reports.</td>
                         <td><div class="proj-tools"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Statistics</span><span class="proj-tool-tag">Formulas</span></div></td>
                         <td><span class="proj-status done"><span class="sdot"></span>Completed</span></td>
                         <td><span class="proj-link-coming">Coming soon</span></td>
                     </tr>
                     <tr>
-                        <td class="proj-num">03</td>
-                        <td class="proj-name">SQL Sales Data Analysis</td>
+                        <td class="proj-num">03</td><td class="proj-name">SQL Sales Data Analysis</td>
                         <td class="proj-desc">Querying retail sales database using SQL joins, aggregations, and subqueries.</td>
                         <td><div class="proj-tools"><span class="proj-tool-tag">MySQL</span><span class="proj-tool-tag">SQL Joins</span><span class="proj-tool-tag">Aggregation</span></div></td>
                         <td><span class="proj-status wip"><span class="sdot"></span>In Progress</span></td>
                         <td><span class="proj-link-coming">Coming soon</span></td>
                     </tr>
                     <tr>
-                        <td class="proj-num">04</td>
-                        <td class="proj-name">Python EDA – Student Dataset</td>
+                        <td class="proj-num">04</td><td class="proj-name">Python EDA – Student Dataset</td>
                         <td class="proj-desc">Exploratory data analysis using Pandas, NumPy and Matplotlib/Seaborn visualizations.</td>
                         <td><div class="proj-tools"><span class="proj-tool-tag">Python</span><span class="proj-tool-tag">Pandas</span><span class="proj-tool-tag">Matplotlib</span><span class="proj-tool-tag">Seaborn</span></div></td>
                         <td><span class="proj-status wip"><span class="sdot"></span>In Progress</span></td>
                         <td><span class="proj-link-coming">Coming soon</span></td>
                     </tr>
                     <tr>
-                        <td class="proj-num">05</td>
-                        <td class="proj-name">Power BI School KPI Dashboard</td>
+                        <td class="proj-num">05</td><td class="proj-name">Power BI School KPI Dashboard</td>
                         <td class="proj-desc">Interactive Power BI dashboard for school KPIs — enrollment, pass rates, performance trends.</td>
                         <td><div class="proj-tools"><span class="proj-tool-tag">Power BI</span><span class="proj-tool-tag">DAX</span><span class="proj-tool-tag">Data Modeling</span></div></td>
                         <td><span class="proj-status wip"><span class="sdot"></span>In Progress</span></td>
@@ -2041,59 +721,17 @@
                 </tbody>
             </table>
         </div>
-
-        <!-- Mobile Cards -->
         <div class="proj-cards-mobile" data-aos="fade-left">
-            <div class="proj-card">
-                <div class="proj-card-header">
-                    <div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">01</span><span class="proj-name">Student Performance Dashboard</span></div>
-                    <span class="proj-status done"><span class="sdot"></span>Done</span>
-                </div>
-                <p class="proj-desc" style="margin-bottom:0.65rem;">Excel dashboard analyzing 5000+ student exam scores, attendance patterns, and grade trends.</p>
-                <div class="proj-tools" style="margin-bottom:0.65rem;"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Pivot Tables</span><span class="proj-tool-tag">XLOOKUP</span></div>
-                <a href="#" class="project-btn"><i class="fa-brands fa-github" style="font-size:0.65rem;"></i> View Excel</a>
-            </div>
-            <div class="proj-card">
-                <div class="proj-card-header">
-                    <div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">02</span><span class="proj-name">Attendance Analytics Report</span></div>
-                    <span class="proj-status done"><span class="sdot"></span>Done</span>
-                </div>
-                <p class="proj-desc" style="margin-bottom:0.65rem;">Statistical analysis identifying attendance patterns with automated monthly reports.</p>
-                <div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Statistics</span><span class="proj-tool-tag">Formulas</span></div>
-                <span class="proj-link-coming">Link coming soon</span>
-            </div>
-            <div class="proj-card">
-                <div class="proj-card-header">
-                    <div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">03</span><span class="proj-name">SQL Sales Data Analysis</span></div>
-                    <span class="proj-status wip"><span class="sdot"></span>In Progress</span>
-                </div>
-                <p class="proj-desc" style="margin-bottom:0.65rem;">Querying retail sales database using SQL joins, aggregations, and subqueries.</p>
-                <div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">MySQL</span><span class="proj-tool-tag">SQL Joins</span></div>
-                <span class="proj-link-coming">Link coming soon</span>
-            </div>
-            <div class="proj-card">
-                <div class="proj-card-header">
-                    <div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">04</span><span class="proj-name">Python EDA – Student Dataset</span></div>
-                    <span class="proj-status wip"><span class="sdot"></span>In Progress</span>
-                </div>
-                <p class="proj-desc" style="margin-bottom:0.65rem;">Exploratory data analysis using Pandas, NumPy and Matplotlib/Seaborn.</p>
-                <div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">Python</span><span class="proj-tool-tag">Pandas</span><span class="proj-tool-tag">Matplotlib</span></div>
-                <span class="proj-link-coming">Link coming soon</span>
-            </div>
-            <div class="proj-card">
-                <div class="proj-card-header">
-                    <div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">05</span><span class="proj-name">Power BI School KPI Dashboard</span></div>
-                    <span class="proj-status wip"><span class="sdot"></span>In Progress</span>
-                </div>
-                <p class="proj-desc" style="margin-bottom:0.65rem;">Interactive Power BI dashboard for school KPIs — enrollment, pass rates, performance.</p>
-                <div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">Power BI</span><span class="proj-tool-tag">DAX</span></div>
-                <span class="proj-link-coming">Link coming soon</span>
-            </div>
+            <div class="proj-card"><div class="proj-card-header"><div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">01</span><span class="proj-name">Student Performance Dashboard</span></div><span class="proj-status done"><span class="sdot"></span>Done</span></div><p class="proj-desc" style="margin-bottom:0.65rem;">Excel dashboard analyzing 5000+ student exam scores, attendance patterns, and grade trends.</p><div class="proj-tools" style="margin-bottom:0.65rem;"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Pivot Tables</span><span class="proj-tool-tag">XLOOKUP</span></div><a href="#" class="project-btn"><i class="fa-brands fa-github" style="font-size:0.65rem;"></i> View Excel</a></div>
+            <div class="proj-card"><div class="proj-card-header"><div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">02</span><span class="proj-name">Attendance Analytics Report</span></div><span class="proj-status done"><span class="sdot"></span>Done</span></div><p class="proj-desc" style="margin-bottom:0.65rem;">Statistical analysis identifying attendance patterns with automated monthly reports.</p><div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Statistics</span><span class="proj-tool-tag">Formulas</span></div><span class="proj-link-coming">Link coming soon</span></div>
+            <div class="proj-card"><div class="proj-card-header"><div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">03</span><span class="proj-name">SQL Sales Data Analysis</span></div><span class="proj-status wip"><span class="sdot"></span>In Progress</span></div><p class="proj-desc" style="margin-bottom:0.65rem;">Querying retail sales database using SQL joins, aggregations, and subqueries.</p><div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">MySQL</span><span class="proj-tool-tag">SQL Joins</span></div><span class="proj-link-coming">Link coming soon</span></div>
+            <div class="proj-card"><div class="proj-card-header"><div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">04</span><span class="proj-name">Python EDA – Student Dataset</span></div><span class="proj-status wip"><span class="sdot"></span>In Progress</span></div><p class="proj-desc" style="margin-bottom:0.65rem;">Exploratory data analysis using Pandas, NumPy and Matplotlib/Seaborn.</p><div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">Python</span><span class="proj-tool-tag">Pandas</span><span class="proj-tool-tag">Matplotlib</span></div><span class="proj-link-coming">Link coming soon</span></div>
+            <div class="proj-card"><div class="proj-card-header"><div><span class="proj-num" style="display:block;margin-bottom:0.2rem;">05</span><span class="proj-name">Power BI School KPI Dashboard</span></div><span class="proj-status wip"><span class="sdot"></span>In Progress</span></div><p class="proj-desc" style="margin-bottom:0.65rem;">Interactive Power BI dashboard for school KPIs — enrollment, pass rates, performance.</p><div class="proj-tools" style="margin-bottom:0.5rem;"><span class="proj-tool-tag">Power BI</span><span class="proj-tool-tag">DAX</span></div><span class="proj-link-coming">Link coming soon</span></div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ EDUCATION ══════════════ -->
+<!-- EDUCATION -->
 <section id="education" class="section" style="background:var(--white);">
     <div class="section-inner">
         <div class="edu-certs-outer">
@@ -2102,136 +740,36 @@
                 <h2 class="section-title">Academic Background</h2>
                 <div class="divider-line"></div>
                 <div class="edu-grid">
-                    <div class="edu-card">
-                        <i class="fa-solid fa-graduation-cap edu-icon"></i>
-                        <div class="edu-card-body">
-                            <div class="edu-degree">BCA (Online) – Bachelor of Computer Applications</div>
-                            <div class="edu-org">Amity University, Noida</div>
-                            <div class="edu-year">2024 – 2027 (Pursuing)</div>
-                        </div>
-                        <a class="edu-cert-btn">
-                            <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            <span class="btn-label">In Progress..........</span>
-                            <span class="btn-label-mobile">Prog..</span>
-                        </a>
-                    </div>
-                    <div class="edu-card">
-                        <i class="fa-solid fa-graduation-cap edu-icon"></i>
-                        <div class="edu-card-body">
-                            <div class="edu-degree">ADCA – Advanced Diploma in Computer Applications</div>
-                            <div class="edu-org">GIST, Uttar Pradesh</div>
-                            <div class="edu-year">2024 – 2025</div>
-                        </div>
-                        <a href="ADCA-Marksheet.jpeg" class="edu-cert-btn">
-                            <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            <span class="btn-label">View Marksheet</span>
-                            <span class="btn-label-mobile">Click</span>
-                        </a>
-                    </div>
-                    <div class="edu-card">
-                        <i class="fa-solid fa-graduation-cap edu-icon"></i>
-                        <div class="edu-card-body">
-                            <div class="edu-degree">12th – UP Board (Intermediate)</div>
-                            <div class="edu-org">Amina G I C Azamgarh</div>
-                            <div class="edu-year">2023</div>
-                        </div>
-                        <a href="12th-Marksheet.jpeg" class="edu-cert-btn">
-                            <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            <span class="btn-label">View Marksheet</span>
-                            <span class="btn-label-mobile">Click</span>
-                        </a>
-                    </div>
-                    <div class="edu-card">
-                        <i class="fa-solid fa-graduation-cap edu-icon"></i>
-                        <div class="edu-card-body">
-                            <div class="edu-degree">10th – UP Board (High School)</div>
-                            <div class="edu-org">Adarsh Janta A I C Azamgarh</div>
-                            <div class="edu-year">2021</div>
-                        </div>
-                        <a href="10th-Marksheet.jpeg" class="edu-cert-btn">
-                            <i class="fa-solid fa-eye" style="font-size:0.6rem;"></i>
-                            <span class="btn-label">View Marksheet</span>
-                            <span class="btn-label-mobile">Click</span>
-                        </a>
-                    </div>
+                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">BCA (Online) – Bachelor of Computer Applications</div><div class="edu-org">Amity University, Noida</div><div class="edu-year">2024 – 2027 (Pursuing)</div></div><a class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">ADCA – Advanced Diploma in Computer Applications</div><div class="edu-org">GIST, Uttar Pradesh</div><div class="edu-year">2024 – 2025</div></div><a href="ADCA-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
+                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">12th – UP Board (Intermediate)</div><div class="edu-org">Amina G I C Azamgarh</div><div class="edu-year">2023</div></div><a href="12th-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
+                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">10th – UP Board (High School)</div><div class="edu-org">Adarsh Janta A I C Azamgarh</div><div class="edu-year">2021</div></div><a href="10th-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ CERTIFICATES ══════════════ -->
+<!-- CERTIFICATES -->
 <section id="certificates" class="section" style="background:var(--section-alt);">
     <div class="section-inner">
         <div data-aos="fade-left">
             <span class="section-tag">Achievements</span>
             <h2 class="section-title">Certificates</h2>
             <div class="divider-line"></div>
-            <p style="font-size:0.86rem;color:var(--text-muted);margin-top:0.5rem;margin-bottom:1.25rem;">
-                Professional certifications, self-learning milestones &amp; real-world achievements
-            </p>
+            <p style="font-size:0.86rem;color:var(--text-muted);margin-top:0.5rem;margin-bottom:1.25rem;">Professional certifications, self-learning milestones &amp; real-world achievements</p>
             <div style="display:flex;flex-direction:column;gap:0.65rem;">
-                <div class="cert-card">
-                    <i class="fa-solid fa-award cert-icon"></i>
-                    <div class="cert-card-body">
-                        <div class="cert-card-text">Advanced Excel — Pivot Tables, XLOOKUP, Charts, Statistical Formulas</div>
-                    </div>
-                    <a href="Advanced-Excel-Certificate.jpeg" class="cert-view-btn">
-                        <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                        <span class="btn-label">View Certificate</span>
-                        <span class="btn-label-mobile">Click</span>
-                    </a>
-                </div>
-                <div class="cert-card">
-                    <i class="fa-solid fa-award cert-icon"></i>
-                    <div class="cert-card-body">
-                        <div class="cert-card-text">Use Excel Formulas with AI — Create Dashboard In Under 2 Minutes — Can Use Macros and VBA Using AI</div>
-                    </div>
-                    <a href="Using-Ai-Certificate.jpeg" class="cert-view-btn">
-                        <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                        <span class="btn-label">View Certificate</span>
-                        <span class="btn-label-mobile">Click</span>
-                    </a>
-                </div>
-                <div class="cert-card">
-                    <i class="fa-solid fa-award cert-icon"></i>
-                    <div class="cert-card-body">
-                        <div class="cert-card-text">I will learn SQL, get its certificate, and update it here</div>
-                    </div>
-                    <a class="cert-view-btn">
-                        <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                        <span class="btn-label">In Progress..........</span>
-                        <span class="btn-label-mobile">Prog..</span>
-                    </a>
-                </div>
-                <div class="cert-card">
-                    <i class="fa-solid fa-award cert-icon"></i>
-                    <div class="cert-card-body">
-                        <div class="cert-card-text">I will learn Python, get its certificate, and update it here</div>
-                    </div>
-                    <a class="cert-view-btn">
-                        <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                        <span class="btn-label">In Progress..........</span>
-                        <span class="btn-label-mobile">Prog..</span>
-                    </a>
-                </div>
-                <div class="cert-card">
-                    <i class="fa-solid fa-award cert-icon"></i>
-                    <div class="cert-card-body">
-                        <div class="cert-card-text">I will learn Power BI, get its certificate, and update it here</div>
-                    </div>
-                    <a class="cert-view-btn">
-                        <i class="fa-solid fa-eye" style="font-size:0.62rem;"></i>
-                        <span class="btn-label">In Progress..........</span>
-                        <span class="btn-label-mobile">Prog..</span>
-                    </a>
-                </div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">Advanced Excel — Pivot Tables, XLOOKUP, Charts, Statistical Formulas</div></div><a href="Advanced-Excel-Certificate.jpeg" class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">View Certificate</span><span class="btn-label-mobile">Click</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">Use Excel Formulas with AI — Create Dashboard In Under 2 Minutes — Can Use Macros and VBA Using AI</div></div><a href="Using-Ai-Certificate.jpeg" class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">View Certificate</span><span class="btn-label-mobile">Click</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">I will learn SQL, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">I will learn Python, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">I will learn Power BI, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ CONTACT ══════════════ -->
+<!-- CONTACT -->
 <section id="contact" class="section" style="background:var(--section-alt);">
     <div class="section-inner">
         <div class="section-center">
@@ -2242,115 +780,81 @@
         </div>
         <div class="contact-inner">
             <div class="contact-cards" data-aos="fade-up">
-                <a href="tel:9369409820" class="contact-card">
-                    <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-                    <div style="min-width:0;">
-                        <div class="contact-card-label">Phone</div>
-                        <div class="contact-card-value">+91 93694 09820</div>
-                    </div>
-                </a>
-                <a href="mailto:mohdhassanhassanshaikh@gmail.com" class="contact-card">
-                    <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                    <div style="min-width:0;">
-                        <div class="contact-card-label">Email</div>
-                        <div class="contact-card-value" style="font-size:0.66rem;">mohdhassanhassanshaikh@gmail.com</div>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-card-icon"><i class="fa-brands fa-linkedin"></i></div>
-                    <div style="min-width:0;">
-                        <div class="contact-card-label">LinkedIn</div>
-                        <div class="contact-card-value">linkedin.com</div>
-                    </div>
-                </a>
+                <a href="tel:9369409820" class="contact-card"><div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div><div style="min-width:0;"><div class="contact-card-label">Phone</div><div class="contact-card-value">+91 93694 09820</div></div></a>
+                <a href="mailto:mohdhassanhassanshaikh@gmail.com" class="contact-card"><div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div><div style="min-width:0;"><div class="contact-card-label">Email</div><div class="contact-card-value" style="font-size:0.66rem;">mohdhassanhassanshaikh@gmail.com</div></div></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" class="contact-card"><div class="contact-card-icon"><i class="fa-brands fa-linkedin"></i></div><div style="min-width:0;"><div class="contact-card-label">LinkedIn</div><div class="contact-card-value">linkedin.com</div></div></a>
             </div>
             <div class="map-wrap" data-aos="fade-up" data-aos-delay="100">
-                <iframe
-                    width="100%" height="320" frameborder="0" scrolling="no" loading="lazy"
-                    title="Location map"
-                    src="https://maps.google.com/maps?q=Andakhor/Tikariya%2C+Uttar+Pradesh%2C+India&amp;hl=en&amp;z=12&amp;output=embed">
-                </iframe>
+                <iframe width="100%" height="320" frameborder="0" scrolling="no" loading="lazy" title="Location map" src="https://maps.google.com/maps?q=Andakhor/Tikariya%2C+Uttar+Pradesh%2C+India&amp;hl=en&amp;z=12&amp;output=embed"></iframe>
             </div>
-            <p style="text-align:center;font-size:0.76rem;color:var(--text-muted);margin-top:0.75rem;">
-                <i class="fa-solid fa-location-dot" style="color:var(--blue);"></i> Azamgarh, Uttar Pradesh, India
-            </p>
+            <p style="text-align:center;font-size:0.76rem;color:var(--text-muted);margin-top:0.75rem;"><i class="fa-solid fa-location-dot" style="color:var(--blue);"></i> Azamgarh, Uttar Pradesh, India</p>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ FOOTER ══════════════ -->
+<!-- FOOTER -->
 <footer>
     <div class="footer-name">MOHD HASSAN</div>
+    <div class="footer-social">
+        <a href="https://wa.me/919369409820?text=Hi" target="_blank" rel="noopener" class="footer-social-btn whatsapp" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.youtube.com/@hassanshaikh12345" target="_blank" rel="noopener" class="footer-social-btn youtube" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100086029205583" target="_blank" rel="noopener" class="footer-social-btn facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/mohdhassanshaikh179?igsh=YmZlNXFvZzlza3g1" target="_blank" rel="noopener" class="footer-social-btn instagram" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/@mohdmh179" target="_blank" rel="noopener" class="footer-social-btn twitter" title="X (Twitter)">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+    </div>
     <p class="footer-copy">© 2026 · Built as a fully responsive portfolio showcasing data analysis expertise</p>
-    <p class="footer-made">Made with ❤️ for a future data-driven career · All CV details are 100% accurate</p>
 </footer>
 
-<!-- ══════════════ SCRIPTS ══════════════ -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    /* ── DARK MODE ───────────────────────────── */
+    /* DARK MODE */
     function applyTheme(dark) {
         var html = document.documentElement;
         var icon = document.getElementById('theme-icon');
-        if (dark) {
-            html.classList.add('dark');
-            if (icon) icon.className = 'fa-solid fa-sun';
-            try { localStorage.setItem('theme', 'dark'); } catch(e) {}
-        } else {
-            html.classList.remove('dark');
-            if (icon) icon.className = 'fa-solid fa-moon';
-            try { localStorage.setItem('theme', 'light'); } catch(e) {}
-        }
+        if (dark) { html.classList.add('dark'); if (icon) icon.className = 'fa-solid fa-sun'; try { localStorage.setItem('theme','dark'); } catch(e){} }
+        else { html.classList.remove('dark'); if (icon) icon.className = 'fa-solid fa-moon'; try { localStorage.setItem('theme','light'); } catch(e){} }
     }
-
-    function toggleDark() {
-        applyTheme(!document.documentElement.classList.contains('dark'));
-    }
-
+    function toggleDark() { applyTheme(!document.documentElement.classList.contains('dark')); }
     (function initTheme() {
-        var saved;
-        try { saved = localStorage.getItem('theme'); } catch(e) {}
+        var saved; try { saved = localStorage.getItem('theme'); } catch(e){}
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         applyTheme(saved === 'dark' || (!saved && prefersDark));
     })();
 
-    /* ── HAMBURGER MENU ──────────────────────── */
+    /* HAMBURGER */
     var menuOpen = false;
-
     function toggleMenu() {
         menuOpen = !menuOpen;
         var menu = document.getElementById('mobile-menu');
         var icon = document.getElementById('hamburger-icon');
-        if (menuOpen) {
-            menu.classList.add('open');
-            icon.className = 'fa-solid fa-xmark';
-        } else {
-            menu.classList.remove('open');
-            icon.className = 'fa-solid fa-bars';
-        }
+        if (menuOpen) { menu.classList.add('open'); icon.className = 'fa-solid fa-xmark'; }
+        else { menu.classList.remove('open'); icon.className = 'fa-solid fa-bars'; }
     }
-
     function closeMenu() {
         menuOpen = false;
         var menu = document.getElementById('mobile-menu');
         var icon = document.getElementById('hamburger-icon');
-        menu.classList.remove('open');
-        icon.className = 'fa-solid fa-bars';
+        menu.classList.remove('open'); icon.className = 'fa-solid fa-bars';
     }
-
     document.addEventListener('click', function(e) {
         var navbar = document.getElementById('navbar');
-        if (menuOpen && navbar && !navbar.contains(e.target)) {
-            closeMenu();
-        }
+        if (menuOpen && navbar && !navbar.contains(e.target)) closeMenu();
     });
 
-    /* ── COUNTERS ────────────────────────────── */
+    /* COUNTERS */
     function runCounter(id, end, suffix, duration) {
-        duration = duration || 1800;
-        suffix = suffix || '';
-        var el = document.getElementById(id);
-        if (!el) return;
+        duration = duration || 1800; suffix = suffix || '';
+        var el = document.getElementById(id); if (!el) return;
         var start = 0;
         var step = Math.max(1, Math.ceil(end / (duration / 16)));
         var timer = setInterval(function() {
@@ -2360,147 +864,116 @@
         }, 16);
     }
 
-    /* ── SKILL BARS ──────────────────────────── */
     function animateBars() {
-        document.querySelectorAll('.skill-bar-fill').forEach(function(bar) {
-            bar.style.width = (bar.dataset.w || 0) + '%';
-        });
+        document.querySelectorAll('.skill-bar-fill').forEach(function(bar) { bar.style.width = (bar.dataset.w || 0) + '%'; });
     }
 
-    /* ── INTERSECTION OBSERVERS ──────────────── */
     function once(el, threshold, callback) {
         if (!el) return;
         var obs = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) {
-                callback();
-                obs.disconnect();
-            }
+            if (entries[0].isIntersecting) { callback(); obs.disconnect(); }
         }, { threshold: threshold });
         obs.observe(el);
     }
-
     function setupObservers() {
-        once(document.getElementById('hero'), 0.3, function() {
-            runCounter('h-s1', 5000, '+');
-            runCounter('h-s2', 100, '%');
-            runCounter('h-s3', 40, '%');
-        });
-
-        once(document.getElementById('about'), 0.25, function() {
-            runCounter('counter-students', 5000, '+');
-            runCounter('counter-efficiency', 40, '%');
-            animateBars();
-        });
+        once(document.getElementById('hero'), 0.3, function() { runCounter('h-s1',5000,'+'); runCounter('h-s2',100,'%'); runCounter('h-s3',40,'%'); });
+        once(document.getElementById('about'), 0.25, function() { runCounter('counter-students',5000,'+'); runCounter('counter-efficiency',40,'%'); animateBars(); });
     }
 
-    /* ══════════════════════════════════════════════════
-       STRENGTH CARDS — LIQUID FILL (TOUCH + MOUSE)
-       
-       Logic:
-       - Desktop (hover): CSS handles hover state via :hover
-       - Touch devices: JS adds/removes .active class on tap
-         Only ONE card can be .active at a time
-       - Clicking outside any card removes all .active states
-    ══════════════════════════════════════════════════ */
+    /* STRENGTH CARDS */
     (function initStrengthCards() {
         var cards = document.querySelectorAll('.strength-card');
         var activeCard = null;
-
-        function isTouchDevice() {
-            return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-        }
-
+        function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
         cards.forEach(function(card) {
-            // Touch tap handler
             card.addEventListener('click', function(e) {
-                if (!isTouchDevice()) return; // Desktop uses CSS :hover, skip
-
+                if (!isTouchDevice()) return;
                 e.stopPropagation();
-
-                if (activeCard && activeCard !== card) {
-                    activeCard.classList.remove('active');
-                }
-
-                if (card.classList.contains('active')) {
-                    card.classList.remove('active');
-                    activeCard = null;
-                } else {
-                    card.classList.add('active');
-                    activeCard = card;
-                }
+                if (activeCard && activeCard !== card) activeCard.classList.remove('active');
+                if (card.classList.contains('active')) { card.classList.remove('active'); activeCard = null; }
+                else { card.classList.add('active'); activeCard = card; }
             });
-
-            // Keyboard support (Enter/Space)
-            card.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    card.click();
-                }
-            });
+            card.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); card.click(); } });
         });
-
-        // Click outside clears active on touch
         document.addEventListener('click', function(e) {
             if (!isTouchDevice()) return;
             var grid = document.getElementById('strengths-grid');
-            if (grid && !grid.contains(e.target) && activeCard) {
-                activeCard.classList.remove('active');
-                activeCard = null;
-            }
+            if (grid && !grid.contains(e.target) && activeCard) { activeCard.classList.remove('active'); activeCard = null; }
         });
     })();
 
-    /* ── SKILL FLIP CARDS ────────────────────────────────────
-       Desktop : CSS hover handles flip
-       Mobile  : tap toggles — only ONE card open at a time
-    ──────────────────────────────────────────────────────── */
+    /* DARK MODE TOUCH EFFECTS */
+    (function initDarkTouchEffects() {
+        function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
+        function isDark() { return document.documentElement.classList.contains('dark'); }
+        function attachTouchToggle(selector) {
+            var elements = document.querySelectorAll(selector);
+            var activeEl = null;
+            elements.forEach(function(el) {
+                el.addEventListener('click', function(e) {
+                    if (!isTouchDevice() || !isDark()) return;
+                    e.stopPropagation();
+                    if (activeEl && activeEl !== el) activeEl.classList.remove('touch-active');
+                    if (el.classList.contains('touch-active')) { el.classList.remove('touch-active'); activeEl = null; }
+                    else { el.classList.add('touch-active'); activeEl = el; }
+                });
+            });
+            document.addEventListener('click', function() {
+                if (!isTouchDevice() || !isDark()) return;
+                if (activeEl) { activeEl.classList.remove('touch-active'); activeEl = null; }
+            });
+        }
+        attachTouchToggle('.projects-table tbody tr');
+        attachTouchToggle('.proj-card');
+        attachTouchToggle('.edu-card');
+        attachTouchToggle('.exp-card');
+        attachTouchToggle('.contact-card');
+        attachTouchToggle('.cert-card');
+    })();
+
+    /* FOOTER SOCIAL — touch toggle for mobile */
+    (function initFooterSocialTouch() {
+        var btns = document.querySelectorAll('.footer-social-btn');
+        var activeBtn = null;
+        function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
+        btns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                if (!isTouchDevice()) return;
+                if (activeBtn && activeBtn !== btn) activeBtn.classList.remove('touch-active');
+                if (btn.classList.contains('touch-active')) { btn.classList.remove('touch-active'); activeBtn = null; }
+                else { btn.classList.add('touch-active'); activeBtn = btn; }
+            });
+        });
+    })();
+
+    /* SKILL FLIP CARDS */
     var allFlipCards = document.querySelectorAll('.skill-flip-card');
-
-    function isTouchDevice() {
-        return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-    }
-
+    function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
     allFlipCards.forEach(function(card) {
         card.addEventListener('click', function() {
             var alreadyFlipped = card.classList.contains('flipped');
-            if (isTouchDevice()) {
-                allFlipCards.forEach(function(c) { c.classList.remove('flipped'); });
-                if (!alreadyFlipped) { card.classList.add('flipped'); }
-            } else {
-                card.classList.toggle('flipped');
-            }
+            if (isTouchDevice()) { allFlipCards.forEach(function(c) { c.classList.remove('flipped'); }); if (!alreadyFlipped) card.classList.add('flipped'); }
+            else { card.classList.toggle('flipped'); }
         });
-        card.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
-        });
+        card.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); card.click(); } });
     });
 
-    /* ── SKILL SCENE SCROLL FADE-IN ─────────── */
+    /* SKILL SCENE SCROLL FADE-IN */
     var skillScenes = document.querySelectorAll('.skill-scene');
     var skillIO = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry, i) {
-            if (entry.isIntersecting) {
-                setTimeout(function() { entry.target.classList.add('visible'); }, i * 80);
-                skillIO.unobserve(entry.target);
-            }
+            if (entry.isIntersecting) { setTimeout(function() { entry.target.classList.add('visible'); }, i * 80); skillIO.unobserve(entry.target); }
         });
     }, { threshold: 0.1 });
     skillScenes.forEach(function(s) { skillIO.observe(s); });
 
-    /* ── INIT ────────────────────────────────── */
+    /* INIT */
     AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 50 });
-
     document.addEventListener('DOMContentLoaded', function() {
         setupObservers();
         if (typeof Typed !== 'undefined') {
-            new Typed('#typed-subtitle', {
-                strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'],
-                loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|'
-            });
-            new Typed('#typed-photo-role', {
-                strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'],
-                loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|'
-            });
+            new Typed('#typed-subtitle', { strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'], loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|' });
+            new Typed('#typed-photo-role', { strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'], loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|' });
         }
     });
 </script>
