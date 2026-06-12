@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="Mohd Hassan - Data Analyst Aspirant from Azamgarh, Uttar Pradesh, India. Expert in Advanced Excel, Pivot Tables, VLOOKUP, Statistics. Mastering SQL, Python, Power BI.">
+    <meta name="description" content="Mohd Hassan - Data Analyst Aspirant from Azamgarh, Uttar Pradesh, India.">
     <title>Mohd Hassan | Data Analyst Aspirant</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -34,32 +34,178 @@
         ::-webkit-scrollbar-track { background: var(--off-white); }
         ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 9px; }
 
-        /* NAVBAR — FIXED */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); transition: background 0.3s, border-color 0.3s; width: 100%; max-width: 100vw; }
+        /* NAVBAR */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13,21,35,0.97); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.3s, border-color 0.3s; width: 100%; max-width: 100vw; }
+        html.dark .navbar { background: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(0,0,0,0.10); }
         .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 0.75rem; display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); gap: 0.5rem; width: 100%; }
         .nav-logo { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 1; min-width: 0; }
         .nav-logo-img { width: 34px; height: 34px; border-radius: 10px; overflow: hidden; border: 2px solid var(--blue); flex-shrink: 0; }
         .nav-logo-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-        .nav-logo-name { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .nav-logo-name-mobile { display: none; font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .nav-logo-name { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .nav-logo-name-mobile { display: none; font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 600; color: #ffffff; white-space: nowrap; }
+        html.dark .nav-logo-name, html.dark .nav-logo-name-mobile { color: #0D1523; }
         @media (max-width: 768px) { .nav-logo-name { display: none; } .nav-logo-name-mobile { display: block; } }
-        .nav-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 99px; background: var(--blue-muted); color: var(--blue); white-space: nowrap; display: none; }
+        .nav-badge { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 99px; background: rgba(255,255,255,0.12); color: #ffffff; white-space: nowrap; display: none; }
+        html.dark .nav-badge { background: rgba(37,99,235,0.12); color: var(--blue); }
         .nav-links { display: none; align-items: center; gap: 1.5rem; }
-        .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; position: relative; padding-bottom: 2px; transition: color 0.2s; white-space: nowrap; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--blue); border-radius: 9px; transition: width 0.25s ease; }
-        .nav-links a:hover { color: var(--blue); }
+        .nav-links a { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.70); cursor: pointer; position: relative; padding-bottom: 2px; transition: color 0.2s; white-space: nowrap; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #ffffff; border-radius: 9px; transition: width 0.25s ease; }
+        .nav-links a:hover { color: #ffffff; }
         .nav-links a:hover::after { width: 100%; }
+        html.dark .nav-links a { color: #56657E; }
+        html.dark .nav-links a::after { background: #0D1523; }
+        html.dark .nav-links a:hover { color: #0D1523; }
         .nav-actions { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
-        .btn-icon { width: 34px; height: 34px; border-radius: 10px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: all 0.2s; flex-shrink: 0; }
-        .btn-icon:hover { background: var(--blue-muted); color: var(--blue); border-color: var(--blue); }
+        .btn-icon { width: 34px; height: 34px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); background: transparent; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: all 0.2s; flex-shrink: 0; }
+        .btn-icon:hover { background: rgba(255,255,255,0.12); border-color: #ffffff; }
+        html.dark .btn-icon { color: #0D1523; border-color: rgba(0,0,0,0.18); }
+        html.dark .btn-icon:hover { background: rgba(0,0,0,0.06); color: #0D1523; border-color: rgba(0,0,0,0.35); }
         .btn-primary { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--blue); color: #fff; padding: 0.45rem 0.8rem; border-radius: 99px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.15s; box-shadow: 0 4px 14px rgba(37,99,235,0.30); white-space: nowrap; border: none; flex-shrink: 0; }
         .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
-
-        /* MOBILE MENU */
-        .mobile-menu { display: none; flex-direction: column; padding: 0.75rem 1rem 1.25rem; border-top: 1px solid var(--border); background: var(--nav-bg); gap: 0.15rem; width: 100%; max-width: 100vw; }
+        .mobile-menu { display: none; flex-direction: column; padding: 0.75rem 1rem 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(13,21,35,0.97); gap: 0.15rem; width: 100%; max-width: 100vw; }
+        html.dark .mobile-menu { background: rgba(255,255,255,0.97); border-top: 1px solid rgba(0,0,0,0.08); }
         .mobile-menu.open { display: flex; }
-        .mobile-menu a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 0.65rem 0.85rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
-        .mobile-menu a:hover, .mobile-menu a:active { background: var(--blue-muted); color: var(--blue); }
+        .mobile-menu a { font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.70); padding: 0.65rem 0.85rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .mobile-menu a:hover { background: rgba(255,255,255,0.10); color: #ffffff; }
+        html.dark .mobile-menu a { color: #56657E; }
+        html.dark .mobile-menu a:hover { background: rgba(0,0,0,0.06); color: #0D1523; }
+
+        /* ══════════════════════════════════════
+           NEW LANGUAGE DROPDOWN DESIGN
+           National (left) | International (right)
+           Each expands independently downward
+        ══════════════════════════════════════ */
+        .lang-dropdown-wrap { position: relative; }
+        @media (max-width: 900px) { .lang-dropdown-wrap { display: none; } }
+
+        .lang-btn {
+            width: 34px; height: 34px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.25); background: transparent;
+            color: #ffffff; cursor: pointer; display: flex; align-items: center;
+            justify-content: center; font-size: 0.85rem; transition: all 0.2s;
+            flex-shrink: 0; position: relative;
+        }
+        .lang-btn:hover { background: rgba(255,255,255,0.12); border-color: #ffffff; }
+        html.dark .lang-btn { color: #0D1523; border-color: rgba(0,0,0,0.18); }
+        html.dark .lang-btn:hover { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.35); }
+        .lang-current-code {
+            position: absolute; bottom: 2px; right: 3px;
+            font-size: 0.36rem; font-weight: 700; letter-spacing: 0.04em;
+            line-height: 1; color: #60a5fa;
+        }
+        html.dark .lang-current-code { color: #2563eb; }
+
+        /* Main dropdown panel */
+        .lang-panel {
+            position: absolute; top: calc(100% + px); right: 0;
+            width: 260px;
+            background: #0D1A2E;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            overflow: hidden; z-index: 2000;
+            display: none;
+            animation: langFadeIn 0.2s ease;
+        }
+        html.dark .lang-panel { background: #ffffff; border-color: rgba(0,0,0,0.10); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .lang-panel.open { display: block; }
+        @keyframes langFadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Panel header */
+        .lang-panel-header {
+            padding: 0.55rem 1rem 0.45rem;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        html.dark .lang-panel-header { border-bottom-color: rgba(0,0,0,0.08); }
+        .lang-panel-header i { color: #60a5fa; font-size: 0.75rem; }
+        html.dark .lang-panel-header i { color: #2563eb; }
+        .lang-panel-header span { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+        html.dark .lang-panel-header span { color: #7B93B8; }
+
+        /* Two-column tab row — National left, International right */
+        .lang-tabs-row {
+            display: flex;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        html.dark .lang-tabs-row { border-bottom-color: rgba(0,0,0,0.07); }
+
+        .lang-tab-btn {
+            flex: 1; padding: 0.5rem 0.5rem 0.45rem;
+            background: transparent; border: none;
+            cursor: pointer; transition: background 0.15s;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.4rem;
+            font-size: 0.68rem; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            position: relative;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+        html.dark .lang-tab-btn { color: #9CAEC5; }
+        .lang-tab-btn .tab-flag { font-size: 0.85rem; line-height: 1; }
+        .lang-tab-btn:hover { background: rgba(255,255,255,0.05); }
+        html.dark .lang-tab-btn:hover { background: rgba(0,0,0,0.04); }
+
+        /* Active tab highlight */
+        .lang-tab-btn.active {
+            color: #60a5fa;
+            border-bottom-color: #60a5fa;
+            background: rgba(96,165,250,0.08);
+        }
+        html.dark .lang-tab-btn.active { color: #2563eb; border-bottom-color: #2563eb; background: rgba(37,99,235,0.07); }
+
+        /* Separator between two tabs */
+        .lang-tab-sep {
+            width: 1px;
+            background: rgba(255,255,255,0.08);
+            flex-shrink: 0;
+            align-self: stretch;
+            margin: 6px 0;
+        }
+        html.dark .lang-tab-sep { background: rgba(0,0,0,0.08); }
+
+        /* Language list pane */
+        .lang-list-pane {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .lang-list-pane.open { max-height: 470px; overflow-y: auto; }
+        .lang-list-pane::-webkit-scrollbar { width: 3px; }
+        .lang-list-pane::-webkit-scrollbar-thumb { background: rgba(96,165,250,0.4); border-radius: 9px; }
+        html.dark .lang-list-pane::-webkit-scrollbar-thumb { background: rgba(37,99,235,0.3); }
+
+        .lang-list-inner { padding: 0.35rem 0.6rem 0.5rem; display: flex; flex-direction: column; gap: 2px; }
+
+        .lang-item {
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.32rem 0.6rem; border-radius: 7px;
+            cursor: pointer; transition: background 0.15s;
+            font-size: 0.73rem; color: rgba(255,255,255,0.75);
+            white-space: nowrap;
+        }
+        html.dark .lang-item { color: #56657E; }
+        .lang-item:hover { background: rgba(255,255,255,0.09); color: #ffffff; }
+        html.dark .lang-item:hover { background: rgba(0,0,0,0.06); color: #0D1523; }
+        .lang-item.active { background: rgba(37,99,235,0.25); color: #60a5fa; font-weight: 600; }
+        html.dark .lang-item.active { background: rgba(37,99,235,0.10); color: #2563eb; }
+        .lang-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+        .lang-item.active .lang-dot { background: #60a5fa; }
+        html.dark .lang-dot { background: rgba(0,0,0,0.12); }
+        html.dark .lang-item.active .lang-dot { background: #2563eb; }
+
+        /* Chevron arrow on tab button */
+        .lang-tab-arrow {
+            font-size: 0.5rem;
+            transition: transform 0.25s;
+            margin-left: 2px;
+            color: inherit;
+        }
+        .lang-tab-btn.active .lang-tab-arrow { transform: rotate(180deg); }
+
+        /* ══════════════════════════════════════ */
 
         /* HERO */
         .hero { min-height: 100svh; display: flex; align-items: center; background: linear-gradient(135deg, #0D2B6E 0%, #1052BF 45%, #2563eb 100%); position: relative; overflow: hidden; color: #fff; width: 100%; }
@@ -114,7 +260,7 @@
         .strengths-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 1rem; }
         .strength-card.desktop-only { display: none; }
         @media (min-width: 900px) { .strengths-grid { grid-template-columns: repeat(3, 1fr); } .strength-card.desktop-only { display: flex; } }
-        .strength-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.875rem; padding: 0.65rem 0.85rem; display: flex; align-items: center; gap: 0.55rem; font-size: 0.78rem; font-weight: 500; color: var(--text-main); cursor: pointer; position: relative; overflow: hidden; transition: border-color 0.3s, color 0.3s, transform 0.2s; z-index: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
+        .strength-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 0.875rem; padding: 0.65rem 0.85rem; display: flex; align-items: center; gap: 0.55rem; font-size: 0.78rem; font-weight: 500; color: var(--text-main); cursor: pointer; position: relative; overflow: hidden; transition: border-color 0.3s, color 0.3s, transform 0.2s; z-index: 0; user-select: none; }
         .strength-card::before { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 0%; background: #60a5fa; border-radius: 0.875rem; transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1); z-index: -1; }
         html.dark .strength-card::before { background: #ffffff; }
         .strength-card:hover::before, .strength-card.active::before { height: 100%; }
@@ -122,7 +268,6 @@
         html.dark .strength-card:hover, html.dark .strength-card.active { border-color: #ffffff; color: #000000; }
         .strength-card i { color: var(--blue); font-size: 0.9rem; flex-shrink: 0; width: 15px; transition: color 0.25s; position: relative; z-index: 1; }
         .strength-card:hover i, .strength-card.active i { color: #ffffff; }
-        html.dark .strength-card i { color: var(--blue); }
         html.dark .strength-card:hover i, html.dark .strength-card.active i { color: #000000; }
         .strength-card span { position: relative; z-index: 1; }
 
@@ -163,10 +308,7 @@
         .exp-tech-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
         .exp-delivered { color: #22C55E; font-weight: 600; font-size: 0.72rem; }
 
-        /* ═══════════════════════════════════════════
-           PROJECTS — dark mode: full white bg fill + black text
-           Same liquid fill effect as strength cards
-        ═══════════════════════════════════════════ */
+        /* PROJECTS */
         .projects-section { background: var(--section-alt); }
         .projects-table-wrap { margin-top: 1.5rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
         .projects-table { width: 100%; border-collapse: collapse; min-width: 600px; }
@@ -174,23 +316,12 @@
         .projects-table thead th { color: #fff; font-family: 'DM Mono', monospace; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 0.85rem; text-align: left; white-space: nowrap; }
         .projects-table tbody tr { background: var(--card-bg); border-bottom: 1px solid var(--border); transition: background 0.3s, box-shadow 0.3s; }
         .projects-table tbody tr:last-child { border-bottom: none; }
-        /* Light mode hover */
         .projects-table tbody tr:hover { background: var(--blue-muted); }
-        /* Dark mode hover — full white fill, all text black */
         html.dark .projects-table tbody tr:hover { background: #ffffff; box-shadow: 0 4px 24px rgba(255,255,255,0.18); }
         html.dark .projects-table tbody tr:hover td { color: #000000; }
         html.dark .projects-table tbody tr:hover .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
-        html.dark .projects-table tbody tr:hover .proj-status.done { color: #16a34a; }
-        html.dark .projects-table tbody tr:hover .proj-status.wip { color: #d97706; }
-        html.dark .projects-table tbody tr:hover .proj-link-coming { color: #56657E; }
-        /* Dark mode touch-active — same as hover */
         html.dark .projects-table tbody tr.touch-active { background: #ffffff; box-shadow: 0 4px 24px rgba(255,255,255,0.18); }
         html.dark .projects-table tbody tr.touch-active td { color: #000000; }
-        html.dark .projects-table tbody tr.touch-active .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
-        html.dark .projects-table tbody tr.touch-active .proj-status.done { color: #16a34a; }
-        html.dark .projects-table tbody tr.touch-active .proj-status.wip { color: #d97706; }
-        html.dark .projects-table tbody tr.touch-active .proj-link-coming { color: #56657E; }
-
         .projects-table td { padding: 0.85rem; vertical-align: middle; font-size: 0.82rem; color: var(--text-main); }
         .proj-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--text-muted); }
         .proj-name { font-weight: 600; }
@@ -200,41 +331,28 @@
         .proj-status { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
         .proj-status.done { color: #22C55E; }
         .proj-status.wip { color: #F59E0B; }
-        .proj-status.planned { color: var(--text-muted); }
         .sdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
         .proj-status.done .sdot { background: #22C55E; }
         .proj-status.wip .sdot { background: #F59E0B; animation: pulse 2s infinite; }
-        .proj-status.planned .sdot { background: var(--text-muted); }
         .proj-link-coming { font-size: 0.7rem; color: var(--text-muted); font-style: italic; white-space: nowrap; }
         .project-btn, .cert-view-btn, .edu-cert-btn { display: inline-flex; align-items: center; gap: 0.3rem; background: var(--blue); color: #fff; padding: 0.3rem 0.75rem; border-radius: 99px; font-size: 0.7rem; font-weight: 600; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(37,99,235,0.28); white-space: nowrap; text-decoration: none; border: none; cursor: pointer; flex-shrink: 0; }
-        .project-btn:hover, .cert-view-btn:hover, .edu-cert-btn:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.38); }
+        .project-btn:hover, .cert-view-btn:hover, .edu-cert-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
 
-        /* Mobile proj cards — dark mode same fill effect */
+        /* Mobile proj cards */
         .proj-cards-mobile { display: none; margin-top: 1.25rem; }
         .proj-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; margin-bottom: 0.65rem; width: 100%; max-width: 100%; overflow: hidden; box-sizing: border-box; transition: all 0.3s; }
         .proj-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
         html.dark .proj-card:hover { background: #ffffff; border-color: #ffffff; box-shadow: 0 8px 32px rgba(255,255,255,0.18); }
-        html.dark .proj-card:hover .proj-name,
-        html.dark .proj-card:hover .proj-desc,
-        html.dark .proj-card:hover .proj-num { color: #000000; }
-        html.dark .proj-card:hover .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
-        html.dark .proj-card:hover .proj-status.done { color: #16a34a; }
-        html.dark .proj-card:hover .proj-status.wip { color: #d97706; }
-        html.dark .proj-card.touch-active { background: #ffffff; border-color: #ffffff; box-shadow: 0 8px 32px rgba(255,255,255,0.18); }
-        html.dark .proj-card.touch-active .proj-name,
-        html.dark .proj-card.touch-active .proj-desc,
-        html.dark .proj-card.touch-active .proj-num { color: #000000; }
-        html.dark .proj-card.touch-active .proj-tool-tag { background: rgba(37,99,235,0.12); color: #1d4ed8; }
-        html.dark .proj-card.touch-active .proj-status.done { color: #16a34a; }
-        html.dark .proj-card.touch-active .proj-status.wip { color: #d97706; }
-
+        html.dark .proj-card:hover .proj-name, html.dark .proj-card:hover .proj-desc, html.dark .proj-card:hover .proj-num { color: #000000; }
+        html.dark .proj-card.touch-active { background: #ffffff; border-color: #ffffff; }
+        html.dark .proj-card.touch-active .proj-name, html.dark .proj-card.touch-active .proj-desc, html.dark .proj-card.touch-active .proj-num { color: #000000; }
         .proj-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.6rem; }
         .proj-card-header > div { min-width: 0; flex: 1; }
         .proj-card .proj-name { word-break: break-word; overflow-wrap: break-word; }
 
         /* EDUCATION */
-        .edu-grid { margin-top: 1.5rem; width: 100%; }
-        .edu-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; margin-bottom: 0.65rem; width: 100%; }
+        .edu-grid-mobile { display: flex; flex-direction: column; gap: 0.65rem; margin-top: 1.5rem; }
+        .edu-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; width: 100%; }
         .edu-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
         html.dark .edu-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); }
         html.dark .edu-card.touch-active { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); transform: translateY(-2px); }
@@ -243,10 +361,58 @@
         .edu-degree { font-weight: 600; font-size: 0.84rem; color: var(--text-main); }
         .edu-org { color: var(--blue); font-size: 0.76rem; font-weight: 500; margin-top: 0.1rem; }
         .edu-year { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem; }
+        .edu-flip-grid { display: none; }
+        @media (min-width: 900px) {
+            .edu-grid-mobile { display: none; }
+            .edu-flip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 1.5rem; max-width: 860px; margin-left: auto; margin-right: auto; }
+        }
+        .edu-scene { perspective: 1000px; width: 100%; height: 85px; }
+        .edu-flip-card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.65s cubic-bezier(0.35,0.1,0.15,1); border-radius: var(--radius); cursor: pointer; }
+        @media (min-width: 900px) {
+            .edu-scene:hover .edu-flip-card:not(.flipped) { transform: rotateX(180deg); }
+            .edu-flip-card.flipped { transform: rotateX(180deg) !important; }
+        }
+        .edu-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--radius); overflow: hidden; }
+        .edu-front { background: var(--card-bg); border: 1px solid var(--border); padding: 0.85rem 1rem; display: flex; align-items: flex-start; gap: 0.65rem; }
+        .edu-front .edu-icon { font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+        .edu-front .edu-degree { font-weight: 700; font-size: 0.80rem; color: var(--text-main); line-height: 1.3; }
+        .edu-front .edu-org { color: var(--blue); font-size: 0.70rem; font-weight: 500; margin-top: 0.15rem; }
+        .edu-front .edu-year { font-size: 0.64rem; color: var(--text-muted); margin-top: 0.1rem; }
+        .edu-front-hint { display: none; }
+        .edu-back { transform: rotateX(-180deg); background: #0D1523; border: 1px solid rgba(255,255,255,0.10); padding: 0.65rem 0.9rem 0.6rem; display: flex; flex-direction: column; gap: 0; }
+        html.dark .edu-back { background: #ffffff; border: 1px solid rgba(0,0,0,0.10); }
+        .edu-back-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.45rem; }
+        .edu-back-titles { flex: 1; min-width: 0; }
+        .edu-back-label { font-size: 0.46rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #60a5fa; line-height: 1.3; margin-bottom: 0.05rem; }
+        html.dark .edu-back-label { color: #2563eb; }
+        .edu-back-title { font-family: 'Syne', sans-serif; font-size: 0.68rem; font-weight: 700; color: #ffffff; line-height: 1.2; }
+        html.dark .edu-back-title { color: #0D1523; }
+        .edu-back-topbtn { display: inline-flex; align-items: center; gap: 0.22rem; padding: 0.18rem 0.5rem; border-radius: 99px; font-size: 0.52rem; font-weight: 600; white-space: nowrap; flex-shrink: 0; margin-top: 1px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+        .edu-back-topbtn.blue { background: #2563eb; color: #fff !important; box-shadow: 0 2px 8px rgba(37,99,235,0.40); }
+        .edu-back-topbtn.blue:hover { background: #1d4ed8; transform: translateY(-1px); }
+        .edu-back-topbtn.amber { background: rgba(245,158,11,0.18); color: #F59E0B !important; border: 1px solid rgba(245,158,11,0.38); }
+        .edu-back-topbtn.amber:hover { background: rgba(245,158,11,0.28); transform: translateY(-1px); }
+        html.dark .edu-back-topbtn.amber { background: rgba(245,158,11,0.10); color: #d97706 !important; border-color: rgba(245,158,11,0.25); }
+        .edu-back-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.12); margin: 0.28rem 0 0.22rem; }
+        html.dark .edu-back-divider { background: rgba(0,0,0,0.10); }
+        .edu-back-table { width: 100%; border-collapse: collapse; }
+        .edu-back-table td { padding: 0.16rem 0.3rem; font-size: 0.58rem; line-height: 1.3; vertical-align: middle; }
+        .edu-back-table .ebt-key { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.38); white-space: nowrap; width: 30%; }
+        html.dark .edu-back-table .ebt-key { color: #9CAEC5; }
+        .edu-back-table .ebt-val { font-weight: 700; color: #22c55e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        html.dark .edu-back-table .ebt-val { color: #16a34a; }
+        .edu-back-table .ebt-val.white { color: rgba(255,255,255,0.85); }
+        html.dark .edu-back-table .ebt-val.white { color: #374151; }
+        .edu-back-table .ebt-val.amber { color: #f59e0b; }
+        html.dark .edu-back-table .ebt-val.amber { color: #d97706; }
+        .edu-back-table .ebt-sep { width: 1px; padding: 0 0.5rem; }
+        .edu-back-table .ebt-sep-line { width: 1px; height: 100%; background: rgba(255,255,255,0.10); display: block; margin: 0 auto; }
+        html.dark .edu-back-table .ebt-sep-line { background: rgba(0,0,0,0.08); }
+        .edu-back-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+        html.dark .edu-back-table tr { border-bottom-color: rgba(0,0,0,0.05); }
+        .edu-back-table tr:last-child { border-bottom: none; }
 
-        /* ═══════════════════════════════════════════
-           CERTIFICATES — dark mode white border
-        ═══════════════════════════════════════════ */
+        /* CERT */
         .cert-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; margin-bottom: 0.65rem; width: 100%; }
         .cert-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
         html.dark .cert-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.08); }
@@ -255,20 +421,7 @@
         .cert-card-body { flex: 1; min-width: 0; }
         .cert-card-text { font-size: 0.82rem; font-weight: 500; color: var(--text-main); }
 
-        /* CONTACT */
-        .contact-inner { max-width: 860px; margin: 0 auto; width: 100%; }
-        .contact-cards { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; width: 100%; }
-        .contact-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; min-width: 0; width: 100%; }
-        .contact-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
-        html.dark .contact-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.10); }
-        html.dark .contact-card.touch-active { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.10); transform: translateY(-2px); }
-        .contact-card-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-muted); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
-        .contact-card-label { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.12rem; }
-        .contact-card-value { font-weight: 600; font-size: 0.82rem; color: var(--text-main); word-break: break-all; overflow-wrap: anywhere; }
-        .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); width: 100%; }
-        .map-wrap iframe { display: block; width: 100%; }
-
-        /* SKILLS FLIP CARDS */
+        /* SKILLS FLIP */
         .skills-section { background: var(--off-white); }
         .skills-flip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.5rem; }
         @media (max-width: 900px) { .skills-flip-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
@@ -294,7 +447,7 @@
         .card-powerbi  .skill-front { background: linear-gradient(145deg, rgba(234,179,8,0.16) 0%, rgba(245,158,11,0.10) 100%), var(--card-bg); border: 1px solid rgba(0,0,0,0.08); }
         html.dark .skill-front { border-color: rgba(255,255,255,0.08) !important; }
         .skill-front-shine { position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); }
-        .skill-front-icon { width: 72px; height: 72px; border-radius: 18px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #ffffff !important; box-shadow: none !important; border: none !important; }
+        .skill-front-icon { width: 72px; height: 72px; border-radius: 18px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #ffffff !important; }
         @media (max-width: 600px) { .skill-front-icon { width: 56px; height: 56px; border-radius: 14px; } }
         .skill-front-icon img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
         .skill-front-icon .emoji-icon { font-size: 2rem; line-height: 1; }
@@ -348,49 +501,39 @@
         html.dark .card-sql      .skill-stag { background: rgba(14,165,233,0.10); border: 1px solid rgba(14,165,233,0.22); }
         html.dark .card-python   .skill-stag { background: rgba(234,179,8,0.10); border: 1px solid rgba(234,179,8,0.22); }
         html.dark .card-powerbi  .skill-stag { background: rgba(242,200,15,0.10); border: 1px solid rgba(242,200,15,0.22); }
-        .skill-scene { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
-        .skill-scene.visible { opacity: 1; transform: translateY(0); }
+        .skill-scene[data-scene] { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .skill-scene[data-scene].visible { opacity: 1; transform: translateY(0); }
 
-        /* ═══════════════════════════════════════════
-           FOOTER — Social Icons (NO floating animation)
-           Hover: white bg, icon color stays BUT X icon → black
-        ═══════════════════════════════════════════ */
+        /* CONTACT */
+        .contact-inner { max-width: 860px; margin: 0 auto; width: 100%; }
+        .contact-cards { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; width: 100%; }
+        .contact-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.25s; min-width: 0; width: 100%; }
+        .contact-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+        html.dark .contact-card:hover { border-color: #ffffff; box-shadow: 0 8px 28px rgba(255,255,255,0.10); }
+        html.dark .contact-card.touch-active { border-color: #ffffff; transform: translateY(-2px); }
+        .contact-card-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-muted); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+        .contact-card-label { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 0.12rem; }
+        .contact-card-value { font-weight: 600; font-size: 0.82rem; color: var(--text-main); word-break: break-all; overflow-wrap: anywhere; }
+        .map-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); width: 100%; }
+        .map-wrap iframe { display: block; width: 100%; }
+
+        /* FOOTER */
         footer { background: #050D1A; color: rgba(255,255,255,0.55); padding: 2rem 1rem 1.5rem; text-align: center; }
         .footer-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 1rem; }
         .footer-social { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 1rem; flex-wrap: wrap; }
-        .footer-social-btn {
-            width: 42px; height: 42px; border-radius: 12px;
-            border: 1.5px solid rgba(255,255,255,0.18);
-            background: transparent;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1rem; cursor: pointer; text-decoration: none;
-            position: relative; overflow: hidden;
-            transition: border-color 0.3s, transform 0.25s;
-        }
-        /* NO animation — removed socialFloat */
-        .footer-social-btn::before {
-            content: ''; position: absolute; inset: 0;
-            background: #ffffff; border-radius: 10px;
-            transform: scale(0);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
+        .footer-social-btn { width: 42px; height: 42px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.18); background: transparent; display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer; text-decoration: none; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.25s; }
+        .footer-social-btn::before { content: ''; position: absolute; inset: 0; background: #ffffff; border-radius: 10px; transform: scale(0); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .footer-social-btn:hover::before, .footer-social-btn.touch-active::before { transform: scale(1); }
         .footer-social-btn:hover { border-color: #ffffff; transform: translateY(-4px) scale(1.08); }
         .footer-social-btn.touch-active { border-color: #ffffff; transform: translateY(-4px) scale(1.08); }
         .footer-social-btn i { position: relative; z-index: 1; transition: transform 0.2s; }
         .footer-social-btn:hover i, .footer-social-btn.touch-active i { transform: scale(1.15); }
-
-        /* Icon colors — normal state */
         .footer-social-btn.whatsapp i { color: #25D366; }
         .footer-social-btn.youtube i { color: #FF0000; }
         .footer-social-btn.facebook i { color: #1877F2; }
         .footer-social-btn.instagram i { color: #E1306C; }
-        /* X icon: white in normal, BLACK on hover (bg is white, so icon must be black) */
         .footer-social-btn.twitter i { color: #ffffff; }
-        .footer-social-btn.twitter:hover i,
-        .footer-social-btn.twitter.touch-active i { color: #000000; }
-        /* Other icons keep their color on hover (colored icon on white bg looks great) */
-
+        .footer-social-btn.twitter:hover i, .footer-social-btn.twitter.touch-active i { color: #000000; }
         .footer-copy { font-size: 0.75rem; }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.3); } }
 
@@ -437,8 +580,6 @@
             .about-grid { flex-direction: row; gap: 3.5rem; }
             .about-grid > * { flex: 1; min-width: 0; }
             .nav-links { display: flex; }
-            .edu-certs-outer { display: flex; gap: 3rem; align-items: flex-start; }
-            .edu-certs-outer > * { flex: 1; min-width: 0; }
             .skills-flip-grid { grid-template-columns: repeat(6, 1fr); gap: 1.1rem; }
             .skill-scene { height: 240px; }
         }
@@ -455,11 +596,6 @@
             .skill-bar-header span:first-child { font-size: 0.62rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0; }
             .skill-bar-header span:last-child { font-size: 0.62rem; white-space: nowrap; flex-shrink: 0; margin-left: 0.3rem; }
         }
-        #education .section-tag, #education .section-title, #education .divider-line,
-        #certificates .section-tag, #certificates .section-title, #certificates .divider-line,
-        #certificates > .section-inner > div > p { text-align: center; display: block; margin-left: auto; margin-right: auto; }
-        #education .divider-line, #certificates .divider-line { margin: 0.6rem auto 0; }
-        #education .section-title { font-size: clamp(1.1rem, 3.5vw, 1.65rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
         @media (max-width: 599px) {
             .projects-table-wrap { display: none; }
             .proj-cards-mobile { display: block; width: 100%; max-width: 100%; overflow: hidden; box-sizing: border-box; }
@@ -489,6 +625,47 @@
             <button class="btn-icon" id="theme-btn" onclick="toggleDark()" title="Toggle dark mode" aria-label="Toggle dark mode">
                 <i id="theme-icon" class="fa-solid fa-moon"></i>
             </button>
+
+            <!-- ══ NEW LANGUAGE DROPDOWN ══ -->
+            <div class="lang-dropdown-wrap" id="lang-dropdown-wrap">
+                <button class="lang-btn" id="lang-btn" title="Change Language" aria-label="Language Selector">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="lang-current-code" id="lang-current-code">EN</span>
+                </button>
+
+                <div class="lang-panel" id="lang-panel">
+                    <!-- Header -->
+                    <div class="lang-panel-header">
+                        <i class="fa-solid fa-language"></i>
+                        <span>Select Language</span>
+                    </div>
+
+                    <!-- Two tabs side by side -->
+                    <div class="lang-tabs-row">
+                        <button class="lang-tab-btn active" id="tab-national" onclick="switchTab('national')">
+                            <span class="tab-flag">🇮🇳</span> National
+                            <i class="fa-solid fa-chevron-down lang-tab-arrow"></i>
+                        </button>
+                        <div class="lang-tab-sep"></div>
+                        <button class="lang-tab-btn" id="tab-international" onclick="switchTab('international')">
+                            <span class="tab-flag">🌐</span> International
+                            <i class="fa-solid fa-chevron-down lang-tab-arrow"></i>
+                        </button>
+                    </div>
+
+                    <!-- National list (open by default) -->
+                    <div class="lang-list-pane open" id="pane-national">
+                        <div class="lang-list-inner" id="list-national"></div>
+                    </div>
+
+                    <!-- International list (closed by default) -->
+                    <div class="lang-list-pane" id="pane-international">
+                        <div class="lang-list-inner" id="list-international"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ══ END LANGUAGE DROPDOWN ══ -->
+
             <a href="Data-Analyst-Resume.pdf" target="_blank" rel="noopener" class="btn-primary">
                 <i class="fa-solid fa-file-pdf"></i><span>Resume</span>
             </a>
@@ -512,16 +689,16 @@
         <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
             <h1 class="hero-title">MOHD<br>HASSAN</h1>
             <p class="hero-sub"><span id="typed-subtitle"></span></p>
-            <p class="hero-desc">Detail-oriented professional with 1 year of hands-on experience managing 5000+ student datasets. Turning raw data into actionable insights using Advanced Excel, Statistics &amp; visualizations.</p>
+            <p class="hero-desc" data-i18n="heroDesc">Detail-oriented professional with 1 year of hands-on experience managing 5000+ student datasets. Turning raw data into actionable insights using Advanced Excel, Statistics &amp; visualizations.</p>
             <div class="hero-ctas">
-                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-desktop"><i class="fa-solid fa-file-pdf"></i> View Presentation</a>
-                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-mobile"><i class="fa-solid fa-file-pdf"></i> View Presentation</a>
+                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-desktop"><i class="fa-solid fa-file-pdf"></i> <span data-i18n="viewPresentation">View Presentation</span></a>
+                <a href="Presentation.html" target="_blank" rel="noopener" class="hero-btn-primary hero-cta-presentation-mobile"><i class="fa-solid fa-file-pdf"></i> <span data-i18n="viewPresentation">View Presentation</span></a>
                 <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" class="hero-btn-outline"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
             </div>
             <div class="hero-stats">
-                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s1">0</div><div class="hero-stat-label">Student records managed</div></div>
-                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s2">0</div><div class="hero-stat-label">Data accuracy</div></div>
-                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s3">0</div><div class="hero-stat-label">Efficiency improvement</div></div>
+                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s1">0</div><div class="hero-stat-label" data-i18n="statStudents">Student records managed</div></div>
+                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s2">0</div><div class="hero-stat-label" data-i18n="statAccuracy">Data accuracy</div></div>
+                <div class="hero-stat-item"><div class="hero-stat-num" id="h-s3">0</div><div class="hero-stat-label" data-i18n="statEfficiency">Efficiency improvement</div></div>
             </div>
         </div>
         <div class="hero-visual" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
@@ -539,34 +716,34 @@
 <!-- ABOUT -->
 <section id="about" class="section" style="background:var(--white);">
     <div class="section-inner">
-        <span class="section-tag">Career Objective</span>
-        <h2 class="section-title">Detail-oriented <span class="highlight-green">Data Analyst Aspirant</span><br>delivering data-driven insights</h2>
+        <span class="section-tag" data-i18n="aboutTag">Career Objective</span>
+        <h2 class="section-title">Detail-oriented <span class="highlight-green" data-i18n="aboutTitleGreen">Data Analyst Aspirant</span><br><span data-i18n="aboutTitleSub">delivering data-driven insights</span></h2>
         <div class="divider-line"></div>
         <div class="about-grid">
             <div data-aos="fade-right">
-                <p class="about-desc">Detail-oriented Data Analyst Aspirant with proven experience managing datasets for 5000+ students using Advanced Excel and Statistics. Skilled at generating actionable insights through analytical reports, Dashboards, Pivot Tables, Macros, and data visualization. Currently mastering SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Power BI to build full-stack data analysis capabilities.</p>
-                <div class="strengths-label">Core Strengths</div>
+                <p class="about-desc" data-i18n="aboutDesc">Detail-oriented Data Analyst Aspirant with proven experience managing datasets for 5000+ students using Advanced Excel and Statistics. Skilled at generating actionable insights through analytical reports, Dashboards, Pivot Tables, Macros, and data visualization. Currently mastering SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Power BI to build full-stack data analysis capabilities.</p>
+                <div class="strengths-label" data-i18n="coreStrengths">Core Strengths</div>
                 <div class="strengths-grid" id="strengths-grid">
-                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-brain"></i><span>Analytical Thinking</span></div>
-                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-magnifying-glass"></i><span>Attention to Detail</span></div>
-                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-rocket"></i><span>Quick Learner</span></div>
-                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-clock"></i><span>Time Management</span></div>
-                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-users"></i><span>Team Collaboration</span></div>
-                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-shield-halved"></i><span>Data Accuracy Focus</span></div>
-                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-chart-line"></i><span>Data Visualization</span></div>
-                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-lightbulb"></i><span>Problem Solving</span></div>
-                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-comments"></i><span>Communication</span></div>
-                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-bullseye"></i><span>Goal Oriented</span></div>
-                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-rotate"></i><span>Adaptability</span></div>
-                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-database"></i><span>Data Management</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-brain"></i><span data-i18n="s1">Analytical Thinking</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-magnifying-glass"></i><span data-i18n="s2">Attention to Detail</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-rocket"></i><span data-i18n="s3">Quick Learner</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-clock"></i><span data-i18n="s4">Time Management</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-users"></i><span data-i18n="s5">Team Collaboration</span></div>
+                    <div class="strength-card" tabindex="0"><i class="fa-solid fa-shield-halved"></i><span data-i18n="s6">Data Accuracy Focus</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-chart-line"></i><span data-i18n="s7">Data Visualization</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-lightbulb"></i><span data-i18n="s8">Problem Solving</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-comments"></i><span data-i18n="s9">Communication</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-bullseye"></i><span data-i18n="s10">Goal Oriented</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-rotate"></i><span data-i18n="s11">Adaptability</span></div>
+                    <div class="strength-card desktop-only" tabindex="0"><i class="fa-solid fa-database"></i><span data-i18n="s12">Data Management</span></div>
                 </div>
             </div>
             <div data-aos="fade-left" data-aos-delay="150">
                 <div class="counters-row">
-                    <div class="counter-card"><div class="counter-num" id="counter-students">0</div><div class="counter-label">Students Data Managed</div><div class="counter-sub">Jamia Tul Falah School</div></div>
-                    <div class="counter-card"><div class="counter-num" id="counter-efficiency">0</div><div class="counter-label">% Efficiency Improved</div><div class="counter-sub">Through Excel Reports</div></div>
+                    <div class="counter-card"><div class="counter-num" id="counter-students">0</div><div class="counter-label" data-i18n="counterStudents">Students Data Managed</div><div class="counter-sub">Jamia Tul Falah School</div></div>
+                    <div class="counter-card"><div class="counter-num" id="counter-efficiency">0</div><div class="counter-label" data-i18n="counterEff">% Efficiency Improved</div><div class="counter-sub" data-i18n="counterEffSub">Through Excel Reports</div></div>
                 </div>
-                <h3 style="font-size:0.85rem;font-weight:700;margin-bottom:0.85rem;color:var(--text-main);">Technical Proficiency</h3>
+                <h3 style="font-size:0.85rem;font-weight:700;margin-bottom:0.85rem;color:var(--text-main);" data-i18n="techProficiency">Technical Proficiency</h3>
                 <div class="skills-bars">
                     <div><div class="skill-bar-header"><span>Advanced Excel + Macros + Pivot Tables + XLOOKUP + Dashboard</span><span>100%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="100"></div></div></div>
                     <div><div class="skill-bar-header"><span>Descriptive Statistics &amp; Data Charts &amp; Probability</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-w="90"></div></div></div>
@@ -578,59 +755,29 @@
                     <div class="lang-tag"><strong>Hindi</strong><span class="native">NATIVE</span></div>
                     <div class="lang-tag"><strong>English</strong><span class="improving">IMPROVING</span></div>
                     <div class="lang-tag"><strong>Arabic</strong><span class="improving">IMPROVING</span></div>
-                    <div class="lang-tag" style="font-size:0.73rem;">Typing: <strong style="margin-left:3px;">30+ WPM</strong></div>
+                    <div class="lang-tag" style="font-size:0.73rem;"><span data-i18n="typing">Typing:</span> <strong style="margin-left:3px;">30+ WPM</strong></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SKILLS FLIP CARDS -->
+<!-- SKILLS -->
 <section id="skills" class="section skills-section">
     <div class="section-inner">
         <div class="section-center">
-            <span class="section-tag">Tools &amp; Technologies</span>
-            <h2 class="section-title">Technical Skills</h2>
+            <span class="section-tag" data-i18n="skillsTag">Tools &amp; Technologies</span>
+            <h2 class="section-title" data-i18n="skillsTitle">Technical Skills</h2>
             <div class="divider-line"></div>
-            <p class="section-subtitle" style="margin-top:0.5rem;">Proficient · Learning (3 Months) — Hover/Tap to flip</p>
+            <p class="section-subtitle" style="margin-top:0.5rem;" data-i18n="skillsSub">Proficient · Learning (3 Months) — Hover/Tap to flip</p>
         </div>
         <div class="skills-flip-grid">
-            <div class="skill-scene">
-                <div class="skill-flip-card card-msoffice" tabindex="0" role="button" aria-label="MS Office skill card">
-                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><span class="emoji-icon">📋</span></div><div class="skill-front-label">MS Office Suite</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div>
-                    <div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>MS Office Suite</h3><div class="skill-back-sub">Office &amp; design tools</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">MS Word</span><span class="skill-stag">PowerPoint</span><span class="skill-stag">Canva</span><span class="skill-stag">CorelDraw</span><span class="skill-stag">Formatting</span><span class="skill-stag">Presentations</span></div></div>
-                </div>
-            </div>
-            <div class="skill-scene">
-                <div class="skill-flip-card card-stats" tabindex="0" role="button" aria-label="Statistics skill card">
-                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Statistics.jpg" alt="Statistics"></div><div class="skill-front-label">Statistics</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div>
-                    <div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>Statistics</h3><div class="skill-back-sub">Data analysis &amp; probability</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Descriptive Stats</span><span class="skill-stag">Probability</span><span class="skill-stag">Visualization</span><span class="skill-stag">Mean/Median</span><span class="skill-stag">Std Deviation</span><span class="skill-stag">Distribution</span></div></div>
-                </div>
-            </div>
-            <div class="skill-scene">
-                <div class="skill-flip-card card-excel" tabindex="0" role="button" aria-label="Excel skill card">
-                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Excel.jpg" alt="Advanced Excel"></div><div class="skill-front-label">Advanced Excel</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div>
-                    <div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>Advanced Excel</h3><div class="skill-back-sub">Full data management toolkit</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Pivot Tables</span><span class="skill-stag">Macros</span><span class="skill-stag">XLOOKUP</span><span class="skill-stag">Charts</span><span class="skill-stag">Dashboard</span><span class="skill-stag">Formulas</span><span class="skill-stag">VBA</span><span class="skill-stag">Data Validation</span></div></div>
-                </div>
-            </div>
-            <div class="skill-scene">
-                <div class="skill-flip-card card-sql" tabindex="0" role="button" aria-label="SQL skill card">
-                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="SQL.jpg" alt="SQL"></div><div class="skill-front-label">SQL</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div>
-                    <div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>SQL</h3><div class="skill-back-sub">Database queries &amp; design</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">MySQL</span><span class="skill-stag">Queries</span><span class="skill-stag">Joins</span><span class="skill-stag">Aggregation</span><span class="skill-stag">Stored Procs</span><span class="skill-stag">Triggers</span><span class="skill-stag">DB Design</span></div></div>
-                </div>
-            </div>
-            <div class="skill-scene">
-                <div class="skill-flip-card card-python" tabindex="0" role="button" aria-label="Python skill card">
-                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Python.jpg" alt="Python"></div><div class="skill-front-label">Python</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div>
-                    <div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>Python</h3><div class="skill-back-sub">Data analysis libraries</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Pandas</span><span class="skill-stag">NumPy</span><span class="skill-stag">Matplotlib</span><span class="skill-stag">Seaborn</span><span class="skill-stag">EDA</span><span class="skill-stag">Data Cleaning</span></div></div>
-                </div>
-            </div>
-            <div class="skill-scene">
-                <div class="skill-flip-card card-powerbi" tabindex="0" role="button" aria-label="Power BI skill card">
-                    <div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Power-BI.jpg" alt="Power BI"></div><div class="skill-front-label">Power BI</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div>
-                    <div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>Power BI</h3><div class="skill-back-sub">BI dashboards &amp; reporting</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Dashboards</span><span class="skill-stag">DAX</span><span class="skill-stag">Reports</span><span class="skill-stag">Data Modeling</span><span class="skill-stag">Power Query</span><span class="skill-stag">KPI Visuals</span></div></div>
-                </div>
-            </div>
+            <div class="skill-scene" data-scene="1"><div class="skill-flip-card card-msoffice" tabindex="0" role="button"><div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><span class="emoji-icon">📋</span></div><div class="skill-front-label">MS Office Suite</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div><div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>MS Office Suite</h3><div class="skill-back-sub" data-i18n="msOfficeSub">Office &amp; design tools</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">MS Word</span><span class="skill-stag">PowerPoint</span><span class="skill-stag">Canva</span><span class="skill-stag">CorelDraw</span><span class="skill-stag">Formatting</span><span class="skill-stag">Presentations</span></div></div></div></div>
+            <div class="skill-scene" data-scene="2"><div class="skill-flip-card card-stats" tabindex="0" role="button"><div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Statistics.jpg" alt="Statistics"></div><div class="skill-front-label">Statistics</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div><div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>Statistics</h3><div class="skill-back-sub" data-i18n="statsSub">Data analysis &amp; probability</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Descriptive Stats</span><span class="skill-stag">Probability</span><span class="skill-stag">Visualization</span><span class="skill-stag">Mean/Median</span><span class="skill-stag">Std Deviation</span><span class="skill-stag">Distribution</span></div></div></div></div>
+            <div class="skill-scene" data-scene="3"><div class="skill-flip-card card-excel" tabindex="0" role="button"><div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Excel.jpg" alt="Advanced Excel"></div><div class="skill-front-label">Advanced Excel</div><span class="skill-front-badge">PROFICIENT</span><div class="skill-hover-hint">tap to flip</div></div><div class="skill-face skill-back"><div class="skill-back-badge">Proficient</div><h3>Advanced Excel</h3><div class="skill-back-sub" data-i18n="excelSub">Full data management toolkit</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Pivot Tables</span><span class="skill-stag">Macros</span><span class="skill-stag">XLOOKUP</span><span class="skill-stag">Charts</span><span class="skill-stag">Dashboard</span><span class="skill-stag">Formulas</span><span class="skill-stag">VBA</span><span class="skill-stag">Data Validation</span></div></div></div></div>
+            <div class="skill-scene" data-scene="4"><div class="skill-flip-card card-sql" tabindex="0" role="button"><div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="SQL.jpg" alt="SQL"></div><div class="skill-front-label">SQL</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div><div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>SQL</h3><div class="skill-back-sub" data-i18n="sqlSub">Database queries &amp; design</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">MySQL</span><span class="skill-stag">Queries</span><span class="skill-stag">Joins</span><span class="skill-stag">Aggregation</span><span class="skill-stag">Stored Procs</span><span class="skill-stag">Triggers</span><span class="skill-stag">DB Design</span></div></div></div></div>
+            <div class="skill-scene" data-scene="5"><div class="skill-flip-card card-python" tabindex="0" role="button"><div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Python.jpg" alt="Python"></div><div class="skill-front-label">Python</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div><div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>Python</h3><div class="skill-back-sub" data-i18n="pythonSub">Data analysis libraries</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Pandas</span><span class="skill-stag">NumPy</span><span class="skill-stag">Matplotlib</span><span class="skill-stag">Seaborn</span><span class="skill-stag">EDA</span><span class="skill-stag">Data Cleaning</span></div></div></div></div>
+            <div class="skill-scene" data-scene="6"><div class="skill-flip-card card-powerbi" tabindex="0" role="button"><div class="skill-face skill-front"><div class="skill-front-shine"></div><div class="skill-front-icon"><img src="Power-BI.jpg" alt="Power BI"></div><div class="skill-front-label">Power BI</div><span class="skill-front-badge">3 MO · LEARNING</span><div class="skill-hover-hint">tap to flip</div></div><div class="skill-face skill-back"><div class="skill-back-badge">Learning</div><h3>Power BI</h3><div class="skill-back-sub" data-i18n="pbiSub">BI dashboards &amp; reporting</div><div class="skill-back-divider"></div><div class="skill-tags-row"><span class="skill-stag">Dashboards</span><span class="skill-stag">DAX</span><span class="skill-stag">Reports</span><span class="skill-stag">Data Modeling</span><span class="skill-stag">Power Query</span><span class="skill-stag">KPI Visuals</span></div></div></div></div>
         </div>
     </div>
 </section>
@@ -639,21 +786,21 @@
 <section id="experience" class="section" style="background:var(--section-alt);">
     <div class="section-inner">
         <div class="section-center">
-            <span class="section-tag">Professional Journey</span>
-            <h2 class="section-title">Experience</h2>
+            <span class="section-tag" data-i18n="expTag">Professional Journey</span>
+            <h2 class="section-title" data-i18n="expTitle">Experience</h2>
             <div class="divider-line"></div>
         </div>
         <div class="experience-wrap">
             <div class="exp-card" data-aos="fade-right">
                 <div class="exp-period"><span class="year">2025 — 2026</span><span class="dur">1 YEAR</span></div>
-                <h3 class="exp-title">Exam Office Assistant</h3>
-                <p class="exp-company"><i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/gr247Dr97EpHqqkEA" target="_blank" rel="noopener" style="text-decoration:none;">Jamia Tul Falah School, Uttar Pradesh</a></p>
+                <h3 class="exp-title" data-i18n="expRole">Exam Office Assistant</h3>
+                <p class="exp-company"><i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/gr247Dr97EpHqqkEA" target="_blank" rel="noopener">Jamia Tul Falah School, Uttar Pradesh</a></p>
                 <ul class="exp-list">
-                    <li><i class="fa-solid fa-check"></i>Managed examination records for 5000+ students</li>
-                    <li><i class="fa-solid fa-check"></i>Built Excel-based reports on exam results &amp; attendance</li>
-                    <li><i class="fa-solid fa-check"></i>Improved data organization efficiency by 40%</li>
-                    <li><i class="fa-solid fa-check"></i>Applied Pivot Tables &amp; Macros, XLOOKUP &amp; Charts to visualize academic performance trends</li>
-                    <li><i class="fa-solid fa-check"></i>Maintained 100% data accuracy across all student databases</li>
+                    <li><i class="fa-solid fa-check"></i><span data-i18n="expL1">Managed examination records for 5000+ students</span></li>
+                    <li><i class="fa-solid fa-check"></i><span data-i18n="expL2">Built Excel-based reports on exam results &amp; attendance</span></li>
+                    <li><i class="fa-solid fa-check"></i><span data-i18n="expL3">Improved data organization efficiency by 40%</span></li>
+                    <li><i class="fa-solid fa-check"></i><span data-i18n="expL4">Applied Pivot Tables &amp; Macros, XLOOKUP &amp; Charts to visualize academic performance trends</span></li>
+                    <li><i class="fa-solid fa-check"></i><span data-i18n="expL5">Maintained 100% data accuracy across all student databases</span></li>
                 </ul>
                 <div class="exp-card-bottom">
                     <div class="exp-icons-row">
@@ -662,7 +809,7 @@
                     </div>
                     <div>
                         <div class="exp-tech-label">Excel · Pivot Tables · XLOOKUP · Charts</div>
-                        <div class="exp-delivered" style="margin-top:0.25rem;"><i class="fa-solid fa-circle-check"></i> Delivered</div>
+                        <div class="exp-delivered"><i class="fa-solid fa-circle-check"></i> <span data-i18n="delivered">Delivered</span></div>
                     </div>
                 </div>
             </div>
@@ -674,50 +821,20 @@
 <section id="projects" class="section projects-section">
     <div class="section-inner">
         <div class="section-center">
-            <span class="section-tag">Portfolio</span>
-            <h2 class="section-title">Projects</h2>
+            <span class="section-tag" data-i18n="projTag">Portfolio</span>
+            <h2 class="section-title" data-i18n="projTitle">Projects</h2>
             <div class="divider-line"></div>
-            <p class="section-subtitle" style="margin-top:0.75rem;">Data analysis and visualization projects</p>
+            <p class="section-subtitle" style="margin-top:0.75rem;" data-i18n="projSub">Data analysis and visualization projects</p>
         </div>
         <div class="projects-table-wrap" data-aos="fade-left">
             <table class="projects-table">
-                <thead><tr><th>No.</th><th>Project Name</th><th>Description</th><th>Tools Used</th><th>Status</th><th>Link</th></tr></thead>
+                <thead><tr><th data-i18n="thNo">No.</th><th data-i18n="thName">Project Name</th><th data-i18n="thDesc">Description</th><th data-i18n="thTools">Tools Used</th><th data-i18n="thStatus">Status</th><th data-i18n="thLink">Link</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td class="proj-num">01</td><td class="proj-name">Student Performance Dashboard</td>
-                        <td class="proj-desc">Excel dashboard analyzing 5000+ student exam scores, attendance patterns, and grade trends.</td>
-                        <td><div class="proj-tools"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Pivot Tables</span><span class="proj-tool-tag">XLOOKUP</span><span class="proj-tool-tag">Charts</span></div></td>
-                        <td><span class="proj-status done"><span class="sdot"></span>Completed</span></td>
-                        <td><a href="#" class="project-btn"><i class="fa-brands fa-github" style="font-size:0.65rem;"></i> View Excel</a></td>
-                    </tr>
-                    <tr>
-                        <td class="proj-num">02</td><td class="proj-name">Attendance Analytics Report</td>
-                        <td class="proj-desc">Statistical analysis identifying attendance patterns with automated monthly reports.</td>
-                        <td><div class="proj-tools"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Statistics</span><span class="proj-tool-tag">Formulas</span></div></td>
-                        <td><span class="proj-status done"><span class="sdot"></span>Completed</span></td>
-                        <td><span class="proj-link-coming">Coming soon</span></td>
-                    </tr>
-                    <tr>
-                        <td class="proj-num">03</td><td class="proj-name">SQL Sales Data Analysis</td>
-                        <td class="proj-desc">Querying retail sales database using SQL joins, aggregations, and subqueries.</td>
-                        <td><div class="proj-tools"><span class="proj-tool-tag">MySQL</span><span class="proj-tool-tag">SQL Joins</span><span class="proj-tool-tag">Aggregation</span></div></td>
-                        <td><span class="proj-status wip"><span class="sdot"></span>In Progress</span></td>
-                        <td><span class="proj-link-coming">Coming soon</span></td>
-                    </tr>
-                    <tr>
-                        <td class="proj-num">04</td><td class="proj-name">Python EDA – Student Dataset</td>
-                        <td class="proj-desc">Exploratory data analysis using Pandas, NumPy and Matplotlib/Seaborn visualizations.</td>
-                        <td><div class="proj-tools"><span class="proj-tool-tag">Python</span><span class="proj-tool-tag">Pandas</span><span class="proj-tool-tag">Matplotlib</span><span class="proj-tool-tag">Seaborn</span></div></td>
-                        <td><span class="proj-status wip"><span class="sdot"></span>In Progress</span></td>
-                        <td><span class="proj-link-coming">Coming soon</span></td>
-                    </tr>
-                    <tr>
-                        <td class="proj-num">05</td><td class="proj-name">Power BI School KPI Dashboard</td>
-                        <td class="proj-desc">Interactive Power BI dashboard for school KPIs — enrollment, pass rates, performance trends.</td>
-                        <td><div class="proj-tools"><span class="proj-tool-tag">Power BI</span><span class="proj-tool-tag">DAX</span><span class="proj-tool-tag">Data Modeling</span></div></td>
-                        <td><span class="proj-status wip"><span class="sdot"></span>In Progress</span></td>
-                        <td><span class="proj-link-coming">Coming soon</span></td>
-                    </tr>
+                    <tr><td class="proj-num">01</td><td class="proj-name" data-i18n="p1name">Student Performance Dashboard</td><td class="proj-desc" data-i18n="p1desc">Excel dashboard analyzing 5000+ student exam scores, attendance patterns, and grade trends.</td><td><div class="proj-tools"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Pivot Tables</span><span class="proj-tool-tag">XLOOKUP</span><span class="proj-tool-tag">Charts</span></div></td><td><span class="proj-status done"><span class="sdot"></span><span data-i18n="completed">Completed</span></span></td><td><a href="#" class="project-btn"><i class="fa-brands fa-github" style="font-size:0.65rem;"></i> View Excel</a></td></tr>
+                    <tr><td class="proj-num">02</td><td class="proj-name" data-i18n="p2name">Attendance Analytics Report</td><td class="proj-desc" data-i18n="p2desc">Statistical analysis identifying attendance patterns with automated monthly reports.</td><td><div class="proj-tools"><span class="proj-tool-tag">Excel</span><span class="proj-tool-tag">Statistics</span><span class="proj-tool-tag">Formulas</span></div></td><td><span class="proj-status done"><span class="sdot"></span><span data-i18n="completed">Completed</span></span></td><td><span class="proj-link-coming" data-i18n="comingSoon">Coming soon</span></td></tr>
+                    <tr><td class="proj-num">03</td><td class="proj-name" data-i18n="p3name">SQL Sales Data Analysis</td><td class="proj-desc" data-i18n="p3desc">Querying retail sales database using SQL joins, aggregations, and subqueries.</td><td><div class="proj-tools"><span class="proj-tool-tag">MySQL</span><span class="proj-tool-tag">SQL Joins</span><span class="proj-tool-tag">Aggregation</span></div></td><td><span class="proj-status wip"><span class="sdot"></span><span data-i18n="inProgress">In Progress</span></span></td><td><span class="proj-link-coming" data-i18n="comingSoon">Coming soon</span></td></tr>
+                    <tr><td class="proj-num">04</td><td class="proj-name" data-i18n="p4name">Python EDA – Student Dataset</td><td class="proj-desc" data-i18n="p4desc">Exploratory data analysis using Pandas, NumPy and Matplotlib/Seaborn visualizations.</td><td><div class="proj-tools"><span class="proj-tool-tag">Python</span><span class="proj-tool-tag">Pandas</span><span class="proj-tool-tag">Matplotlib</span><span class="proj-tool-tag">Seaborn</span></div></td><td><span class="proj-status wip"><span class="sdot"></span><span data-i18n="inProgress">In Progress</span></span></td><td><span class="proj-link-coming" data-i18n="comingSoon">Coming soon</span></td></tr>
+                    <tr><td class="proj-num">05</td><td class="proj-name" data-i18n="p5name">Power BI School KPI Dashboard</td><td class="proj-desc" data-i18n="p5desc">Interactive Power BI dashboard for school KPIs — enrollment, pass rates, performance trends.</td><td><div class="proj-tools"><span class="proj-tool-tag">Power BI</span><span class="proj-tool-tag">DAX</span><span class="proj-tool-tag">Data Modeling</span></div></td><td><span class="proj-status wip"><span class="sdot"></span><span data-i18n="inProgress">In Progress</span></span></td><td><span class="proj-link-coming" data-i18n="comingSoon">Coming soon</span></td></tr>
                 </tbody>
             </table>
         </div>
@@ -734,18 +851,22 @@
 <!-- EDUCATION -->
 <section id="education" class="section" style="background:var(--white);">
     <div class="section-inner">
-        <div class="edu-certs-outer">
-            <div data-aos="fade-right">
-                <span class="section-tag">Education</span>
-                <h2 class="section-title">Academic Background</h2>
-                <div class="divider-line"></div>
-                <div class="edu-grid">
-                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">BCA (Online) – Bachelor of Computer Applications</div><div class="edu-org">Amity University, Noida</div><div class="edu-year">2024 – 2027 (Pursuing)</div></div><a class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
-                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">ADCA – Advanced Diploma in Computer Applications</div><div class="edu-org">GIST, Uttar Pradesh</div><div class="edu-year">2024 – 2025</div></div><a href="ADCA-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
-                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">12th – UP Board (Intermediate)</div><div class="edu-org">Amina G I C Azamgarh</div><div class="edu-year">2023</div></div><a href="12th-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
-                    <div class="edu-card"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">10th – UP Board (High School)</div><div class="edu-org">Adarsh Janta A I C Azamgarh</div><div class="edu-year">2021</div></div><a href="10th-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
-                </div>
-            </div>
+        <div class="section-center" data-aos="fade-up">
+            <span class="section-tag" data-i18n="eduTag">Education</span>
+            <h2 class="section-title" data-i18n="eduTitle">Academic Background</h2>
+            <div class="divider-line"></div>
+        </div>
+        <div class="edu-grid-mobile">
+            <div class="edu-card" data-aos="fade-right"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">BCA (Online) – Bachelor of Computer Applications</div><div class="edu-org">Amity University, Noida</div><div class="edu-year">2024 – 2027 (Pursuing)</div></div><a class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+            <div class="edu-card" data-aos="fade-right" data-aos-delay="50"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">ADCA – Advanced Diploma in Computer Applications</div><div class="edu-org">GIST, Uttar Pradesh</div><div class="edu-year">2024 – 2025</div></div><a href="ADCA-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
+            <div class="edu-card" data-aos="fade-right" data-aos-delay="100"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">12th – UP Board (Intermediate)</div><div class="edu-org">Amina G I C Azamgarh</div><div class="edu-year">2023</div></div><a href="12th-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
+            <div class="edu-card" data-aos="fade-right" data-aos-delay="150"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">10th – UP Board (High School)</div><div class="edu-org">Adarsh Janta A I C Azamgarh</div><div class="edu-year">2021</div></div><a href="10th-Marksheet.jpeg" class="edu-cert-btn"><i class="fa-solid fa-eye" style="font-size:0.6rem;"></i><span class="btn-label">View Marksheet</span><span class="btn-label-mobile">Click</span></a></div>
+        </div>
+        <div class="edu-flip-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="edu-scene"><div class="edu-flip-card" id="edu-bca" tabindex="0" role="button"><div class="edu-face edu-front"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">BCA (Online) – Bachelor of Computer Applications</div><div class="edu-org">Amity University, Noida</div><div class="edu-year">2024 – 2027 · Pursuing</div></div></div><div class="edu-face edu-back"><div class="edu-back-head"><div class="edu-back-titles"><div class="edu-back-label">Bachelor of Computer Applications</div><div class="edu-back-title">BCA — Amity University, Noida</div></div><a class="edu-back-topbtn amber"><i class="fa-solid fa-spinner fa-spin" style="font-size:0.44rem;"></i> In Progress</a></div><div class="edu-back-divider"></div><table class="edu-back-table"><tr><td class="ebt-key">CGPA</td><td class="ebt-val amber">9.25</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Year</td><td class="ebt-val white">2024–2027</td></tr><tr><td class="ebt-key">Grade</td><td class="ebt-val amber">A+</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Specialization</td><td class="ebt-val amber">Data Analytics</td></tr></table></div></div></div>
+            <div class="edu-scene"><div class="edu-flip-card" id="edu-adca" tabindex="0" role="button"><div class="edu-face edu-front"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">ADCA – Adv. Diploma in Computer Applications</div><div class="edu-org">GIST, Uttar Pradesh</div><div class="edu-year">2024 – 2025</div></div></div><div class="edu-face edu-back"><div class="edu-back-head"><div class="edu-back-titles"><div class="edu-back-label">Advanced Diploma — Computer Applications</div><div class="edu-back-title">ADCA — GIST, Uttar Pradesh</div></div><a href="ADCA-Marksheet.jpeg" class="edu-back-topbtn blue"><i class="fa-solid fa-eye" style="font-size:0.44rem;"></i> View Marksheet</a></div><div class="edu-back-divider"></div><table class="edu-back-table"><tr><td class="ebt-key">Percentage</td><td class="ebt-val">84</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Year</td><td class="ebt-val white">2024–2025</td></tr><tr><td class="ebt-key">Grade</td><td class="ebt-val">A+</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Subject</td><td class="ebt-val">Computer Apps</td></tr></table></div></div></div>
+            <div class="edu-scene"><div class="edu-flip-card" id="edu-12th" tabindex="0" role="button"><div class="edu-face edu-front"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">12th – UP Board (Intermediate)</div><div class="edu-org">Amina G I C Azamgarh</div><div class="edu-year">2023</div></div></div><div class="edu-face edu-back"><div class="edu-back-head"><div class="edu-back-titles"><div class="edu-back-label">Intermediate — UP Board</div><div class="edu-back-title">12th — Amina G I C Azamgarh</div></div><a href="12th-Marksheet.jpeg" class="edu-back-topbtn blue"><i class="fa-solid fa-eye" style="font-size:0.44rem;"></i> View Marksheet</a></div><div class="edu-back-divider"></div><table class="edu-back-table"><tr><td class="ebt-key">Percentage</td><td class="ebt-val">59.2</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Year</td><td class="ebt-val white">2023</td></tr><tr><td class="ebt-key">Grade</td><td class="ebt-val">A</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Subject</td><td class="ebt-val">Science</td></tr></table></div></div></div>
+            <div class="edu-scene"><div class="edu-flip-card" id="edu-10th" tabindex="0" role="button"><div class="edu-face edu-front"><i class="fa-solid fa-graduation-cap edu-icon"></i><div class="edu-card-body"><div class="edu-degree">10th – UP Board (High School)</div><div class="edu-org">Adarsh Janta A I C Azamgarh</div><div class="edu-year">2021</div></div></div><div class="edu-face edu-back"><div class="edu-back-head"><div class="edu-back-titles"><div class="edu-back-label">High School — UP Board</div><div class="edu-back-title">10th — Adarsh Janta A I C</div></div><a href="10th-Marksheet.jpeg" class="edu-back-topbtn blue"><i class="fa-solid fa-eye" style="font-size:0.44rem;"></i> View Marksheet</a></div><div class="edu-back-divider"></div><table class="edu-back-table"><tr><td class="ebt-key">Percentage</td><td class="ebt-val">66</td><td class="ebt-sep"><span class="ebt-sep-line"></span></td><td class="ebt-key">Year</td><td class="ebt-val white">2021</td></tr><tr><td class="ebt-key">Grade</td><td class="ebt-val">A</td><td class="ebt-sep"><span class="ebt-sep-line"><Area></Area></span></td><td class="ebt-key">Subject</td><td class="ebt-val">Mathematics</td></tr></table></div></div></div>
         </div>
     </div>
 </section>
@@ -754,16 +875,18 @@
 <section id="certificates" class="section" style="background:var(--section-alt);">
     <div class="section-inner">
         <div data-aos="fade-left">
-            <span class="section-tag">Achievements</span>
-            <h2 class="section-title">Certificates</h2>
-            <div class="divider-line"></div>
-            <p style="font-size:0.86rem;color:var(--text-muted);margin-top:0.5rem;margin-bottom:1.25rem;">Professional certifications, self-learning milestones &amp; real-world achievements</p>
+            <div class="section-center">
+                <span class="section-tag" data-i18n="certTag">Achievements</span>
+                <h2 class="section-title" data-i18n="certTitle">Certificates</h2>
+                <div class="divider-line"></div>
+            </div>
+            <p style="font-size:0.86rem;color:var(--text-muted);margin-top:0.5rem;margin-bottom:1.25rem;text-align:center;" data-i18n="certSub">Professional certifications, self-learning milestones &amp; real-world achievements</p>
             <div style="display:flex;flex-direction:column;gap:0.65rem;">
-                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">Advanced Excel — Pivot Tables, XLOOKUP, Charts, Statistical Formulas</div></div><a href="Advanced-Excel-Certificate.jpeg" class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">View Certificate</span><span class="btn-label-mobile">Click</span></a></div>
-                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">Use Excel Formulas with AI — Create Dashboard In Under 2 Minutes — Can Use Macros and VBA Using AI</div></div><a href="Using-Ai-Certificate.jpeg" class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">View Certificate</span><span class="btn-label-mobile">Click</span></a></div>
-                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">I will learn SQL, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
-                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">I will learn Python, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
-                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text">I will learn Power BI, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text" data-i18n="cert1">Advanced Excel — Pivot Tables, XLOOKUP, Charts, Statistical Formulas</div></div><a href="Advanced-Excel-Certificate.jpeg" class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label" data-i18n="viewCert">View Certificate</span><span class="btn-label-mobile">Click</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text" data-i18n="cert2">Use Excel Formulas with AI — Create Dashboard In Under 2 Minutes — Can Use Macros and VBA Using AI</div></div><a href="Using-Ai-Certificate.jpeg" class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label" data-i18n="viewCert">View Certificate</span><span class="btn-label-mobile">Click</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text" data-i18n="cert3">I will learn SQL, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text" data-i18n="cert4">I will learn Python, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
+                <div class="cert-card"><i class="fa-solid fa-award cert-icon"></i><div class="cert-card-body"><div class="cert-card-text" data-i18n="cert5">I will learn Power BI, get its certificate, and update it here</div></div><a class="cert-view-btn"><i class="fa-solid fa-eye" style="font-size:0.62rem;"></i><span class="btn-label">In Progress..........</span><span class="btn-label-mobile">Prog..</span></a></div>
             </div>
         </div>
     </div>
@@ -773,15 +896,15 @@
 <section id="contact" class="section" style="background:var(--section-alt);">
     <div class="section-inner">
         <div class="section-center">
-            <span class="section-tag">Get In Touch</span>
-            <h2 class="section-title">Contact Me</h2>
+            <span class="section-tag" data-i18n="contactTag">Get In Touch</span>
+            <h2 class="section-title" data-i18n="contactTitle">Contact Me</h2>
             <div class="divider-line"></div>
-            <p class="section-subtitle" style="margin-top:0.5rem;">Feel free to reach out anytime</p>
+            <p class="section-subtitle" style="margin-top:0.5rem;" data-i18n="contactSub">Feel free to reach out anytime</p>
         </div>
         <div class="contact-inner">
             <div class="contact-cards" data-aos="fade-up">
-                <a href="tel:9369409820" class="contact-card"><div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div><div style="min-width:0;"><div class="contact-card-label">Phone</div><div class="contact-card-value">+91 93694 09820</div></div></a>
-                <a href="mailto:mohdhassanhassanshaikh@gmail.com" class="contact-card"><div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div><div style="min-width:0;"><div class="contact-card-label">Email</div><div class="contact-card-value" style="font-size:0.66rem;">mohdhassanhassanshaikh@gmail.com</div></div></a>
+                <a href="tel:9369409820" class="contact-card"><div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div><div style="min-width:0;"><div class="contact-card-label" data-i18n="phone">Phone</div><div class="contact-card-value">+91 93694 09820</div></div></a>
+                <a href="mailto:mohdhassanhassanshaikh@gmail.com" class="contact-card"><div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div><div style="min-width:0;"><div class="contact-card-label" data-i18n="email">Email</div><div class="contact-card-value" style="font-size:0.66rem;">mohdhassanhassanshaikh@gmail.com</div></div></a>
                 <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" class="contact-card"><div class="contact-card-icon"><i class="fa-brands fa-linkedin"></i></div><div style="min-width:0;"><div class="contact-card-label">LinkedIn</div><div class="contact-card-value">linkedin.com</div></div></a>
             </div>
             <div class="map-wrap" data-aos="fade-up" data-aos-delay="100">
@@ -796,186 +919,376 @@
 <footer>
     <div class="footer-name">MOHD HASSAN</div>
     <div class="footer-social">
-        <a href="https://wa.me/919369409820?text=Hi" target="_blank" rel="noopener" class="footer-social-btn whatsapp" title="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="https://www.youtube.com/@hassanshaikh12345" target="_blank" rel="noopener" class="footer-social-btn youtube" title="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=100086029205583" target="_blank" rel="noopener" class="footer-social-btn facebook" title="Facebook">
-            <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/mohdhassanshaikh179?igsh=YmZlNXFvZzlza3g1" target="_blank" rel="noopener" class="footer-social-btn instagram" title="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://x.com/@mohdmh179" target="_blank" rel="noopener" class="footer-social-btn twitter" title="X (Twitter)">
-            <i class="fa-brands fa-x-twitter"></i>
-        </a>
+        <a href="https://wa.me/919369409820?text=Hi" target="_blank" rel="noopener" class="footer-social-btn whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/@hassanshaikh12345" target="_blank" rel="noopener" class="footer-social-btn youtube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100086029205583" target="_blank" rel="noopener" class="footer-social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/mohdhassanshaikh179?igsh=YmZlNXFvZzlza3g1" target="_blank" rel="noopener" class="footer-social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://x.com/@mohdmh179" target="_blank" rel="noopener" class="footer-social-btn twitter"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
-    <p class="footer-copy">© 2026 · Built as a fully responsive portfolio showcasing data analysis expertise</p>
+    <p class="footer-copy" data-i18n="footerCopy">© 2026 · Built as a fully responsive portfolio showcasing data analysis expertise</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    /* DARK MODE */
-    function applyTheme(dark) {
-        var html = document.documentElement;
-        var icon = document.getElementById('theme-icon');
-        if (dark) { html.classList.add('dark'); if (icon) icon.className = 'fa-solid fa-sun'; try { localStorage.setItem('theme','dark'); } catch(e){} }
-        else { html.classList.remove('dark'); if (icon) icon.className = 'fa-solid fa-moon'; try { localStorage.setItem('theme','light'); } catch(e){} }
-    }
-    function toggleDark() { applyTheme(!document.documentElement.classList.contains('dark')); }
-    (function initTheme() {
-        var saved; try { saved = localStorage.getItem('theme'); } catch(e){}
-        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        applyTheme(saved === 'dark' || (!saved && prefersDark));
-    })();
+/* ══════════════════════════════════════════════════
+   TRANSLATIONS
+══════════════════════════════════════════════════ */
+var TRANSLATIONS = {
+  'en': { heroDesc:'Detail-oriented professional with 1 year of hands-on experience managing 5000+ student datasets. Turning raw data into actionable insights using Advanced Excel, Statistics & visualizations.', viewPresentation:'View Presentation', statStudents:'Student records managed', statAccuracy:'Data accuracy', statEfficiency:'Efficiency improvement', aboutTag:'Career Objective', aboutTitleGreen:'Data Analyst Aspirant', aboutTitleSub:'delivering data-driven insights', aboutDesc:'Detail-oriented Data Analyst Aspirant with proven experience managing datasets for 5000+ students using Advanced Excel and Statistics. Skilled at generating actionable insights through analytical reports, Dashboards, Pivot Tables, Macros, and data visualization. Currently mastering SQL, Python (Pandas, NumPy, Matplotlib, Seaborn), and Power BI to build full-stack data analysis capabilities.', coreStrengths:'Core Strengths', s1:'Analytical Thinking',s2:'Attention to Detail',s3:'Quick Learner',s4:'Time Management',s5:'Team Collaboration',s6:'Data Accuracy Focus',s7:'Data Visualization',s8:'Problem Solving',s9:'Communication',s10:'Goal Oriented',s11:'Adaptability',s12:'Data Management', counterStudents:'Students Data Managed', counterEff:'% Efficiency Improved', counterEffSub:'Through Excel Reports', techProficiency:'Technical Proficiency', typing:'Typing:', skillsTag:'Tools & Technologies', skillsTitle:'Technical Skills', skillsSub:'Proficient · Learning (3 Months) — Hover/Tap to flip', msOfficeSub:'Office & design tools', statsSub:'Data analysis & probability', excelSub:'Full data management toolkit', sqlSub:'Database queries & design', pythonSub:'Data analysis libraries', pbiSub:'BI dashboards & reporting', expTag:'Professional Journey', expTitle:'Experience', expRole:'Exam Office Assistant', expL1:'Managed examination records for 5000+ students', expL2:'Built Excel-based reports on exam results & attendance', expL3:'Improved data organization efficiency by 40%', expL4:'Applied Pivot Tables & Macros, XLOOKUP & Charts to visualize academic performance trends', expL5:'Maintained 100% data accuracy across all student databases', delivered:'Delivered', projTag:'Portfolio', projTitle:'Projects', projSub:'Data analysis and visualization projects', thNo:'No.', thName:'Project Name', thDesc:'Description', thTools:'Tools Used', thStatus:'Status', thLink:'Link', p1name:'Student Performance Dashboard', p1desc:'Excel dashboard analyzing 5000+ student exam scores, attendance patterns, and grade trends.', p2name:'Attendance Analytics Report', p2desc:'Statistical analysis identifying attendance patterns with automated monthly reports.', p3name:'SQL Sales Data Analysis', p3desc:'Querying retail sales database using SQL joins, aggregations, and subqueries.', p4name:'Python EDA – Student Dataset', p4desc:'Exploratory data analysis using Pandas, NumPy and Matplotlib/Seaborn visualizations.', p5name:'Power BI School KPI Dashboard', p5desc:'Interactive Power BI dashboard for school KPIs — enrollment, pass rates, performance trends.', completed:'Completed', inProgress:'In Progress', comingSoon:'Coming soon', eduTag:'Education', eduTitle:'Academic Background', certTag:'Achievements', certTitle:'Certificates', certSub:'Professional certifications, self-learning milestones & real-world achievements', cert1:'Advanced Excel — Pivot Tables, XLOOKUP, Charts, Statistical Formulas', cert2:'Use Excel Formulas with AI — Create Dashboard In Under 2 Minutes — Can Use Macros and VBA Using AI', cert3:'I will learn SQL, get its certificate, and update it here', cert4:'I will learn Python, get its certificate, and update it here', cert5:'I will learn Power BI, get its certificate, and update it here', viewCert:'View Certificate', contactTag:'Get In Touch', contactTitle:'Contact Me', contactSub:'Feel free to reach out anytime', phone:'Phone', email:'Email', footerCopy:'© 2026 · Built as a fully responsive portfolio showcasing data analysis expertise' },
+  'hi': { heroDesc:'1 वर्ष के व्यावहारिक अनुभव के साथ 5000+ छात्रों के डेटासेट प्रबंधित करने वाले विशेषज्ञ।', viewPresentation:'प्रेजेंटेशन देखें', statStudents:'छात्र रिकॉर्ड प्रबंधित', statAccuracy:'डेटा सटीकता', statEfficiency:'दक्षता सुधार', aboutTag:'करियर उद्देश्य', aboutTitleGreen:'डेटा विश्लेषक अभिलाषी', aboutTitleSub:'डेटा-आधारित अंतर्दृष्टि प्रदान करते हैं', aboutDesc:'विस्तार-उन्मुख डेटा विश्लेषक अभिलाषी जिनके पास Advanced Excel और Statistics का उपयोग करके 5000+ छात्रों के डेटासेट प्रबंधित करने का सिद्ध अनुभव है।', coreStrengths:'मुख्य शक्तियाँ', s1:'विश्लेषणात्मक सोच',s2:'विवरण पर ध्यान',s3:'त्वरित सीखने वाले',s4:'समय प्रबंधन',s5:'टीम सहयोग',s6:'डेटा सटीकता',s7:'डेटा विज़ुअलाइज़ेशन',s8:'समस्या समाधान',s9:'संचार',s10:'लक्ष्य उन्मुख',s11:'अनुकूलनशीलता',s12:'डेटा प्रबंधन', counterStudents:'छात्र डेटा प्रबंधित', counterEff:'% दक्षता सुधार', counterEffSub:'Excel रिपोर्ट के माध्यम से', techProficiency:'तकनीकी दक्षता', typing:'टाइपिंग:', skillsTag:'टूल्स और तकनीक', skillsTitle:'तकनीकी कौशल', skillsSub:'दक्ष · सीख रहे हैं (3 महीने)', msOfficeSub:'ऑफिस और डिज़ाइन टूल्स', statsSub:'डेटा विश्लेषण और संभाव्यता', excelSub:'पूर्ण डेटा प्रबंधन', sqlSub:'डेटाबेस क्वेरी', pythonSub:'डेटा विश्लेषण लाइब्रेरी', pbiSub:'BI डैशबोर्ड', expTag:'पेशेवर यात्रा', expTitle:'अनुभव', expRole:'परीक्षा कार्यालय सहायक', expL1:'5000+ छात्रों के परीक्षा रिकॉर्ड प्रबंधित', expL2:'Excel रिपोर्ट बनाई', expL3:'40% दक्षता सुधार', expL4:'Pivot Tables, XLOOKUP उपयोग', expL5:'100% डेटा सटीकता', delivered:'पूर्ण', projTag:'पोर्टफोलियो', projTitle:'परियोजनाएं', projSub:'डेटा विश्लेषण परियोजनाएं', thNo:'क्र.', thName:'परियोजना नाम', thDesc:'विवरण', thTools:'टूल्स', thStatus:'स्थिति', thLink:'लिंक', p1name:'छात्र प्रदर्शन डैशबोर्ड', p1desc:'5000+ छात्रों के परीक्षा अंक विश्लेषण।', p2name:'उपस्थिति विश्लेषण रिपोर्ट', p2desc:'उपस्थिति पैटर्न सांख्यिकीय विश्लेषण।', p3name:'SQL बिक्री डेटा', p3desc:'SQL joins उपयोग।', p4name:'Python EDA', p4desc:'Pandas, NumPy विश्लेषण।', p5name:'Power BI KPI डैशबोर्ड', p5desc:'इंटरैक्टिव Power BI।', completed:'पूर्ण', inProgress:'प्रगति में', comingSoon:'जल्द आ रहा', eduTag:'शिक्षा', eduTitle:'शैक्षणिक पृष्ठभूमि', certTag:'उपलब्धियां', certTitle:'प्रमाणपत्र', certSub:'पेशेवर प्रमाणपत्र', cert1:'Advanced Excel — Pivot Tables, XLOOKUP', cert2:'AI के साथ Excel', cert3:'SQL सीखूंगा', cert4:'Python सीखूंगा', cert5:'Power BI सीखूंगा', viewCert:'प्रमाणपत्र देखें', contactTag:'संपर्क', contactTitle:'संपर्क करें', contactSub:'कभी भी संपर्क करें', phone:'फ़ोन', email:'ईमेल', footerCopy:'© 2026 · डेटा विश्लेषण पोर्टफोलियो' },
+  'ar': { heroDesc:'محترف دقيق مع خبرة عملية لمدة عام في إدارة بيانات 5000+ طالب.', viewPresentation:'عرض التقديمي', statStudents:'سجلات الطلاب', statAccuracy:'دقة البيانات', statEfficiency:'تحسين الكفاءة', aboutTag:'الهدف الوظيفي', aboutTitleGreen:'طموح محلل بيانات', aboutTitleSub:'تقديم رؤى مدفوعة بالبيانات', aboutDesc:'طموح دقيق في تحليل البيانات مع خبرة مثبتة في إدارة بيانات 5000+ طالب.', coreStrengths:'نقاط القوة', s1:'التفكير التحليلي',s2:'الاهتمام بالتفاصيل',s3:'متعلم سريع',s4:'إدارة الوقت',s5:'التعاون الجماعي',s6:'دقة البيانات',s7:'تصور البيانات',s8:'حل المشكلات',s9:'التواصل',s10:'موجه للهدف',s11:'التكيف',s12:'إدارة البيانات', counterStudents:'بيانات الطلاب', counterEff:'% تحسين', counterEffSub:'تقارير Excel', techProficiency:'الكفاءة التقنية', typing:'الكتابة:', skillsTag:'الأدوات', skillsTitle:'المهارات', skillsSub:'متقن · يتعلم (3 أشهر)', msOfficeSub:'أدوات المكتب', statsSub:'تحليل البيانات', excelSub:'مجموعة أدوات البيانات', sqlSub:'استعلامات قاعدة البيانات', pythonSub:'مكتبات التحليل', pbiSub:'لوحات معلومات BI', expTag:'الرحلة المهنية', expTitle:'الخبرة', expRole:'مساعد مكتب الامتحانات', expL1:'إدارة سجلات 5000+ طالب', expL2:'بناء تقارير Excel', expL3:'تحسين الكفاءة 40%', expL4:'تطبيق Pivot Tables, XLOOKUP', expL5:'100% دقة البيانات', delivered:'مُنجز', projTag:'المحفظة', projTitle:'المشاريع', projSub:'مشاريع تحليل البيانات', thNo:'رقم', thName:'المشروع', thDesc:'الوصف', thTools:'الأدوات', thStatus:'الحالة', thLink:'الرابط', p1name:'لوحة أداء الطلاب', p1desc:'تحليل 5000+ طالب.', p2name:'تقرير الحضور', p2desc:'تحليل إحصائي.', p3name:'SQL تحليل المبيعات', p3desc:'استعلامات SQL.', p4name:'Python EDA', p4desc:'تحليل استكشافي.', p5name:'Power BI KPI', p5desc:'لوحة تفاعلية.', completed:'مكتمل', inProgress:'قيد التقدم', comingSoon:'قريباً', eduTag:'التعليم', eduTitle:'الخلفية الأكاديمية', certTag:'الإنجازات', certTitle:'الشهادات', certSub:'شهادات مهنية', cert1:'Excel المتقدم', cert2:'Excel مع الذكاء الاصطناعي', cert3:'سأتعلم SQL', cert4:'سأتعلم Python', cert5:'سأتعلم Power BI', viewCert:'عرض الشهادة', contactTag:'تواصل', contactTitle:'اتصل بي', contactSub:'في أي وقت', phone:'هاتف', email:'بريد', footerCopy:'© 2026 · محفظة تحليل البيانات' },
+  'fr': { heroDesc:"Professionnel minutieux avec 1 an d'expérience.", viewPresentation:'Voir la présentation', statStudents:'Dossiers étudiants', statAccuracy:'Précision', statEfficiency:'Efficacité', aboutTag:'Objectif', aboutTitleGreen:'Aspirant analyste', aboutTitleSub:'insights basés sur les données', aboutDesc:"Aspirant analyste de données avec expérience en gestion de 5000+ étudiants.", coreStrengths:'Forces', s1:'Pensée analytique',s2:'Souci du détail',s3:'Apprentissage rapide',s4:'Gestion du temps',s5:'Collaboration',s6:'Précision',s7:'Visualisation',s8:'Résolution',s9:'Communication',s10:'Objectifs',s11:'Adaptabilité',s12:'Gestion données', counterStudents:'Données étudiants', counterEff:"% d'efficacité", counterEffSub:'Rapports Excel', techProficiency:'Compétences', typing:'Frappe :', skillsTag:'Outils', skillsTitle:'Compétences', skillsSub:'Compétent · Apprentissage (3 mois)', msOfficeSub:'Outils bureautiques', statsSub:'Analyse et probabilités', excelSub:'Boîte à outils', sqlSub:'Requêtes BD', pythonSub:'Bibliothèques', pbiSub:'Tableaux BI', expTag:'Parcours', expTitle:'Expérience', expRole:'Assistant examens', expL1:'5000+ dossiers gérés', expL2:'Rapports Excel', expL3:'40% efficacité', expL4:'Pivot Tables, XLOOKUP', expL5:'100% précision', delivered:'Livré', projTag:'Portfolio', projTitle:'Projets', projSub:'Analyse de données', thNo:'N°', thName:'Projet', thDesc:'Description', thTools:'Outils', thStatus:'Statut', thLink:'Lien', p1name:'Dashboard performances', p1desc:'5000+ étudiants analysés.', p2name:'Rapport présences', p2desc:'Analyse statistique.', p3name:'SQL Ventes', p3desc:'Requêtes SQL.', p4name:'Python EDA', p4desc:'Analyse exploratoire.', p5name:'Power BI KPI', p5desc:'Dashboard interactif.', completed:'Terminé', inProgress:'En cours', comingSoon:'Bientôt', eduTag:'Formation', eduTitle:'Parcours académique', certTag:'Réalisations', certTitle:'Certificats', certSub:'Certifications', cert1:'Excel avancé', cert2:"Excel avec l'IA", cert3:"J'apprendrai SQL", cert4:"J'apprendrai Python", cert5:"J'apprendrai Power BI", viewCert:'Voir certificat', contactTag:'Contact', contactTitle:'Contactez-moi', contactSub:'Disponible', phone:'Téléphone', email:'E-mail', footerCopy:"© 2026 · Portfolio d'analyse de données" },
+  'de': { heroDesc:'1 Jahr Erfahrung in der Verwaltung von 5000+ Studentendatensätzen.', viewPresentation:'Präsentation', statStudents:'Studentendaten', statAccuracy:'Genauigkeit', statEfficiency:'Effizienz', aboutTag:'Karriereziel', aboutTitleGreen:'Datenanalyst', aboutTitleSub:'Datenbasierte Erkenntnisse', aboutDesc:'Erfahrener Datenanalyst mit 5000+ Studentendatensätzen.', coreStrengths:'Stärken', s1:'Analytisch',s2:'Detailorientiert',s3:'Schnell lernend',s4:'Zeitmanagement',s5:'Teamarbeit',s6:'Datengenauigkeit',s7:'Visualisierung',s8:'Problemlösung',s9:'Kommunikation',s10:'Zielorientiert',s11:'Anpassungsfähig',s12:'Datenverwaltung', counterStudents:'Studentendaten', counterEff:'% Effizienz', counterEffSub:'Excel-Berichte', techProficiency:'Technische Kenntnisse', typing:'Tippen:', skillsTag:'Tools', skillsTitle:'Fähigkeiten', skillsSub:'Kompetent · Lernend (3 Monate)', msOfficeSub:'Office Tools', statsSub:'Datenanalyse', excelSub:'Excel Toolkit', sqlSub:'Datenbankabfragen', pythonSub:'Python-Bibliotheken', pbiSub:'BI-Dashboards', expTag:'Beruflicher Weg', expTitle:'Erfahrung', expRole:'Prüfungsassistent', expL1:'5000+ Prüfungsunterlagen', expL2:'Excel-Berichte', expL3:'40% Effizienz', expL4:'Pivot Tables, XLOOKUP', expL5:'100% Genauigkeit', delivered:'Geliefert', projTag:'Portfolio', projTitle:'Projekte', projSub:'Datenanalyseprojekte', thNo:'Nr.', thName:'Projekt', thDesc:'Beschreibung', thTools:'Tools', thStatus:'Status', thLink:'Link', p1name:'Leistungs-Dashboard', p1desc:'5000+ Prüfungsergebnisse.', p2name:'Anwesenheitsbericht', p2desc:'Statistische Analyse.', p3name:'SQL Verkaufsanalyse', p3desc:'SQL-Abfragen.', p4name:'Python EDA', p4desc:'Explorative Analyse.', p5name:'Power BI KPI', p5desc:'Interaktives Dashboard.', completed:'Abgeschlossen', inProgress:'In Bearbeitung', comingSoon:'Demnächst', eduTag:'Bildung', eduTitle:'Akademischer Hintergrund', certTag:'Errungenschaften', certTitle:'Zertifikate', certSub:'Zertifizierungen', cert1:'Advanced Excel', cert2:'Excel mit KI', cert3:'SQL lernen', cert4:'Python lernen', cert5:'Power BI lernen', viewCert:'Zertifikat ansehen', contactTag:'Kontakt', contactTitle:'Kontakt', contactSub:'Jederzeit', phone:'Telefon', email:'E-Mail', footerCopy:'© 2026 · Datenanalyse-Portfolio' },
+  'es': { heroDesc:'1 año de experiencia gestionando 5000+ conjuntos de datos.', viewPresentation:'Ver presentación', statStudents:'Registros', statAccuracy:'Precisión', statEfficiency:'Eficiencia', aboutTag:'Objetivo', aboutTitleGreen:'Analista de datos', aboutTitleSub:'insights basados en datos', aboutDesc:'Aspirante a analista de datos con experiencia en 5000+ estudiantes.', coreStrengths:'Fortalezas', s1:'Analítico',s2:'Detallista',s3:'Aprendizaje rápido',s4:'Gestión del tiempo',s5:'Trabajo en equipo',s6:'Precisión',s7:'Visualización',s8:'Resolución',s9:'Comunicación',s10:'Objetivos',s11:'Adaptabilidad',s12:'Gestión datos', counterStudents:'Datos gestionados', counterEff:'% eficiencia', counterEffSub:'Informes Excel', techProficiency:'Competencias', typing:'Escritura:', skillsTag:'Herramientas', skillsTitle:'Habilidades', skillsSub:'Competente · Aprendiendo (3 meses)', msOfficeSub:'Herramientas', statsSub:'Análisis', excelSub:'Kit datos', sqlSub:'Consultas', pythonSub:'Bibliotecas', pbiSub:'Dashboards BI', expTag:'Trayectoria', expTitle:'Experiencia', expRole:'Asistente exámenes', expL1:'5000+ registros', expL2:'Informes Excel', expL3:'40% eficiencia', expL4:'Pivot Tables, XLOOKUP', expL5:'100% precisión', delivered:'Completado', projTag:'Portafolio', projTitle:'Proyectos', projSub:'Análisis de datos', thNo:'N°', thName:'Proyecto', thDesc:'Descripción', thTools:'Herramientas', thStatus:'Estado', thLink:'Enlace', p1name:'Dashboard rendimiento', p1desc:'5000+ notas analizadas.', p2name:'Informe asistencia', p2desc:'Análisis estadístico.', p3name:'SQL ventas', p3desc:'Consultas SQL.', p4name:'Python EDA', p4desc:'Análisis exploratorio.', p5name:'Power BI KPI', p5desc:'Dashboard interactivo.', completed:'Completado', inProgress:'En progreso', comingSoon:'Próximamente', eduTag:'Educación', eduTitle:'Formación', certTag:'Logros', certTitle:'Certificados', certSub:'Certificaciones', cert1:'Excel Avanzado', cert2:'Excel con IA', cert3:'Aprenderé SQL', cert4:'Aprenderé Python', cert5:'Aprenderé Power BI', viewCert:'Ver certificado', contactTag:'Contacto', contactTitle:'Contáctame', contactSub:'Disponible', phone:'Teléfono', email:'Correo', footerCopy:'© 2026 · Portafolio de análisis de datos' },
+  'zh': { heroDesc:'1年管理5000+学生数据集经验。', viewPresentation:'查看演示', statStudents:'学生记录', statAccuracy:'准确性', statEfficiency:'效率', aboutTag:'职业目标', aboutTitleGreen:'数据分析师', aboutTitleSub:'数据驱动洞察', aboutDesc:'管理5000+学生数据集的数据分析志向者。', coreStrengths:'核心优势', s1:'分析思维',s2:'细节',s3:'快速学习',s4:'时间管理',s5:'团队合作',s6:'数据准确',s7:'可视化',s8:'问题解决',s9:'沟通',s10:'目标导向',s11:'适应',s12:'数据管理', counterStudents:'学生数据', counterEff:'%效率', counterEffSub:'Excel报告', techProficiency:'技术熟练度', typing:'打字:', skillsTag:'工具', skillsTitle:'技能', skillsSub:'熟练 · 学习中(3个月)', msOfficeSub:'办公工具', statsSub:'数据分析', excelSub:'Excel工具包', sqlSub:'数据库查询', pythonSub:'Python库', pbiSub:'BI仪表板', expTag:'职业旅程', expTitle:'经验', expRole:'考试助理', expL1:'5000+学生记录', expL2:'Excel报告', expL3:'40%效率提升', expL4:'Pivot Tables, XLOOKUP', expL5:'100%准确性', delivered:'完成', projTag:'作品集', projTitle:'项目', projSub:'数据分析项目', thNo:'序号', thName:'项目', thDesc:'描述', thTools:'工具', thStatus:'状态', thLink:'链接', p1name:'学生绩效仪表板', p1desc:'5000+学生分析。', p2name:'出勤报告', p2desc:'统计分析。', p3name:'SQL销售分析', p3desc:'SQL查询。', p4name:'Python EDA', p4desc:'探索性分析。', p5name:'Power BI KPI', p5desc:'交互式仪表板。', completed:'完成', inProgress:'进行中', comingSoon:'即将', eduTag:'教育', eduTitle:'学术背景', certTag:'成就', certTitle:'证书', certSub:'专业认证', cert1:'Advanced Excel', cert2:'AI Excel', cert3:'学SQL', cert4:'学Python', cert5:'学Power BI', viewCert:'查看证书', contactTag:'联系', contactTitle:'联系我', contactSub:'随时联系', phone:'电话', email:'邮件', footerCopy:'© 2026 · 数据分析作品集' },
+  'ja': { heroDesc:'5000人以上の学生データを管理する1年の実務経験。', viewPresentation:'プレゼンを見る', statStudents:'学生記録', statAccuracy:'精度', statEfficiency:'効率', aboutTag:'キャリア目標', aboutTitleGreen:'データアナリスト', aboutTitleSub:'データ駆動の洞察', aboutDesc:'5000人以上の学生データを管理した実績。', coreStrengths:'強み', s1:'分析的',s2:'細部注意',s3:'学習速度',s4:'時間管理',s5:'チームワーク',s6:'データ精度',s7:'可視化',s8:'問題解決',s9:'コミュニケーション',s10:'目標志向',s11:'適応力',s12:'データ管理', counterStudents:'学生データ', counterEff:'%効率', counterEffSub:'Excelレポート', techProficiency:'技術', typing:'タイピング:', skillsTag:'ツール', skillsTitle:'スキル', skillsSub:'熟練 · 学習中(3ヶ月)', msOfficeSub:'オフィスツール', statsSub:'データ分析', excelSub:'Excelツール', sqlSub:'DBクエリ', pythonSub:'Pythonライブラリ', pbiSub:'BIダッシュボード', expTag:'職歴', expTitle:'経験', expRole:'試験室助手', expL1:'5000人以上の記録', expL2:'Excelレポート', expL3:'40%効率向上', expL4:'Pivot Tables, XLOOKUP', expL5:'100%精度', delivered:'完了', projTag:'ポートフォリオ', projTitle:'プロジェクト', projSub:'データ分析プロジェクト', thNo:'番号', thName:'プロジェクト', thDesc:'説明', thTools:'ツール', thStatus:'状態', thLink:'リンク', p1name:'学生ダッシュボード', p1desc:'5000人以上の分析。', p2name:'出席レポート', p2desc:'統計分析。', p3name:'SQL販売分析', p3desc:'SQLクエリ。', p4name:'Python EDA', p4desc:'探索的分析。', p5name:'Power BI KPI', p5desc:'インタラクティブ。', completed:'完了', inProgress:'進行中', comingSoon:'近日公開', eduTag:'教育', eduTitle:'学歴', certTag:'実績', certTitle:'証明書', certSub:'認定', cert1:'Advanced Excel', cert2:'AI Excel', cert3:'SQLを学ぶ', cert4:'Pythonを学ぶ', cert5:'Power BIを学ぶ', viewCert:'証明書を見る', contactTag:'連絡', contactTitle:'連絡先', contactSub:'いつでも', phone:'電話', email:'メール', footerCopy:'© 2026 · データ分析ポートフォリオ' },
+  'ru': { heroDesc:'1 год опыта управления данными 5000+ студентов.', viewPresentation:'Презентация', statStudents:'Записей', statAccuracy:'Точность', statEfficiency:'Эффективность', aboutTag:'Цель', aboutTitleGreen:'Аналитик данных', aboutTitleSub:'Основанные на данных выводы', aboutDesc:'Опытный аналитик данных с 5000+ студенческими наборами данных.', coreStrengths:'Навыки', s1:'Аналитическое мышление',s2:'Внимание к деталям',s3:'Быстрое обучение',s4:'Тайм-менеджмент',s5:'Командная работа',s6:'Точность данных',s7:'Визуализация',s8:'Решение проблем',s9:'Коммуникация',s10:'Целеустремлённость',s11:'Адаптивность',s12:'Управление данными', counterStudents:'Данных студентов', counterEff:'% улучшение', counterEffSub:'Excel-отчёты', techProficiency:'Навыки', typing:'Печать:', skillsTag:'Инструменты', skillsTitle:'Навыки', skillsSub:'Компетентен · Обучение (3 месяца)', msOfficeSub:'Office', statsSub:'Анализ данных', excelSub:'Excel', sqlSub:'БД-запросы', pythonSub:'Python-библиотеки', pbiSub:'BI-дашборды', expTag:'Опыт', expTitle:'Опыт', expRole:'Ассистент', expL1:'5000+ записей', expL2:'Excel-отчёты', expL3:'40% эффективность', expL4:'Pivot Tables, XLOOKUP', expL5:'100% точность', delivered:'Выполнено', projTag:'Портфолио', projTitle:'Проекты', projSub:'Проекты анализа данных', thNo:'№', thName:'Проект', thDesc:'Описание', thTools:'Инструменты', thStatus:'Статус', thLink:'Ссылка', p1name:'Дашборд успеваемости', p1desc:'5000+ результатов.', p2name:'Отчёт посещаемости', p2desc:'Статистический анализ.', p3name:'SQL-анализ', p3desc:'SQL-запросы.', p4name:'Python EDA', p4desc:'Разведочный анализ.', p5name:'Power BI KPI', p5desc:'Интерактивный дашборд.', completed:'Завершено', inProgress:'В процессе', comingSoon:'Скоро', eduTag:'Образование', eduTitle:'Образование', certTag:'Достижения', certTitle:'Сертификаты', certSub:'Сертификаты', cert1:'Advanced Excel', cert2:'Excel с ИИ', cert3:'Изучу SQL', cert4:'Изучу Python', cert5:'Изучу Power BI', viewCert:'Сертификат', contactTag:'Контакт', contactTitle:'Свяжитесь', contactSub:'В любое время', phone:'Телефон', email:'Почта', footerCopy:'© 2026 · Портфолио аналитика данных' },
+  'pt': { heroDesc:'1 ano de experiência gerenciando 5000+ conjuntos de dados.', viewPresentation:'Ver apresentação', statStudents:'Registros', statAccuracy:'Precisão', statEfficiency:'Eficiência', aboutTag:'Objetivo', aboutTitleGreen:'Analista de dados', aboutTitleSub:'Insights baseados em dados', aboutDesc:'Aspirante a analista de dados com 5000+ estudantes.', coreStrengths:'Pontos fortes', s1:'Analítico',s2:'Detalhista',s3:'Aprendizado rápido',s4:'Gestão do tempo',s5:'Colaboração',s6:'Precisão',s7:'Visualização',s8:'Resolução',s9:'Comunicação',s10:'Objetivos',s11:'Adaptabilidade',s12:'Gestão dados', counterStudents:'Dados gerenciados', counterEff:'% eficiência', counterEffSub:'Relatórios Excel', techProficiency:'Competências', typing:'Digitação:', skillsTag:'Ferramentas', skillsTitle:'Habilidades', skillsSub:'Proficiente · Aprendendo (3 meses)', msOfficeSub:'Ferramentas', statsSub:'Análise', excelSub:'Kit dados', sqlSub:'Consultas', pythonSub:'Bibliotecas', pbiSub:'Dashboards BI', expTag:'Trajetória', expTitle:'Experiência', expRole:'Assistente exames', expL1:'5000+ registros', expL2:'Relatórios Excel', expL3:'40% eficiência', expL4:'Pivot Tables, XLOOKUP', expL5:'100% precisão', delivered:'Entregue', projTag:'Portfólio', projTitle:'Projetos', projSub:'Projetos de análise', thNo:'N°', thName:'Projeto', thDesc:'Descrição', thTools:'Ferramentas', thStatus:'Status', thLink:'Link', p1name:'Dashboard desempenho', p1desc:'5000+ notas.', p2name:'Relatório presença', p2desc:'Análise estatística.', p3name:'SQL vendas', p3desc:'Consultas SQL.', p4name:'Python EDA', p4desc:'Análise exploratória.', p5name:'Power BI KPI', p5desc:'Dashboard interativo.', completed:'Concluído', inProgress:'Em andamento', comingSoon:'Em breve', eduTag:'Educação', eduTitle:'Formação', certTag:'Conquistas', certTitle:'Certificados', certSub:'Certificações', cert1:'Excel Avançado', cert2:'Excel com IA', cert3:'Aprenderei SQL', cert4:'Aprenderei Python', cert5:'Aprenderei Power BI', viewCert:'Ver certificado', contactTag:'Contato', contactTitle:'Fale comigo', contactSub:'Disponível', phone:'Telefone', email:'E-mail', footerCopy:'© 2026 · Portfólio de análise de dados' }
+};
 
-    /* HAMBURGER */
-    var menuOpen = false;
-    function toggleMenu() {
-        menuOpen = !menuOpen;
-        var menu = document.getElementById('mobile-menu');
-        var icon = document.getElementById('hamburger-icon');
-        if (menuOpen) { menu.classList.add('open'); icon.className = 'fa-solid fa-xmark'; }
-        else { menu.classList.remove('open'); icon.className = 'fa-solid fa-bars'; }
-    }
-    function closeMenu() {
-        menuOpen = false;
-        var menu = document.getElementById('mobile-menu');
-        var icon = document.getElementById('hamburger-icon');
-        menu.classList.remove('open'); icon.className = 'fa-solid fa-bars';
-    }
-    document.addEventListener('click', function(e) {
-        var navbar = document.getElementById('navbar');
-        if (menuOpen && navbar && !navbar.contains(e.target)) closeMenu();
+/* ── National languages ── */
+var NATIONAL_LANGS = [
+  {code:'en',label:'English',short:'EN'},
+  {code:'hi',label:'Hindi — हिंदी',short:'HI'},
+  {code:'as',label:'Assamese — অসমীয়া',short:'AS'},
+  {code:'bn',label:'Bengali — বাংলা',short:'BN'},
+  {code:'bh',label:'Bhojpuri — भोजपुरी',short:'BH'},
+  {code:'gu',label:'Gujarati — ગુજરાતી',short:'GU'},
+  {code:'kn',label:'Kannada — ಕನ್ನಡ',short:'KN'},
+  {code:'ks',label:'Kashmiri — کٲشُر',short:'KS'},
+  {code:'ml',label:'Malayalam — മലയാളം',short:'ML'},
+  {code:'mr',label:'Marathi — मराठी',short:'MR'},
+  {code:'or',label:'Odia — ଓଡ଼ିଆ',short:'OR'},
+  {code:'pa',label:'Punjabi — ਪੰਜਾਬੀ',short:'PA'},
+  {code:'raj',label:'Rajasthani — राजस्थानी',short:'RJ'},
+  {code:'sd',label:'Sindhi — سنڌي',short:'SD'},
+  {code:'ta',label:'Tamil — தமிழ்',short:'TA'},
+  {code:'te',label:'Telugu — తెలుగు',short:'TE'},
+  {code:'ur',label:'Urdu — اردو',short:'UR'}
+];
+
+/* ── International languages ── */
+var INTL_LANGS = [
+  {code:'en',label:'American English',short:'EN'},
+  {code:'ar',label:'Arabic — العربية',short:'AR'},
+  {code:'zh',label:'Chinese — 中文',short:'ZH'},
+  {code:'fr',label:'French — Français',short:'FR'},
+  {code:'de',label:'German — Deutsch',short:'DE'},
+  {code:'it',label:'Italian — Italiano',short:'IT'},
+  {code:'ja',label:'Japanese — 日本語',short:'JA'},
+  {code:'ko',label:'Korean — 한국어',short:'KO'},
+  {code:'pt',label:'Portuguese — Português',short:'PT'},
+  {code:'ru',label:'Russian — Русский',short:'RU'},
+  {code:'es',label:'Spanish — Español',short:'ES'},
+  {code:'th',label:'Thai — ภาษาไทย',short:'TH'},
+  {code:'tr',label:'Turkish — Türkçe',short:'TR'},
+  {code:'vi',label:'Vietnamese — Tiếng Việt',short:'VI'}
+];
+
+/* ═══════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════ */
+function applyTheme(dark) {
+  var html = document.documentElement;
+  var icon = document.getElementById('theme-icon');
+  if (dark) {
+    html.classList.add('dark');
+    if(icon) icon.className='fa-solid fa-sun';
+    try{localStorage.setItem('theme','dark');}catch(e){}
+  } else {
+    html.classList.remove('dark');
+    if(icon) icon.className='fa-solid fa-moon';
+    try{localStorage.setItem('theme','light');}catch(e){}
+  }
+}
+function toggleDark() { applyTheme(!document.documentElement.classList.contains('dark')); }
+(function(){
+  var saved; try{saved=localStorage.getItem('theme');}catch(e){}
+  applyTheme(saved==='dark'||(saved!=='light'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches));
+})();
+
+/* ═══════════════════════════════════════
+   HAMBURGER
+═══════════════════════════════════════ */
+var menuOpen = false;
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  var menu = document.getElementById('mobile-menu');
+  var icon = document.getElementById('hamburger-icon');
+  if(menuOpen){menu.classList.add('open');icon.className='fa-solid fa-xmark';}
+  else{menu.classList.remove('open');icon.className='fa-solid fa-bars';}
+}
+function closeMenu() {
+  menuOpen=false;
+  var menu=document.getElementById('mobile-menu');
+  var icon=document.getElementById('hamburger-icon');
+  if(menu) menu.classList.remove('open');
+  if(icon) icon.className='fa-solid fa-bars';
+}
+document.addEventListener('click', function(e) {
+  var navbar=document.getElementById('navbar');
+  if(menuOpen&&navbar&&!navbar.contains(e.target)) closeMenu();
+});
+
+/* ═══════════════════════════════════════
+   NEW LANGUAGE DROPDOWN LOGIC
+   - Globe button opens/closes the panel
+   - Two tabs: National (left) | International (right)
+   - Clicking a tab opens its list below (accordion)
+   - Clicking same tab again closes it (toggle)
+   - Only one list open at a time
+═══════════════════════════════════════ */
+var currentLang = 'en';
+var langPanelOpen = false;
+var activeTab = 'national'; /* track which tab is currently open */
+
+/* Build list items for a container */
+function buildLangList(containerId, list) {
+  var container = document.getElementById(containerId);
+  if(!container) return;
+  container.innerHTML = '';
+  list.forEach(function(lang) {
+    var el = document.createElement('div');
+    el.className = 'lang-item' + (lang.code === currentLang ? ' active' : '');
+    el.setAttribute('data-code', lang.code);
+    el.innerHTML = '<span class="lang-dot"></span>' + lang.label;
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      setLanguage(lang.code, lang.short);
     });
+    container.appendChild(el);
+  });
+}
 
-    /* COUNTERS */
-    function runCounter(id, end, suffix, duration) {
-        duration = duration || 1800; suffix = suffix || '';
-        var el = document.getElementById(id); if (!el) return;
-        var start = 0;
-        var step = Math.max(1, Math.ceil(end / (duration / 16)));
-        var timer = setInterval(function() {
-            start = Math.min(start + step, end);
-            el.textContent = start.toLocaleString() + suffix;
-            if (start >= end) clearInterval(timer);
-        }, 16);
+/* Switch tab — opens that tab's pane, closes the other */
+function switchTab(tab) {
+  var tabNational = document.getElementById('tab-national');
+  var tabIntl     = document.getElementById('tab-international');
+  var paneNational = document.getElementById('pane-national');
+  var paneIntl     = document.getElementById('pane-international');
+  if(!tabNational||!tabIntl||!paneNational||!paneIntl) return;
+
+  if(activeTab === tab) {
+    /* Same tab clicked again → toggle close */
+    activeTab = null;
+    tabNational.classList.remove('active');
+    tabIntl.classList.remove('active');
+    paneNational.classList.remove('open');
+    paneIntl.classList.remove('open');
+  } else {
+    activeTab = tab;
+    if(tab === 'national') {
+      tabNational.classList.add('active');
+      tabIntl.classList.remove('active');
+      paneNational.classList.add('open');
+      paneIntl.classList.remove('open');
+    } else {
+      tabIntl.classList.add('active');
+      tabNational.classList.remove('active');
+      paneIntl.classList.add('open');
+      paneNational.classList.remove('open');
     }
+  }
+}
 
-    function animateBars() {
-        document.querySelectorAll('.skill-bar-fill').forEach(function(bar) { bar.style.width = (bar.dataset.w || 0) + '%'; });
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  /* Populate both lists */
+  buildLangList('list-national', NATIONAL_LANGS);
+  buildLangList('list-international', INTL_LANGS);
 
-    function once(el, threshold, callback) {
-        if (!el) return;
-        var obs = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) { callback(); obs.disconnect(); }
-        }, { threshold: threshold });
-        obs.observe(el);
-    }
-    function setupObservers() {
-        once(document.getElementById('hero'), 0.3, function() { runCounter('h-s1',5000,'+'); runCounter('h-s2',100,'%'); runCounter('h-s3',40,'%'); });
-        once(document.getElementById('about'), 0.25, function() { runCounter('counter-students',5000,'+'); runCounter('counter-efficiency',40,'%'); animateBars(); });
-    }
+  /* Default: national tab open */
+  switchTab('national');
 
-    /* STRENGTH CARDS */
-    (function initStrengthCards() {
-        var cards = document.querySelectorAll('.strength-card');
-        var activeCard = null;
-        function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
-        cards.forEach(function(card) {
-            card.addEventListener('click', function(e) {
-                if (!isTouchDevice()) return;
-                e.stopPropagation();
-                if (activeCard && activeCard !== card) activeCard.classList.remove('active');
-                if (card.classList.contains('active')) { card.classList.remove('active'); activeCard = null; }
-                else { card.classList.add('active'); activeCard = card; }
-            });
-            card.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); card.click(); } });
-        });
-        document.addEventListener('click', function(e) {
-            if (!isTouchDevice()) return;
-            var grid = document.getElementById('strengths-grid');
-            if (grid && !grid.contains(e.target) && activeCard) { activeCard.classList.remove('active'); activeCard = null; }
-        });
-    })();
-
-    /* DARK MODE TOUCH EFFECTS */
-    (function initDarkTouchEffects() {
-        function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
-        function isDark() { return document.documentElement.classList.contains('dark'); }
-        function attachTouchToggle(selector) {
-            var elements = document.querySelectorAll(selector);
-            var activeEl = null;
-            elements.forEach(function(el) {
-                el.addEventListener('click', function(e) {
-                    if (!isTouchDevice() || !isDark()) return;
-                    e.stopPropagation();
-                    if (activeEl && activeEl !== el) activeEl.classList.remove('touch-active');
-                    if (el.classList.contains('touch-active')) { el.classList.remove('touch-active'); activeEl = null; }
-                    else { el.classList.add('touch-active'); activeEl = el; }
-                });
-            });
-            document.addEventListener('click', function() {
-                if (!isTouchDevice() || !isDark()) return;
-                if (activeEl) { activeEl.classList.remove('touch-active'); activeEl = null; }
-            });
-        }
-        attachTouchToggle('.projects-table tbody tr');
-        attachTouchToggle('.proj-card');
-        attachTouchToggle('.edu-card');
-        attachTouchToggle('.exp-card');
-        attachTouchToggle('.contact-card');
-        attachTouchToggle('.cert-card');
-    })();
-
-    /* FOOTER SOCIAL — touch toggle for mobile */
-    (function initFooterSocialTouch() {
-        var btns = document.querySelectorAll('.footer-social-btn');
-        var activeBtn = null;
-        function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
-        btns.forEach(function(btn) {
-            btn.addEventListener('click', function(e) {
-                if (!isTouchDevice()) return;
-                if (activeBtn && activeBtn !== btn) activeBtn.classList.remove('touch-active');
-                if (btn.classList.contains('touch-active')) { btn.classList.remove('touch-active'); activeBtn = null; }
-                else { btn.classList.add('touch-active'); activeBtn = btn; }
-            });
-        });
-    })();
-
-    /* SKILL FLIP CARDS */
-    var allFlipCards = document.querySelectorAll('.skill-flip-card');
-    function isTouchDevice() { return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0); }
-    allFlipCards.forEach(function(card) {
-        card.addEventListener('click', function() {
-            var alreadyFlipped = card.classList.contains('flipped');
-            if (isTouchDevice()) { allFlipCards.forEach(function(c) { c.classList.remove('flipped'); }); if (!alreadyFlipped) card.classList.add('flipped'); }
-            else { card.classList.toggle('flipped'); }
-        });
-        card.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); card.click(); } });
+  /* Globe button toggle */
+  var langBtn   = document.getElementById('lang-btn');
+  var langPanel = document.getElementById('lang-panel');
+  if(langBtn) {
+    langBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      langPanelOpen = !langPanelOpen;
+      if(langPanel) langPanel.classList.toggle('open', langPanelOpen);
     });
+  }
 
-    /* SKILL SCENE SCROLL FADE-IN */
-    var skillScenes = document.querySelectorAll('.skill-scene');
-    var skillIO = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry, i) {
-            if (entry.isIntersecting) { setTimeout(function() { entry.target.classList.add('visible'); }, i * 80); skillIO.unobserve(entry.target); }
-        });
-    }, { threshold: 0.1 });
-    skillScenes.forEach(function(s) { skillIO.observe(s); });
+  /* Click outside → close panel */
+  document.addEventListener('click', function(e) {
+    var wrap = document.getElementById('lang-dropdown-wrap');
+    if(wrap && !wrap.contains(e.target)) {
+      langPanelOpen = false;
+      if(langPanel) langPanel.classList.remove('open');
+    }
+  });
+});
 
-    /* INIT */
-    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic', offset: 50 });
-    document.addEventListener('DOMContentLoaded', function() {
-        setupObservers();
-        if (typeof Typed !== 'undefined') {
-            new Typed('#typed-subtitle', { strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'], loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|' });
-            new Typed('#typed-photo-role', { strings: ['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'], loop: true, typeSpeed: 75, backSpeed: 20, backDelay: 1500, showCursor: true, cursorChar: '|' });
-        }
+/* ═══════════════════════════════════════
+   TRANSLATION ENGINE
+═══════════════════════════════════════ */
+function setLanguage(code, shortCode) {
+  if(window.innerWidth < 900) return;
+  currentLang = code;
+  var short = shortCode || code.toUpperCase().substring(0,2);
+  var codeEl = document.getElementById('lang-current-code');
+  if(codeEl) codeEl.textContent = short;
+  var t = TRANSLATIONS[code] || TRANSLATIONS['en'];
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  /* Close panel */
+  langPanelOpen = false;
+  var langPanel = document.getElementById('lang-panel');
+  if(langPanel) langPanel.classList.remove('open');
+  /* Rebuild lists to update active highlight */
+  buildLangList('list-national', NATIONAL_LANGS);
+  buildLangList('list-international', INTL_LANGS);
+}
+
+/* ═══════════════════════════════════════
+   COUNTERS
+═══════════════════════════════════════ */
+function runCounter(id, end, suffix, duration) {
+  duration = duration||1800; suffix = suffix||'';
+  var el = document.getElementById(id); if(!el) return;
+  var start=0, step=Math.max(1,Math.ceil(end/(duration/16)));
+  var timer=setInterval(function(){
+    start=Math.min(start+step,end);
+    el.textContent=start.toLocaleString()+suffix;
+    if(start>=end) clearInterval(timer);
+  },16);
+}
+function animateBars() {
+  document.querySelectorAll('.skill-bar-fill').forEach(function(bar){bar.style.width=(bar.dataset.w||0)+'%';});
+}
+function once(el,threshold,callback) {
+  if(!el) return;
+  var obs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){callback();obs.disconnect();}
+  },{threshold:threshold});
+  obs.observe(el);
+}
+function setupObservers() {
+  once(document.getElementById('hero'),0.3,function(){runCounter('h-s1',5000,'+');runCounter('h-s2',100,'%');runCounter('h-s3',40,'%');});
+  once(document.getElementById('about'),0.25,function(){runCounter('counter-students',5000,'+');runCounter('counter-efficiency',40,'%');animateBars();});
+}
+
+/* ── STRENGTH CARDS ── */
+(function(){
+  var cards=document.querySelectorAll('.strength-card'), activeCard=null;
+  function isTD(){return('ontouchstart' in window)||(navigator.maxTouchPoints>0);}
+  cards.forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(!isTD()) return;
+      e.stopPropagation();
+      if(activeCard&&activeCard!==card) activeCard.classList.remove('active');
+      card.classList.toggle('active');
+      activeCard = card.classList.contains('active') ? card : null;
     });
+    card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
+  });
+  document.addEventListener('click',function(e){
+    if(!isTD()) return;
+    var grid=document.getElementById('strengths-grid');
+    if(grid&&!grid.contains(e.target)&&activeCard){activeCard.classList.remove('active');activeCard=null;}
+  });
+})();
+
+/* ── DARK TOUCH EFFECTS ── */
+(function(){
+  function isTD(){return('ontouchstart' in window)||(navigator.maxTouchPoints>0);}
+  function isDark(){return document.documentElement.classList.contains('dark');}
+  function attachTouchToggle(selector){
+    var elements=document.querySelectorAll(selector), activeEl=null;
+    elements.forEach(function(el){
+      el.addEventListener('click',function(e){
+        if(!isTD()||!isDark()) return;
+        e.stopPropagation();
+        if(activeEl&&activeEl!==el) activeEl.classList.remove('touch-active');
+        el.classList.toggle('touch-active');
+        activeEl = el.classList.contains('touch-active') ? el : null;
+      });
+    });
+    document.addEventListener('click',function(){
+      if(!isTD()||!isDark()) return;
+      if(activeEl){activeEl.classList.remove('touch-active');activeEl=null;}
+    });
+  }
+  attachTouchToggle('.projects-table tbody tr');
+  attachTouchToggle('.proj-card');
+  attachTouchToggle('.edu-card');
+  attachTouchToggle('.exp-card');
+  attachTouchToggle('.contact-card');
+  attachTouchToggle('.cert-card');
+})();
+
+/* FOOTER SOCIAL */
+(function(){
+  var btns=document.querySelectorAll('.footer-social-btn'), activeBtn=null;
+  function isTD(){return('ontouchstart' in window)||(navigator.maxTouchPoints>0);}
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(!isTD()) return;
+      if(activeBtn&&activeBtn!==btn) activeBtn.classList.remove('touch-active');
+      btn.classList.toggle('touch-active');
+      activeBtn = btn.classList.contains('touch-active') ? btn : null;
+    });
+  });
+})();
+
+/* ── SKILL FLIP CARDS ── */
+var allFlipCards=document.querySelectorAll('.skill-flip-card');
+function isTD(){return('ontouchstart' in window)||(navigator.maxTouchPoints>0);}
+allFlipCards.forEach(function(card){
+  card.addEventListener('click',function(){
+    var alreadyFlipped=card.classList.contains('flipped');
+    if(isTD()){allFlipCards.forEach(function(c){c.classList.remove('flipped');});if(!alreadyFlipped)card.classList.add('flipped');}
+    else{card.classList.toggle('flipped');}
+  });
+  card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
+});
+
+/* ── EDU FLIP CARDS ── */
+(function(){
+  var eduCards=document.querySelectorAll('.edu-flip-card'), lockedCard=null;
+  function isDesktop(){return window.innerWidth>=900;}
+  eduCards.forEach(function(card){
+    card.addEventListener('click',function(e){
+      if(!isDesktop()) return;
+      if(e.target.closest('.edu-back-topbtn')) return;
+      e.stopPropagation();
+      if(lockedCard===card){card.classList.remove('flipped');lockedCard=null;}
+      else{if(lockedCard)lockedCard.classList.remove('flipped');card.classList.add('flipped');lockedCard=card;}
+    });
+    card.addEventListener('keydown',function(e){if(!isDesktop())return;if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}});
+  });
+  document.addEventListener('click',function(e){
+    if(!isDesktop()) return;
+    var section=document.getElementById('education');
+    if(section&&!section.contains(e.target)&&lockedCard){lockedCard.classList.remove('flipped');lockedCard=null;}
+  });
+})();
+
+/* SKILL SCENE SCROLL FADE */
+var skillScenes=document.querySelectorAll('.skill-scene[data-scene]');
+var skillIO=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      var idx=parseInt(entry.target.dataset.scene||0);
+      setTimeout(function(){entry.target.classList.add('visible');},idx*80);
+      skillIO.unobserve(entry.target);
+    }
+  });
+},{threshold:0.1});
+skillScenes.forEach(function(s){skillIO.observe(s);});
+
+/* INIT */
+AOS.init({duration:700,once:true,easing:'ease-out-cubic',offset:50});
+document.addEventListener('DOMContentLoaded',function(){
+  setupObservers();
+  if(typeof Typed!=='undefined'){
+    new Typed('#typed-subtitle',{strings:['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'],loop:true,typeSpeed:75,backSpeed:20,backDelay:1500,showCursor:true,cursorChar:'|'});
+    new Typed('#typed-photo-role',{strings:['Data Analyst Aspirant','Statistics Expert','Advanced Excel Expert','SQL Learner','Python Libraries Learner','Power BI Learner'],loop:true,typeSpeed:75,backSpeed:20,backDelay:1500,showCursor:true,cursorChar:'|'});
+  }
+});
 </script>
 </body>
 </html>
